@@ -1,0 +1,10 @@
+{
+  "sourceUrl": "https://github.com/slorber/this-week-in-react",
+  "branch": "main",
+  "docusaurusRoot": "website",
+  "configFile": "website/docusaurus.config.js",
+  "translateCommand": "../node_modules/.bin/docusaurus write-translations",
+  "buildCommand": "../node_modules/.bin/docusaurus build",
+  "buildOutput": "build",
+  "packageManager": "yarn"
+}
