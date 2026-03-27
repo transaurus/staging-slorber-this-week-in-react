@@ -1,0 +1,176 @@
+---
+slug: /254
+title: "This Week In React #254: Next.js, Remix, Compiler, Async React, TanStack, Cloudflare, Hook Form, Conform | VirtualView, DevTools, Screens, Radon, Harness, Audio API, Uniwind, Nitro | Bun, Oxlint, Vite, View Transitions"
+authors: [kacperkapusciak, piaskowyk]
+date: 10-15-2025
+---
+
+Hi everyone\! Krzysztof and Kacper from Software Mansion here\! 👋
+
+We don't know about you, but we're still living and breathing the news from last week's React conf.
+
+In the previous issue, we covered the first day of React Conf, but when it comes to React Native, many announcements took place on the second day, including VirtualView and the sneak peek into React Native 0.83.
+
+Aside from React conf announcements, Next.js 16 has been released in beta, and Remix 3 has been introduced.
+
+Also check our partner conf 🇬🇧 [React Native London](https://www.reactnativelondon.co.uk/?utm_source=thisweekinreact) on 13-14 Nov, and make sure to claim a 10% discount with our usual code "TWIR".
+
+Let’s go\!
+
+<!-- truncate -->
+
+import Support from "../_support.mdx";
+
+<Support />
+
+---
+
+## 💸 Sponsor {#sponsor1}
+
+[![AG Charts: The Best React Charts in the World.](/emails/issues/254/aggrid.jpg)](https://www.ag-grid.com/charts?utm_source=thisweekinreact&utm_medium=newsletter&utm_campaign=2025-email-6)
+
+**[AG Charts: The Best React Charts in the World.](https://www.ag-grid.com/charts?utm_source=thisweekinreact&utm_medium=newsletter&utm_campaign=2025-email-6)**
+
+**AG Charts** is a high-performance, canvas-based charting library from [AG Grid](https://www.ag-grid.com/react-table?utm_source=thisweekinreact&utm_medium=newsletter&utm_campaign=2025-email-6).
+
+Originally built to power AG Grid’s Integrated Charts, it now serves over **1M npm downloads** each month.
+
+- 🆓 **Free**: A wide range of chart types (bar, line, scatter, area, and more) — free, forever.
+- 🚀 **Fast**: Optimised canvas rendering for large datasets (1M+ points).
+- 🦾 **Accessible**: Built-in support for screen readers and keyboard navigation.
+- 🔄 **AG Grid Integration**: Shared API with AG Grid for seamless integration.
+
+👉 Get Started for Free: [www.ag-grid.com/charts](https://www.ag-grid.com/charts?utm_source=thisweekinreact&utm_medium=newsletter&utm_campaign=2025-email-6)
+
+---
+
+## ⚛️ React {#react}
+
+![Next.js 16 beta](/emails/issues/254/nextjs-16-beta.png)
+
+**[Next.js 16 beta](https://nextjs.org/blog/next-16-beta%20)**
+
+A new major version of Next.js got released in beta. This is the best time to try the newest features and share the feedback with the team. Highlights for this release include:
+
+- Turbopack (stable): Enabled by default. Promised to be up to 5-10x faster Fast Refresh, and 2-5x faster builds.
+- Turbopack file system caching (beta): Faster startup and compile times.
+- React Compiler Support (stable): Need to be manually enabled.
+- Optimized navigations and prefetching: Prefetching multiple URLs that share a layout now downloads that layout only once which cuts down on network transfer size.
+- Improved Caching APIs: New `updateTag()` and refined `revalidateTag()`.
+- Build Adapters API (alpha): Create custom adapters to modify the build process.
+- React 19.2: `<Activity>`, View Transitions, `useEffectEvent`.
+
+---
+
+![Remix v3 basic component](/emails/issues/254/remix.jpg)
+
+🎥 **[Remix Jam 2025 \- Introducing Remix 3](https://www.youtube.com/watch?v=xt_iEOn2a6Y&t=11764s)**
+
+Ryan and Micheal introduced for the very first time Remix v3 in a 3h+ conf talk, and Seb watched it all so that you don’t have to. This new major version does not use React anymore, but we think it still deserves to be featured here. It’s not even in alpha yet, but still worth exploring.
+
+On the client, it remains quite similar to React (using declarative JSX) but it has a setup function that runs only once (like Solid), state is managed imperatively and re-renders are triggered manually with `this.update()` (good idea? time will tell 😅). It also has a quite interesting composable event system that lets you build custom interactions and move “event state” outside of your components (when you’d probably use refs in React).
+
+On the server, it’s built on top of a scalable router with advanced pattern matching and typesafe reverse routing. It also takes the best of iframes to introduce a `<Frame>` component that reminds React’s Suspense and Astro Server Islands (see my [tweet](https://x.com/sebastienlorber/status/1978429126370336966)), letting you defer expensive components to the client. Frames have explicit URLs, can be granularly reloaded after mutations, and payloads are plain old HTML, making them quite easy to debug in the network tab. Unlike React, Remix is able to reconcile both plain HTML and JSX.
+
+Overall, it introduces an interesting model that remains close to React before hooks were introduced, with some major design changes (non-reactive state updates, manual re-renders), and also offers a simpler alternative to React Server Components. As you’d expect from that team, the framework heavily relies on standard web platform primitives (even for the backend), allowing it to run almost everywhere, including Service Workers. Learning Remix 3 will teach you about CustomEvent, EventTarget and AbortController extensively.
+
+---
+
+- 💸 [The Road to Next - Master Full-Stack Web Development with Next.js 15 and React 19](https://www.road-to-next.com/?utm_source=newsletter&utm_medium=email&utm_campaign=this_week_in_react_3.1)
+- 👀 [Introducing the Async React Working Group](https://github.com/reactwg/async-react/discussions/1): Provides support and guidance for modern React features such as Transitions, Suspense and optimistic.
+- 📜 [Context Inheritance in TanStack Router](https://tkdodo.eu/blog/context-inheritance-in-tan-stack-router): Explains how the router handles parent URL path parameters for nested routings and provides type-safe access to them.
+- 📜 [The Perils of Reactivity](https://outbox.matthewphillips.info/archive/perils-of-reactivity): A "magic" API is always a trade-off. The author discusses the hidden costs of reactivity in modern UI frameworks.
+- 📜 [Serialization and deserialization without blowing React](https://www.orilivni.com/2025/10/serialization-and-deserialization/): If you share large data structures between components, the `replaceEqualDeep` method from TanStack Query can help you avoid unnecessary re-renders by updating only parts of the structure instead of recreating them entirely.
+- 📜 [Transform FormData Between UI and Database in React Router](https://sergiodxa.com/tutorials/transform-formdata-between-ui-and-database-in-react-router): An interesting take on how form actions simplify the mental model of synchronizing data between the UI and the database.
+- 📜 [Building an Async Combobox with useSuspenseQuery() and useDeferredValue()](https://certificates.dev/blog/building-an-async-combobox-with-usesuspensequery-and-usedeferredvalue?friend=TWIR): The combination of concurrent features like `useSuspenseQuery()` and `useDeferredValue()` can help create a smooth user experience by deferring less critical UI updates.
+- 📜 [HTML’s Best Kept Secret: The \<output\> Tag](https://denodell.com/blog/html-best-kept-secret-output-tag): Some forgotten HTML tags, like `<output>`, have can help improve your React app accessibility.
+- 📜 [React Conf 2025 – Recap (React & React Native Days)](https://blog.swmansion.com/react-conf-2025-recap-922c50d97318): The summary of the main highlights and hot takes from two days of React Conf.
+- 📜 [Unpacking Cloudflare Workers CPU Performance Benchmarks](https://blog.cloudflare.com/unpacking-cloudflare-workers-cpu-performance-benchmarks/): Theo recently published benchmarks showing how Vercel outperforms Cloudflare on various scenarios including React and Next.js-related ones. Cloudflare reacted by investigating and fixing many performance issues, some of which will be upstreamed in React and OpenNext.
+- 📜 [React Alicante 2025 Recap](https://kalabro.tech/react-alicante-2025/)
+- 💸 [React Certification – 50% off Mid + Senior bundles. Exams by Aurora Scharff. Trusted by Deloitte, Cognizant, Sopra Steria.](https://certificates.dev/react?friend=TWIR&utm_source=twir&utm_medium=email&utm_campaign=autumnsale)
+- 📦 [React Compiler 1.0](https://react.dev/blog/2025/10/07/react-compiler-1): At React Conf, the React Compiler 1.0 was released. This release blog post gives more context and introduces what’s new, including the new Compiler-powered lint rules.
+- 📦 [TanStack Router 1.133 \- Adds a history tab to the dev tools](https://github.com/TanStack/router/releases/tag/v1.133.0)
+- 📦 [Conform 1.12 \- Introduces a new `<FormOptionsProvider />` component for metadata customization](https://github.com/edmundhung/conform/releases/tag/v1.12.0)
+- 📦 [React Admin 5.12 \- New props for fallback components in non-success states, and several new portable logic hooks](https://github.com/marmelab/react-admin/releases/tag/v5.12.0)
+- 📦 [XState 5.23 \- Adds system.getAll to get all running actors](https://github.com/statelyai/xstate/releases/tag/xstate%405.23.0)
+- 📦 [React Hook Form 7.65 \- New `<Watch>` component](https://github.com/react-hook-form/react-hook-form/releases/tag/v7.65.0)
+- 🎥 [Theo \- The Future of React](https://www.youtube.com/watch?v=d6Mk-3qh2O0)
+- 🎥 [Alem Tuzlak \- React 19 metadata in React Router \- Dynamic SEO](https://www.youtube.com/watch?v=K0Xu2oPjax4)
+
+<SubscribeFormEmbed placement="middle" />
+
+---
+
+## 💸 Sponsor {#sponsor2}
+
+[![No breakpoints, no console.log — just AI & time travel](/emails/issues/254/wallaby.jpg)](https://wallabyjs.com/?referrer=ThisWeekInReactOct25)
+
+**[No breakpoints, no console.log — just AI & time travel](https://wallabyjs.com/?referrer=ThisWeekInReactOct25)**
+
+15x faster TypeScript and JavaScript debugging than with breakpoints and `console.log`, while upgrading your AI agent into an expert debugger with real-time context.
+
+Wallaby.js runs your tests as you type, feeding your AI assistant live runtime values, code coverage, error details, and execution paths — all right next to your code. With [Wallaby v3’s new engine](https://wallabyjs.com/blog/wallaby-v3.html?referrer=ThisWeekInReactOct25) 🚀, tests start instantly with cached results, prioritize active files, and stream updates in real time.
+
+Built for testing, Wallaby includes a **Time Travel Debugger**, the ability to run only opened files, full-context AI integration, smart test runs, and more.
+
+[➡️ Learn More](https://wallabyjs.com/?referrer=ThisWeekInReactOct25)
+
+---
+
+## 📱 React-Native {#react-native}
+
+[![](/emails/issues/254/react-native-conf-day.jpg)](https://www.youtube.com/watch?v=p9OcztRyDl0)
+
+**React Native announcements at React Conf**
+
+Last week, Sébastien already posted some hot takes from React Conf, but this conf edition was so packed that he didn’t cover all the great announcements related to React Native. Let’s summarize what we can expect from the latest React Native news.
+
+- **[`<VirtualView>`](https://reactnative.dev/docs/next/virtualview)** \- the building block for virtualized lists. In cooperation with synchronous events, this component can eliminate blank spaces during fast list scrolling. Detailed explanation you can find [here](https://www.youtube.com/live/p9OcztRyDl0?t=10623s).
+- **Web Performance API** \- the well-known `performance.mark()` and `performance.now()` are now available in React Native.
+- Better Developer Experience coming in the future **React Native 0.83**:
+  - **Network Panel** \- a long-missing network inspector now provides information about `fetch()`, `XHR()`, and images, along with metadata and payload inspection.
+  - **Performance Panel** \- powered by the new Web Performance API, this provides us with powerful tools for performance profiling and identifying bottlenecks.
+  - **Desktop app for React Native DevTools** \- no browser requirement, one window per app, refocusing if re-launched, auto-focus on breakpoint, and saved window arrangements.
+- [Evan Bacon announced](https://www.youtube.com/live/p9OcztRyDl0?t=21364s) first class **support for CSS and Tailwind in Expo**.
+
+---
+
+- 👀 [React Native RFC: ArrayBuffer support in TurboModules](https://github.com/react-native-community/discussions-and-proposals/pull/947)
+- 🐦 Jay Meistrich showcased his [CPU benchmarks for LegendList](https://x.com/jmeistrich/status/1977692305604608194) in comparison to other list solutions.
+- 🐦 [React Native Screens will provide a Native Split View](https://x.com/swmansion/status/1978099822860058806)
+- 📣 [Expo Changelog \- GitHub Build Triggers Deprecated in Favor of EAS Workflows](https://expo.dev/changelog/github-build-triggers-deprecation)
+- 📣 [React Native Harness \- Test Native Modules with JavaScript](https://github.com/callstackincubator/react-native-harness)
+- 📜 [From Files to Buffers: Building Real-Time Audio Pipelines in React Native](https://www.callstack.com/blog/from-files-to-buffers-building-real-time-audio-pipelines-in-react-native): A taste of low-level programming: by using an ArrayBuffer, you can generate a binary audio buffer that will be played as a WAV file.
+- 📜 [No rewrite required: How to bring Expo into mature native apps](https://expo.dev/blog/how-to-bring-expo-into-mature-native-apps): With the latest changes in Expo, you can incrementally adopt React Native into existing native applications, screen by screen.
+- 📦 [Radon IDE 1.12 \- Radon AI can see build & bundle logs, improved Network Inspector, iPhone Air & iPhone 17 Pro, RN 0.82](https://github.com/software-mansion/radon-ide/releases/tag/v1.12.0)
+- 📦 [React Native Audio API 0.9 \- Custom worklet node processors, background recording support for Android](https://github.com/software-mansion/react-native-audio-api/releases/tag/0.9.0)
+- 📦 [Nitro 0.30 \- Fixes for Nitrogen and memory management](https://github.com/mrousavy/nitro/releases/tag/v0.30.0)
+- 📦 [Uniwind Public Beta \- Tailwind bindings for React Native from the creator of Unistyles](https://github.com/Unistyles-OSS/uniwind)
+- 📦 [React Native RAG 0.2 \- A leaner and more flexible API for creating RAGs](https://github.com/software-mansion-labs/react-native-rag/releases/tag/v0.2.0)
+- 📦 [React Native Sound 0.13 \- Drop Old Architecture](https://github.com/zmxv/react-native-sound/releases/tag/v0.13.0)
+- 🎥 [Marc Rousavy \- How to build a Nitro Module](https://www.youtube.com/watch?v=528SxTGnIlc)
+- 🎥 [Expo \- How to adopt Liquid Glass in an Expo app](https://www.youtube.com/watch?v=NMCQOBIwW2M)
+- 🎥 [William Candillon \- Liquid Glass with React Native Skia](https://www.youtube.com/watch?v=qYFMOMVZoPY)
+- 🎙️ [React Universe On Air \- React Native at Scale With NFL](https://www.youtube.com/watch?v=gJdydItq6tE)
+
+---
+
+## 🔀 Other {#other}
+
+- 📣 [Oxlint JS Plugins Preview \- Lets you write very fast JS-based lint plugins](https://oxc.rs/blog/2025-10-09-oxlint-js-plugins.html)
+- 📣 [Announcing Vite+ \- Unified Rust-powered toolchain for JavaScript](https://voidzero.dev/posts/announcing-vite-plus)
+- 📜 [Transition to the Other Side with Container Query Units](https://ryanmulligan.dev/blog/transition-to-the-other-side/): Container Query Units in CSS provide information in the child component's style to access the parent's dimensions. This is super useful when you're trying to position a component within the parent's boundaries.
+- 📦 [Firefox 144.0 \- View Transitions, `Element.moveBefore()`, `commandfor` attribute](https://www.firefox.com/en-US/firefox/144.0/releasenotes/): View Transitions (level 1\) is now supported across all browsers\!
+- 📦 [Bun 1.3 \- Now a full‑stack JavaScript runtime](https://bun.com/blog/bun-v1.3): Including good support for React.
+- 📦 [Node.js 24.10](https://nodejs.org/en/blog/release/v24.10.0)
+- 🎥 [Vite: The Documentary](https://www.youtube.com/watch?v=bmWQqAKLgT4)
+
+---
+
+## 🤭 Fun {#fun}
+
+[![alt](/emails/issues/254/meme1.png)](https://x.com/dennis_kortsch/status/1976756803540058536)
+
+[![alt](/emails/issues/254/meme2.jpg)](https://x.com/sebastienlorber/status/1976009323685056722)
+
+See ya! 👋

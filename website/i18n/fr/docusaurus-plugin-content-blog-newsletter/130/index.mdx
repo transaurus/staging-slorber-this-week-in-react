@@ -1,0 +1,182 @@
+---
+slug: /130
+title: "React Hebdo #130: Next.js, callback ref, Zod, React-Hook-Form, Redux, mdxjs-rs, Tamagui, Skia, Shopify, Solid, Bun..."
+authors: [slorber]
+date: 01-03-2023
+---
+
+Salut à tous et bonne année 2023 🍾🥂🥳️
+
+En cette période de fêtes, il y a tout de même eu pas mal d'activité avec une release Next.js et de supers articles React. Et l'écosystème React-Native a été particulièrement actif également, avec Tamagui, le support TypeScript et 2 articles Shopify.
+
+Vous êtes maintenant plus de **15000 abonnés** à me lire chaque semaine 😍
+
+Merci pour votre fidélité et votre contribution à la croissance de ce projet. Je ferai bientôt une rétrospective 2022 pour tout vous dévoiler. En attendant, vous trouverez beaucoup d'infos sur ma [page Indie Hackers](https://www.indiehackers.com/product/french-react-newsletter).
+
+La newsletter est revenue en avance: j'ai décalé ma semaine de ski, car il n'y a pas beaucoup de neige 😅
+Prochaine édition le 17 Janvier.
+
+Oh, et j'ai enfin réussi a créer un [meme viral](https://twitter.com/sebastienlorber/status/1610243388174991360) 🥲
+
+<!-- truncate -->
+
+**💡 [Consulter cette newsletter sur Twitter](https://slo.im/thread) - format visuel 🎨**
+
+---
+
+import Support from "../_support.mdx";
+
+<Support />
+
+---
+
+## 💸 Sponsor {#sponsor1}
+
+[![React Bricks est un CMS visuel basé sur des composants React.](/emails/issues/128/reactbricks.png)](https://reactbricks.com/?utm_source=this_week_in_react)
+
+**[React Bricks est un CMS visuel basé sur des composants React.](https://reactbricks.com/?utm_source=this_week_in_react)**
+
+**Flexible pour les développeurs**: créez votre propre design system en utilisant des composants React, ajoutez l'édition visuelle dans votre JSX et ajoutez des contrôles dans la barre latérale pour modifier les props comme la couleur de fond. Choisissez Next.js, Gatsby ou Remix et le framework CSS de votre choix !
+
+**Facile pour les éditeurs:** qui peuvent éditer directement de manière visuelle sans casser le design system: beaucoup plus facile que d'éditer des entités abstraites en utilisant des champs gris, comme dans un CMS headless classique. **Vous gagnez du temps**: les éditeurs de contenu sont autonomes !
+
+**Prêt pour l'entreprise** avec la collaboration, le versioning, l'authentification unique, la conformité réglementation GDPR, le CDN global pour des images optimisées, l'intégration e-commerce électronique, la publication programmée et bien plus encore.
+
+Commencez ici: [ReactBricks.com](https://reactbricks.com/?utm_source=this_week_in_react)
+
+---
+
+## ⚛️ React {#react}
+
+[![Next.js 13.1](/emails/issues/130/nextjs-13.1.jpg)](https://nextjs.org/blog/next-13-1)
+
+**[Next.js 13.1](https://nextjs.org/blog/next-13-1)**
+
+Une version mineure avec pas mal d'améliorations:
+
+- app directory
+- TypeScript plugin
+- Module transpilation
+- Turbopack et benchmarks
+- SWC plugin pour transformer les imports
+- Edge runtime stable pour les API routes et middleware avancé
+
+---
+
+- 📖 Beta docs [useEffectEvent](https://beta.reactjs.org/learn/separating-events-from-effects#declaring-an-effect-event): mise à jour suite au renommage du hook. Le [nouveau site arrive en janvier](https://twitter.com/dan_abramov/status/1606646280649904131)!
+- 📖 Redux docs: [Side Effects Approaches](https://twitter.com/acemarke/status/1607869290715222016): nouvelle page de doc avec des recommendations et comparaison entre thunks, sagas, observables, listeners, RTQ Query...
+- 📜 [React ref Callback Use–Cases](https://julesblom.com/writing/ref-callback-use-cases): article très complet sur les callback refs qui permettent de déclencher des side-effects associés à un élément DOM. Jules présente de nombreux cas d'utilisation: portals, mesurer un élément DOM...
+- 📜 [The Ultimate Form Abstraction](https://www.brendonovich.dev/blog/the-ultimate-form-abstraction): utilise React-Hook-Form avec un résolver Zod. Utiliser la toute nouvelle feature Zod: type coercion pour les inputs number. Construit progressivement une abstraction de formulaire avec une bonne DX et typesafe.
+- 📜 [A React Developer’s First Take on Solid](https://jakelazaroff.com/words/a-react-developers-first-take-on-solid/): une comparaison intéressante entre Solid et React, puis SolidStart et Next.js/Remix. Jake liste aussi les détails de Solid qu'il a moins aimé.
+- 📜 [A Review of UltraJS, Mixing React and Deno in a Single Framework](https://blog.bitsrc.io/a-review-of-ultrajs-mixing-react-and-deno-in-a-single-framework-8e4dd41ea076): belle présentation d'Ultra, le framework React pour Deno qui pousse les dernières innovations en avant (ES sans bundling, ImportMaps...).
+- 📜 [Turbocharging Next.js: How Remote Caching decreased publish times by 80%](https://vercel.com/blog/turborepo-remote-cache-nextjs-publish-times-80-percent): retour d'expérience de Vercel qui a utilisé Turborepo et Vercel Remote Caching pour réduire les temps de build de Next.js, en particulier du build natif de SWC.
+- 📜 [Hello React, Goodbye useEffect (I Hope)](https://blog.imam.dev/post/hello-react-18-goodbye-useffect): article bien documenté sur useEffect, sans doute trop utilisé dans nos codebases. C'est avant tout un outil de synchronisation. Quelques incohérences, mais mérite d'être lu.
+- 📜 [Simplifying React Three Fiber with Entity Component System](https://douges.dev/blog/simplifying-r3f-with-ecs)
+- 📜 [Everything you need to know about Concurrent React (with a little bit of Suspense)](https://blog.codeminer42.com/everything-you-need-to-know-about-concurrent-react-with-a-little-bit-of-suspense/)
+- 🤔 [Bun + new JSX 2.0 Syntax](https://twitter.com/jarredsumner/status/1609025481684422659): support de la syntaxe `<User {user} />)`. Une nouvelle qui ne plait pas à tout le monde car la spec de JSX 2.0 n'est pas finalisée.
+- 👀 [Remix - CSS Modules support](https://github.com/remix-run/remix/pull/4852): PR mergée, cela devrait arriver prochainement
+- 📦 [mdxjs-rs](https://github.com/wooorm/mdxjs-rs): implémentation de MDX en Rust 👌
+- 📦 [react-wrap-balancer](https://github.com/shuding/react-wrap-balancer): un composant pour "équilibrer" le texte de vos titres sur plusieurs lignes (impossible en CSS). JavaScript inliné avec support SSR et sans layout shifts.
+- 📦 [react-resizable-panels](https://github.com/bvaughn/react-resizable-panels) ([demo](https://twitter.com/brian_d_vaughn/status/1605751430542925827)): une nouvelle lib de Brian Vaughn qui permet de resizer les elements d'un layout.
+- 📦 [gltfjsx v6](https://twitter.com/0xca0a/status/1605566666066124802): des optimisations sur le loader de modèles 3D GLTF.
+- 📦 [react-ts-form](https://github.com/iway1/react-ts-form): lib de formulaires basée Zod et React-Hook-Form
+- 📦 [Gatsby 5.3](https://www.gatsbyjs.com/docs/reference/release-notes/v5.3/)
+- 📊 [Mobile Performance of Next.js Sites](https://calendar.perfplanet.com/2022/mobile-performance-of-next-js-sites/)
+- 🎥 [3 React Mistakes, 1 App Killer](https://www.youtube.com/watch?v=QuLfCUh-iwI)
+- 🎥 [Learn with Jason - TanStack Query v4 with Dominik Dorfmeister](https://www.learnwithjason.dev/tanstack-query-v4)
+- 🎥 [Learn How I Built a Twitter UI with TypeScript, Qwik, SolidJS, and React in Mitosis](https://www.youtube.com/watch?v=07UW3REM6k8)
+- 🎥 [Remotion - The Rust journey begins](https://twitter.com/JNYBGR/status/1610273808820363265)
+- 👥 [Storybook Day user conference](https://storybook.js.org/blog/storybook-day/): conférence en ligne le 14 Mars, lancement de Storybook 7.0
+
+<SubscribeFormEmbed />
+
+---
+
+## 💸 Sponsor {#sponsor2}
+
+[![Developer Nation Survey - Vous voulez avoir un impact sur l'écosystème des développeurs ?](/emails/issues/128/dn-survey.png)](https://developereconomics.net/?member_id=thisweekinreact)
+
+**[Vous voulez avoir un impact sur l'écosystème des développeurs ?](https://developereconomics.net/?member_id=thisweekinreact)**
+
+D'après le dernier rapport State of the Developer Nation, React est de loin la lib client la plus populaire puisqu'elle est utilisée par 58 % des développeurs web qui utilisent des frameworks web. Qu'en pensez-vous ?
+
+Participez à l'[enquête](https://developereconomics.net/?member_id=thisweekinreact) la plus complète jamais créée par Developer Nation, façonnez les principales tendances chez les développeurs pour 2023 et gagnez des cadeaux incroyables ! 🎁
+
+Une fois le questionnaire complété, vous obtiendrez un accès gratuit à notre sac à surprises virtuel. N'oubliez pas de vous inscrire pour participer aux tirages au sort hebdomadaires. Parmi les 250 prix, vous trouverez un ThinkPad L15 Gen 3, un mini PC Intel NUC 10 Performance, des kits IoT, un iPad Air, des cartes-cadeaux, des cours Udemy, des accessoires tech, et bien d'autres encore.
+
+[Commencez ici](https://developereconomics.net/?member_id=thisweekinreact) !
+
+---
+
+## 📱 React-Native {#react-native}
+
+[![Tamagui](/emails/issues/130/tamagui.jpg)](https://tamagui.dev/blog/version-one)
+
+**[Tamagui 1.0](https://tamagui.dev/blog/version-one)**
+
+Tamagui sort officiellement de beta, et permet de faciliter la création de projets cross-platform (web et mobile) basés sur une même codebase en React, sans pour autant perdre en DX ou en performances. Le projet est divisé en 3 parties:
+
+- Tamagui Core: un runtime CSS-in-JS au dessus de React-Native et [React-Native-Web-Lite](https://www.npmjs.com/package/react-native-web-lite)
+- Tamagui Static: un compiler basé sur Babel et une pré-évaluation Node qui supporte le "view flattening" et l'extraction de styles en atomic CSS
+- Tamagui UI: une librairie de composants et hooks React pour faciliter l'utilisation
+
+Tamagui est un projet innovant, qui pourrait avoir un intérêt même si on ne vise qu'une seule plateforme. Le support des features React 18 comme Server Components, Concurrent Mode est déjà la. A tester!
+
+---
+
+[![React Native Skia: A Year in Review and a Look Ahead](/emails/issues/130/skia.jpg)](https://shopify.engineering/react-native-skia-2022)
+
+**[React Native Skia: A Year in Review and a Look Ahead](https://shopify.engineering/react-native-skia-2022)**
+
+William Candillon fait une belle rétrospective du projet React-Native-Skia. Pour rappel, [Skia](https://skia.org/) est le moteur 2D de Google, utilisé par Chrome, Android, Flutter... Ils ont amélioré significativement les performances avec le UI Thread Rendering et une nouvelle API déclarative SkiaDOM. La librairie est flexible et peut être étendue (Skottie, VisionCamera frame processing). En 2023, on peut s'attendre à voir arriver les animations via worklets, une intégration plus performante avec Reanimated, ou encore le layout de texte.
+
+---
+
+- 📊 [State of React-Native 2022](https://twitter.com/swmansion/status/1605957585684799493): le sondage est ouvert.
+- 📜 [First-class Support for TypeScript](https://reactnative.dev/blog/2023/01/03/typescript-first): React-Native 0.71 devrait sortir très prochainement avec un support complet de TypeScript par défaut: type definitions, documentation et starter template.
+- 📜 [Shopify - Migrating our Largest Mobile App to React Native](https://shopify.engineering/migrating-our-largest-mobile-app-to-react-native): Shopifie est en train de migrer incrémentalement son app principale vers React-Native. Il s'agit d'une app vieille de 6 ans et de plus de 300 écrans, qui n'a pas particulièrement de dette technique. Un retour d'expérience très intéressant sur cette migration en cours (environ 10%). La première approche (nouvelles features en React-Native) n'avait pas fonctionné. Ils ont finalement opté pour convertir en premier la racine de l'app.
+- 📜 [Implementing CSS Style Inheritance in React Native](https://www.builder.io/blog/implementing-css-style-inheritance-in-react-native): un article intéressant qui explique comment reproduire la cascade CSS en React-Native. C'est particulièrement utile pour une intégration avec un CMS, qui assume souvent qu'on peut appliquer le style du texte sur une View parente.
+- 📜 [Google Drive auto-backup for React Native on Android](https://dev.to/retyui/google-drive-auto-backup-for-react-native-on-android-254a): pour persister le async storage (ou autre) d'un téléphone à l'autre 🤔
+- 🎥 [How to use Bluetooth Low Energy ( BLE ) Beacons with React-Native](https://www.youtube.com/watch?v=1hYM_sdQcBU)
+
+---
+
+## 🧑‍💻 Jobs {#jobs}
+
+🧑‍💼 [**Shotgun - Senior Full Stack Engineer - 60-75k€ + BSPCE**](https://shotgun.teamtailor.com/jobs/1981578-senior-full-stack-engineer)
+
+Shotgun est la billetterie des évènements electro. Nous recherchons des devs expérimentés pour travailler sur une stack moderne: React, React-Native, Typescript, GraphQL, NextJS, PgSQL, Vercel...
+
+🧑‍💼 [**Premier Octet - Développeurs(euses) React - Paris**](https://www.premieroctet.com/jobs)
+
+Nous cherchons des développeurs(euses) JavaScript passionnés. Vous interviendrez en développement sur des projets variés et motivants, à la fois serveur et front (React, Nest, Next), et éventuellement mobile (React Native).
+
+💡 [Comment publier une offre d'emploi ?](https://thisweekinreact.com/fr/sponsor)
+
+---
+
+## 🇫🇷 En français {#fr}
+
+- 🎥 [3 React Clean Code Concepts à Suivre](https://www.youtube.com/watch?v=w6vFSOsQx7k)
+
+💡Tu peux m'envoyer ton contenu: [sebastien@thisweekinreact.com](mailto:sebastien@thisweekinreact.com?subject=Contenu%20en%20fran%C3%A7ais) !
+
+---
+
+## 🔀 Autre {#other}
+
+- [JavaScript Frameworks - Heading into 2023](https://dev.to/this-is-learning/javascript-frameworks-heading-into-2023-nln)
+- [2022 CSS Updates](https://12daysofweb.dev/2022/2022-css-updates/)
+- [Nx 15.4 — Vite 4 Support, a new Nx Watch Command, and more!](https://blog.nrwl.io/nx-15-4-vite-4-support-a-new-nx-watch-command-and-more-77cbf6c9a711)
+- [Jamstack Trends: How will we develop in 2023?](https://www.netlify.com/blog/jamstack-trend-predictions-2023/)
+- [How We Improved monday.com Board’s Scroll Performance](https://engineering.monday.com/how-we-improved-monday-com-boards-scroll-performance-a-case-study-on-boosting-fps-by-50/)
+- [Bun 0.4.0](https://twitter.com/jarredsumner/status/1606345309050634240)
+- [bunx - 100x faster than npx](https://twitter.com/jarredsumner/status/1606163655527059458)
+- [pretty-cache-header](https://github.com/jjenzz/pretty-cache-header): parses human readable time strings into seconds.
+- [HTTP/3 Prioritization Demystified](https://calendar.perfplanet.com/2022/http-3-prioritization-demystified/)
+
+---
+
+## 🤭 Fun {#fun}
+
+[![alt](/emails/issues/130/meme.jpg)](https://twitter.com/sebastienlorber/status/1610243388174991360)

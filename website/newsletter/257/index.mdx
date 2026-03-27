@@ -1,0 +1,174 @@
+---
+slug: /257
+title: "This Week In React #257: Navigation API, PPR, directives, micro-frontends, i18n, Storybook, Immer | Godot, Uniwind, RCE, iOS filters, Windows, GPU, Hermes, Meta Quest | Node LTS, Safari, Rspack, Vite, SWC, Remix"
+authors: [slorber, armandpetit]
+date: 11-05-2025
+---
+
+Hi everyone, [Seb](https://x.com/sebastienlorber) and [Armand](https://www.linkedin.com/in/armandpetit/) here\! 👋
+
+This week, we found various interesting React releases and links about directives, Partial Pre-Rendering, performance, micro-frontends, i18n, among other things.
+
+On the React Native side, we had 2 major releases and various interesting weak signals. Beware of the RN Dev Server vulnerability, and make sure to upgrade if needed.
+
+<!-- truncate -->
+
+import Support from "../_support.mdx";
+
+<Support />
+
+---
+
+## 💸 Sponsor {#sponsor1}
+
+[![Ship Faster with AI Code Review](/emails/issues/257/sentry.jpg)](https://blog.sentry.io/ai-code-review-30k-bugs-lighter-50-faster/?utm_source=thisweekinreact&utm_medium=paid-community&utm_campaign=aicodereview-fy26q4-aicodereviewlaunch&utm_content=newsletter-30k-blog-learnmore)
+
+**[Ship Faster with AI Code Review](https://blog.sentry.io/ai-code-review-30k-bugs-lighter-50-faster/?utm_source=thisweekinreact&utm_medium=paid-community&utm_campaign=aicodereview-fy26q4-aicodereviewlaunch&utm_content=newsletter-30k-blog-learnmore)**
+
+How many bugs has Sentry’s AI Code Review caught _before_ they hit production? More than **30,000. 🤯**
+
+Since launch, it has only gotten better, now working its magic **50% faster,** and providing agent prompts to automate fixes.
+
+Want to see it in action? Watch [the on-demand workshop](https://sentry.io/resources/ai-code-review-workshop/?utm_source=thisweekinreact&utm_medium=paid-community&utm_campaign=aicodereview-fy26q4-aicodereviewlaunch&utm_content=newsletter-workshop-learnmore) for a walkthrough of how [AI Code Review](https://sentry.io/product/ai-code-review/?utm_source=thisweekinreact&utm_medium=paid-community&utm_campaign=aicodereview-fy26q4-aicodereviewlaunch&utm_content=newsletter-30k-blog-learnmore) works and why it is a game changer for production reliability.
+
+[Learn more about AI Code Review](https://blog.sentry.io/ai-code-review-30k-bugs-lighter-50-faster/?utm_source=thisweekinreact&utm_medium=paid-community&utm_campaign=aicodereview-fy26q4-aicodereviewlaunch&utm_content=newsletter-30k-blog-learnmore).
+
+---
+
+## ⚛️ React {#react}
+
+- 💸 [Product for Engineers - 32 things we’ve learned about building a startup that scales](https://go.posthog.com/twir-nov5)
+- 🦋 [Navigation API \- Available in all browsers soon](https://bsky.app/profile/did:plc:hxmev3uady7j4litwnr5fzbg/post/3m4uqq6kplc24): This exciting new web platform API will soon be available in all browsers and will redefine how we build client-side / SPA navigation. Instead of using the awkward History API (not initially created for SPAs) and having a `<Link>` component that intercepts clicks to call `event.preventDefault()` and `history.pushState()`, there will be a central place to handle and intercept navigation events. The React team is working on a [Transition Indicator](https://github.com/facebook/react/pull/33162) feature that leverages this API to provide native loading state feedback.
+- 📜 [Partial Prerendering \- From error-based detection to promise-driven architecture for optimal web performance](https://wyattjoh.ca/blog/partial-prerendering): A Vercel engineer explains the motivation behind PPR, and why the first attempt \- based on throwing errors \- didn’t work. This led to a new Promise-based implementation \- dynamic IO \- later renamed as Cache Components.
+- 📜 [Implementing Next.js 16 ‘use cache’ with next-intl Internationalization](https://aurorascharff.no/posts/implementing-nextjs-16-use-cache-with-next-intl-internationalization/): Explores an incompatibility between Next.js and the next-intl library due to reading the locale from `headers()`. An upcoming `rootParams` Next.js API should help support i18n and multi-tenancy use cases better.
+- 📜 [Encapsulate as much state as possible in your component](https://blacksheepcode.com/posts/encapsulate_as_much_state_as_possible): I agree that it’s often better to encapsulate the loading state of a button triggering an async action instead of exposing that state as a controlled prop.
+- 📜 [The New Programming Frontier: Why Vercel is Redefining "The Language"](https://dev.to/herrington_darkholme/the-new-programming-frontier-why-vercel-is-redefining-the-language-2ij0): A high-level article explaining the motivations behind directives. They provide language constructs to improve the DX of building distributed systems.
+- 📜 [Why startups choose React (and when you shouldn't)](https://evilmartians.com/chronicles/why-startups-choose-react-and-when-you-should-not): Although I don’t necessarily agree with the conclusion, it gives interesting stats about the React ecosystem, including its “library survival rate”.
+- 📜 [Using Atomic State to Improve React Performance in Deeply Nested Component Trees](https://runharbor.com/blog/2025-10-26-improving-deeply-nested-react-render-performance-with-jotai-atomic-state): An interactive article showing how Jotai atoms can help prevent useless re-renders.
+- 📜 [Quality Assurance for i18n in React](https://lingual.dev/blog/quality-assurance-for-i18n-in-react/): Explores how tools like `i18n-check` can detect missing or unused translation keys and integrate validation into CI to improve translation quality and consistency across React and React Native apps.
+- 💸 [The Road to Next - Master Full-Stack Web Development with Next.js 15 and React 19](https://www.road-to-next.com/?utm_source=newsletter&utm_medium=email&utm_campaign=this_week_in_react_3.3)
+- 📦 [Immer 10.2](https://github.com/immerjs/immer/releases/tag/v10.2.0): Mark Erikson noticed a performance loss in recent versions of the popular state update library, and he’s on a journey to fix it. He also released [Redux Toolkit 2.10](https://github.com/reduxjs/redux-toolkit/releases/tag/v2.10.0), which picks up the initial set of Immer performance improvements.
+- 📦 [React Concurrent Store \- Ponyfill of experimental React concurrent stores](https://github.com/reactjs/rfcs/pull/271): A community-built version of the upcoming React Labs feature, whose goal is to test the integration into Redux and Relay. See this [related Redux PR](https://github.com/reduxjs/react-redux/pull/2263) for more context.
+- 📦 [Turborepo 2.6 \- Support for local microfrontend development, Bun package manager stable](https://turborepo.com/blog/turbo-2-6): It seems Vercel is working on features to improve microfrontend support. See also this [podcast with CTO Malte Ubi introducing Remote Components](https://www.youtube.com/watch?v=tgfjhAy85UI), which should be supported by Next.js later.
+- 📦 [Storybook 10.0 \- ESM-only, Module automocking, typesafe React CSF factories in preview](https://storybook.js.org/blog/storybook-10/)
+- 📦 [TypeScript Plugin Directives \- Language Service Plugin that provides IDE-level awareness for "use server", "use client", "use cache", and more](https://github.com/lazarv/typescript-plugin-directives)
+- 📦 [Ink 6.4 \- Add `onRender()` hook](https://github.com/vadimdemedes/ink/releases/tag/v6.4.0)
+- 📦 [React Intersection Observer 10.0 \- New `useOnInView()` hook](https://github.com/thebuilder/react-intersection-observer/releases/tag/v10.0.0)
+- 📦 [Next SEO 7.0 \- Complete rewrite, new API](https://github.com/garmeeh/next-seo/releases/tag/v7.0.0)
+- 🔗 [Shadcn Registry directory \- A list of code registries you can browse and pull code and components from](https://ui.shadcn.com/docs/directory)
+- 🎥 [Jack Herrington \- React Compiler 1.0 with TanStack Start\!](https://www.youtube.com/watch?v=-3-17PRN7jg)
+- 🎥 [Ben Davis \- The Real NextJS Killer is Finally Here...](https://www.youtube.com/watch?v=4ig08UACvso)
+- 🎥 [Ankita Kulkarni \- Everyone's Making Fun of Next.js 16](https://www.youtube.com/watch?v=QQnqj5c76es)
+- 🎥 [Theo \- Watch this if you hate React Server Components](https://www.youtube.com/watch?v=C84YEp-8-hI)
+- 🎙️ [This Month in React 2025-10: Post-conf; React 19.2, React Foundation, React Native removing old architecture. Next.js has too many directives](https://share.transistor.fm/s/ad1a1c53)
+
+<SubscribeFormEmbed placement="middle" />
+
+---
+
+## 💸 Sponsor {#sponsor2}
+
+[![The Free, The Fast, The Data Grid… LyteNyte Grid Core](/emails/issues/257/1771.jpg)](https://www.1771technologies.com/)
+
+**[The Free, The Fast, The Data Grid… LyteNyte Grid Core](https://www.1771technologies.com/)**
+
+🚫**Stop burning the budget** on basic data grid features! **LyteNyte Grid Core is a free React data grid** with the capabilities and performance you’d expect from a paid library.
+
+At just **36kb gzipped**, LyteNyte unlocks the premium features other grids lock behind a paywall, such as aggregation, row grouping, data export, and more. Built in React for React, it can be **headless or pre-styled**, and our clean, **declarative API** means no more awkward integrations or workarounds.
+
+If you’re not looking for an invoice, start with [LyteNyte Grid Core today](https://www.1771technologies.com/pricing).
+
+---
+
+## 📱 React-Native {#react-native}
+
+[![React Native + Godot — A new frontier for hybrid apps](/emails/issues/257/godot.jpg)](https://github.com/borndotcom/react-native-godot)
+
+**[React Native \+ Godot — A new frontier for hybrid apps](https://github.com/borndotcom/react-native-godot)**
+
+Born React Native Godot bridges the Godot game engine directly into React Native apps, letting you embed full 2D/3D scenes and physics worlds as native views. Built by Born and Migeran, it runs on iOS and Android with a dedicated engine thread, pause/resume controls, and complete Godot API access from TypeScript.
+
+Core features:
+
+- Cross-platform – Works seamlessly on Android and iOS via LibGodot.
+- Lifecycle control – Start, stop, or restart the Godot engine dynamically.
+- Pause/Resume – Halt and resume engine execution without losing state.
+- Thread isolation – Runs on its own thread to prevent UI jank.
+- View embedding – Place Godot scenes inside any React Native view.
+- Full Godot API – Access and control nodes, scenes, and signals from JS/TS.
+- Worklet bridge – Use React Native Worklets to interact with the engine thread.
+
+This release turns React Native into a true playground for interactive and game-driven experiences merging UI and gameplay in one unified codebase.
+
+---
+
+[![Uniwind — The fastest Tailwind bindings for React Native️](/emails/issues/257/uniwind.jpg)](https://www.reactnativecrossroads.com/posts/introducing-uniwind-the-fastest-tailwind-bindings-for-react-native)
+
+**[Uniwind — The fastest Tailwind bindings for React Native️](https://www.reactnativecrossroads.com/posts/introducing-uniwind-the-fastest-tailwind-bindings-for-react-native)**
+
+Uniwind brings true Tailwind-style `className` support to React Native, offering build-time speed, seamless theming, and cross-platform styling across web, iOS, and Android.  
+Created by the team behind Unistyles, it’s designed to unify design systems, accelerate UI builds, and replace ad-hoc styling with a consistent, high-performance approach :
+
+- A CSS Parser That Goes Beyond Tailwind – Understands Tailwind v4 syntax and regular CSS for hybrid styling workflows.
+- Effortless Multi-Theme Support – Register unlimited light/dark or custom themes directly in your Metro config.
+- Automatic React Native Bindings – Every core RN component supports `className`, plus extra props like `colorClassName`.
+- 2.5× Faster Than NativeWind – Build-time caching and Nitro-module integration ensure instant style resolution.
+- HeroUI Native Collaboration – First UI kit built entirely on Uniwind, proving real-world compatibility and speed.
+- Pseudo-classes \+ Responsive Design – Use `focus`, `active`, `disabled`, and media queries just like on the web.
+- Ready for Scale – Backed by Unistyles tech and optimized for enterprise-grade cross-platform styling.
+
+---
+
+- 💸 [Most Expo libs “just work” on Meta Quest, but a few need tweaks. Here’s what’s compatible, what breaks, and how to fix it.](https://www.callstack.com/blog/using-expo-libraries-on-horizon-os-a-guide-to-compatibility?utm_campaign=meta&utm_source=TWIR&utm_medium=email&utm_content=using-expo-libraries-on-horizon-os-a-guide-to-compatibility)
+- 🐦 [Mike Grabowski built a cross-platform Turbo Module in Swift that runs on iOS and Android via Swift Android SDK](https://x.com/grabbou/status/1985394290298683463)
+- 🐦 [Embedding Hermes made simple](https://x.com/tmikov/status/1984742735530831955): It only takes three C++ steps: create config, create runtime, and evaluate JS.
+- 🐦 [Hermes compilation & runtime modes revealed](https://x.com/tmikov/status/1985120423424708785)
+- 🐦 [Launch Flutter apps & websites from the browser with Expo Launch](https://x.com/Baconbrix/status/1984788567579914394)
+- 🗓 [RNLConf](https://www.reactnativelondon.co.uk/?utm_source=thisweekinreact) - 🇬🇧 London - 13-14 Nov. Last call to secure your ticket! 2 days of talks, workshops, afterparty, and networking with the React Native community. Get a 10% discount with code "TWIR".
+- 🔐 [Critical RCE vulnerability found in React Native CLI](https://jfrog.com/blog/CVE-2025-11953-critical-react-native-community-cli-vulnerability/): A critical remote code execution vulnerability that affects the dev server, already patched months ago. If you are on an older version, make sure to update immediately or bind Metro to localhost.
+- 👀 [Reanimated PR \- Shared Element Transition on New Architecture](https://github.com/software-mansion/react-native-reanimated/pull/7466): The exciting PR that brings support for Shared Element Transitions has moved to “ready to review” state, is gated behind a feature flag, and has limited scope for now.
+- 👀 [Expo Router PR – Adds server-data loaders for static web export](https://github.com/expo/expo/pull/40130): Enables preloading and bundling of route data at build time (`web.output: static`), bringing faster, data-aware static exports to Expo web apps.
+- 👀 [React Native PR \- Implementing missing CSS filters on iOS](https://github.com/react-native-community/discussions-and-proposals/issues/927): Recently, 2 PRs were merged, adding support for grayscale, drop-shadow, saturate, contrast, and hueRotate CSS filters.
+- 👀 [React Native PR \- iOS support for `background-size` / `background-position` / `background-repeat` in React Native](https://github.com/facebook/react-native/pull/52283)
+- 💬 [State of React Native 2025 Preview / Call for Questions](https://github.com/software-mansion/state-of-react-native/discussions/11): Invites community feedback to refine the next State of React Native survey and capture real-world insights on architecture, tooling, and ecosystem trends.
+- 💬 [React Native RFC – Standardized Brownfield Integration APIs for React Native (Android)](https://github.com/react-native-community/discussions-and-proposals/pull/953)
+- 📦 [React Native Windows 0.80 \- The New Architecture will be enabled by default](https://github.com/microsoft/react-native-windows/releases/tag/react-native-windows_v0.80.0)
+- 📦 [Flash-List 2.2 – Adds stickyHeaderConfig & onChangeStickyIndex to support native-driver sticky headers](https://github.com/Shopify/flash-list/releases/tag/v2.2.0)
+- 📦 [Detox 20.45 – Adds Swift support and iOS18 compatibility](https://github.com/wix/Detox/releases/tag/20.45.0)
+- 📦 [React Native WebGPU 0.4 – Adds Web support alongside iOS, Android & visionOS](https://github.com/wcandillon/react-native-webgpu/commit/578ad989b4326724702b14245d5c82622849ee23)
+- 📦 [TypeGPU 0.8 – Improving shader ergonomics, performance, and DX](https://github.com/software-mansion/TypeGPU/releases/tag/v0.8.0)
+- 📦 [React Native Clusterer – High-performance map clustering](https://github.com/JiriHoffmann/react-native-clusterer): Nitro-based lib that delivers up to 10× faster geospacial marker clustering.
+- 📜 [How to Add Meta Quest Support to Your Expo App](https://blog.swmansion.com/how-to-add-meta-quest-support-to-your-expo-app-68c52778b1fe): Explains how to run Expo/React Native apps on Meta Quest using `expo-horizon-core` and forked modules for VR, enabling cross-platform builds across mobile \+ VR.
+- 📜 [Onboarding in React Native Doesn’t Have to Be Hard](https://blog.swmansion.com/onboarding-in-react-native-doesnt-have-to-be-hard-d037cd383771): Introduces `react-native-onboarding`, a cross-platform library for smooth, customizable onboarding flows with built-in animations and theming powered by Reanimated.
+- 📜 [React Native for Vega \- Recreating Apple & Google Photos in RN — Part 3](https://blog.swmansion.com/react-native-for-vega-recreating-apple-google-photos-in-rn-part-3-f015e9272aed): Explains how to extend a React Native photo gallery app to Amazon’s new Vega OS using RN 0.72 \+ Fabric/TurboModules, showing cross-platform setup for Echo & Fire TV devices.
+- 📜 [How to AirDrop a SQLite Database from Your React Native App](https://spin.atomicobject.com/sqlite-database-react-native-app/)
+- 📜 [Building a MIDI-over-Bluetooth App Using Expo Modules](https://expo.dev/blog/building-a-midi-over-bluetooth-app-using-expo-modules)
+- 🎥 [Oskar Kwaśniewski \- Building React Native TurboModules with Swift \- Event Emitting](https://www.youtube.com/watch?v=WArl-7O6e0w)
+- 🎥 [Expo \- How to make Expo apps faster | Expo app development best practices](https://www.youtube.com/watch?v=vFbim_U1Lmc)
+- 🎥 [Dan’s React Native Lab \- How to Create Liquid Tabs with Expo Router and React Native Skia](https://www.youtube.com/watch?v=AJA4Crbd0cI)
+- 🎥 [Infinite Red \- Live today at 18h CEST or catch the recording \- Expo UI with Beto Moedano](https://www.youtube.com/watch?v=7HdwnDmfY90)
+- 🎙️ [Rocket Ship 84 – Expo MCP, MMKV, Godot Games & React Native Package Confusion](https://share.transistor.fm/s/247578d7?utm_source=convertkit&utm_medium=email&utm_campaign=New%20podcast,%20AI-native%20dev,%20Godot%20games%20&%20Flutter%20in%20Expo?%20%F0%9F%8E%AE%20-%2019581248)
+
+---
+
+## 🔀 Other {#other}
+
+- 📜 [Node.js v22 to v24](https://nodejs.org/en/blog/migrations/v22-to-v24): Last week, Node 24.11 “Krypton” became the new LTS. The Node.js team now documents breaking changes clearly and provides codemods.
+- 📜 [setHTML(), Trusted Types and the Sanitizer API](https://olliewilliams.xyz/blog/sanitizer/)
+- 📦 [Safari 26.2 beta](https://developer.apple.com/documentation/safari-release-notes/safari-26_2-release-notes): A massive Safari release is coming, unlocking cool features that will become supported in all browsers, including the Navigation API, `commandfor,` `hidden="until-found"`, and more\!
+- 📦 [Remix Interaction 0.1](https://github.com/remix-run/remix/blob/main/packages/interaction/README.md): The flexible, composable, typesafe event/interaction package recently introduced at Remix Jam conf.
+- 📦 [Rspack 1.6 \- `import defer` Improve tree-shaking, ESM output, barrel optimizations, stable layers, preserve JSX, and more](https://rspack.rs/blog/announcing-1-6)
+- 📦 [SWC 1.15 \- Stable ABI, backward-compatible Wasm plugins](https://blog.swc.rs/2025-11-4-wasm-backward-compatibility)
+- 📦 [Vite 7.2 \- `build.license` option, proxy \+ HTTP2 support, and more](https://bsky.app/profile/vite.dev/post/3m4uva3sj4c2z)
+- 📦 [Mock Service Worker 2.12 \- Support for mocking Server-Sent Events](https://mswjs.io/blog/server-sent-events-are-here)
+- 🎙️ [Syntax.fm \- First look at Remix 3](https://syntax.fm/show/951/a-first-look-at-remix-3)
+
+---
+
+## 🤭 Fun {#fun}
+
+[![alt](/emails/issues/257/meme.jpg)](https://x.com/sebastienlorber/status/1983108348494119093)
+
+[![alt](/emails/issues/257/meme2.jpg)](https://x.com/Baconbrix/status/1983593605706203577)
+
+See ya! 👋

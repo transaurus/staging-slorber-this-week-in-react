@@ -1,0 +1,163 @@
+---
+slug: /156
+title: "React Hebdo #156: Server Actions, Stale Closures, React Falls Behind, Expo Builds, Suspense Throttling, React-Aria, Natuerlich, Obsidiosaurus, Expo-SQLite, Expo DevTools..."
+authors: [slorber]
+date: 08-15-2023
+---
+
+Salut à tous !
+
+Cette semaine, nous avons pas mal d'articles de la communauté React et React-Native, et les dernières annonces Expo Launch Party. Certains articles sont très longs, je n'ai pas eu le temps de tout lire.
+
+📷 J'étais trop occupé à créer le [**compte Instagram**](https://www.instagram.com/thisweekinreact/) de la newsletter! Je compte y poster les news et tips React visuels, y compris les meilleurs memes que je n'ai pas pu inclure ici 🤭.
+
+🧑 J'ai aussi retiré la section Jobs qui n'apportait pas grand-chose: je vais voir plus tard comment la réintégrer.
+
+👥 Pour les développeurs React-Native: la conférence [React Native EU](https://www.react-native.eu/) (Wrocław/Pologne, 7–8 September 2023) nous propose une réduction de [-15% sur les entrées](https://ti.to/react-native-eu/2023/discount/thisweekinreact15).
+
+<!-- truncate -->
+
+**💡 [Consulter cette newsletter sur Twitter](https://slo.im/thread) - format visuel 🎨**
+
+---
+
+import Support from "../_support.mdx";
+
+<Support />
+
+---
+
+## 💸 Sponsor {#sponsor1}
+
+[![Enterprise Grade APIs for Feeds, Chat, & Video!](/emails/issues/153/stream.jpg)](https://getstream.io/video/voice-calling/?utm_source=thisweekinreact&utm_medium=sponsorship&utm_content=&utm_campaign=thisweekinreact_July2023_video_klmh22)
+
+[**Enterprise Grade APIs for Feeds, Chat, & Video!**](https://getstream.io/video/docs/react/?utm_source=thisweekinreact&utm_medium=sponsorship&utm_content=&utm_campaign=thisweekinreact_July2023_video_klmh22)
+
+Stream is the maker of enterprise-grade **APIs** and **SDKs** that help product and engineering teams solve two common problems at scale: in-app chat and social activity feeds.
+
+With Stream, developers can integrate any type of messaging or feed experience into their app in a fraction of the time it would take to build these features from scratch. Stream Chat makes it easy for developers to integrate rich, real-time messaging into their applications.
+
+Stream provides robust client-side SDKs for popular frameworks such as [**React**](https://getstream.io/chat/sdk/react/?utm_source=thisweekinreact&utm_medium=sponsorship&utm_content=&utm_campaign=thisweekinreact_July2023_video_klmh22), [**React-Native**](https://getstream.io/chat/sdk/react-native/?utm_source=thisweekinreact&utm_medium=sponsorship&utm_content=&utm_campaign=thisweekinreact_July2023_video_klmh22), Expo, Flutter, Android, Angular, Compose, Unreal, and iOS.
+Unlock enterprise-grade features, functions, and UI components completely free for your startup or side project with the Maker Account.
+
+[**Try the new React Video tutorial!**](https://getstream.io/video/docs/react/?utm_source=thisweekinreact&utm_medium=sponsorship&utm_content=&utm_campaign=thisweekinreact_July2023_video_klmh22)
+
+---
+
+## ⚛️ React {#react}
+
+[![Can React Server Actions finally fix forms?](/emails/issues/156/serveractions.jpg)](https://www.mux.com/blog/what-are-react-server-actions)
+
+[**Can React Server Actions finally fix forms?**](https://www.mux.com/blog/what-are-react-server-actions)
+
+Une bonne introduction aux Server Actions, feature React à venir, mais déjà intégrée en expérimental dans Next.js 13.4. Propose un petit tutoriel pour uploader une vidéo avec un titre. Les Server Actions peuvent retourner une réponse pour donner du feedback à l'utilisateur, mais on voit bien que ça n'est pas une DX idéale.
+
+Pour moi, il faudrait que les Server Actions supportent à 100% le progressive enhancement. Il faudrait sans doute introduire une API "flash" pour gérer un feedback sans JavaScript coté client, et qui existe sur de nombreux frameworks backend. Remix propose d'ailleurs ([`session.flash()`](https://remix.run/docs/en/main/utils/sessions#sessionflashkey-value)). Info liée qui pourrait vous intéresser: avec [`action.$$FORM_ACTION`](https://twitter.com/sebastienlorber/status/1689921046856474625) il est possible d'étendre le progressive enhancement de React.
+
+---
+
+- 💸 [Zero To Shipped - Master Fast-Paced Fullstack Development and **Finally** ship that product](https://www.zerotoshipped.com/)
+- 🧑‍🎓 [React.dev - Using TypeScript](https://react.dev/learn/typescript): nouvelle page officielle de documentation.
+- 💬 [Next.js RFC - Google Tag Manager and gtag in next/third-parties](https://github.com/vercel/next.js/discussions/53868): propose d'intégrer les analytics Google via un hook plutôt qu'un composant, avec support Web Worker.
+- 🐦 [Million.js Automatic Mode - Video trailer](https://twitter.com/aidenybai/status/1689773623827943424)
+- 📜 [Things you forgot (or never knew) because of React](https://joshcollinsworth.com/blog/antiquated-react): une très longue critique de React, qui selon l'auteur est un framework dépassé. Ça reste intéressant à lire même si [je ne suis pas d'accord](https://github.com/josh-collinsworth/joco-sveltekit/issues/35#issuecomment-1680817566) 😄.
+- 📜 [Fantastic closures and how to find them in React](https://www.developerway.com/posts/fantastic-closures): explique ce qu'est une stale closure en React et présente différents cas qui peuvent introduire ce problème, puis propose une solution basée sur `useRef()`.
+- 📜 [The simplest example to understand Server Actions in Next.js](https://scastiel.dev/simplest-example-server-actions-nextjs): exemple de Server Actions très simple à comprendre, qui offre un moyen pratique de faire des appels RPC à votre API.
+- 📜 [On React Suspense’s throttling](https://andreigatej.dev/blog/on-react-suspense-throttling/): met en avant un comportement surprenant de React lorsque vous imbriquez les `<Suspense>`.
+- 📜 [Quit Your YAP-ing](https://kyleshevlin.com/quit-your-yapping): encourage à abandonner le syndrome "Yet-Another-Prop" et utiliser la composition.
+- 📜 [Node.js's Config Hell Problem](https://deno.com/blog/node-config-hell): Deno pointe du doigt les projets comme Next.js qui ont souvent des dizaines de fichiers de configuration.
+- 📜 [Supabase - Vercel Integration and Next.js App Router Support](https://supabase.com/blog/using-supabase-with-vercel): intégration qui peut être intéressante à étudier. Des APIs aux noms intéressants comme `createClientComponentClient` 😅.
+- 📜 [Lifting Off with Astro](https://remotesynthesis.com/blog/lifting-off-with-astro/)
+- 📜 [Form Validation with React Hook Form](https://claritydev.net/blog/form-validation-react-hook-form)
+- 📜 [Introducing a new lint rule for React Testing Library](https://blog.testdouble.com/posts/2023-07-31-a-new-rtl-lint-rule/)
+- 📜 [How to Use Jotai and useTransition for Mutation](https://blog.axlight.com/posts/how-to-use-jotai-and-use-transition-for-mutation/)
+- 📜 [Coding the stars - An interactive constellation with Three.js and React Three Fiber](https://supabase.com/blog/interactive-constellation-threejs-react-three-fiber)
+- 📦 [React Aria - August 9 Releases - HTML form submit/reset, DropZone, FileTrigger...](https://react-spectrum.adobe.com/releases/2023-08-09.html)
+- 📦 [Natuerlich - Composable interactions for WebXR experiences - With React-Three-Fiber support](https://github.com/coconut-xr/natuerlich)
+- 📦 [Reakit - August 2023 update](https://newsletter.ariakit.org/p/all-things)
+- 📦 [Obsidiosaurus - Obsidian -> Docusaurus Converter](https://github.com/CIMSTA/obsidiosaurus)
+- 📦 [tw2panda - Easily migrate code from Tailwind to Panda CSS](https://github.com/astahmer/tw2panda)
+- 🎥 [Why I Stopped Using Next.js And Chose Astro Instead](https://www.youtube.com/watch?v=BoeZqPaYw9s)
+- 🎥 [Responsive Framer Motion with Tailwind CSS](https://www.youtube.com/watch?v=xSuxsfn13xg)
+- 🎥 [Dominik Dorfmeister: React Query With The App Router](https://www.youtube.com/watch?v=R4NHXrvwZWA)
+
+<SubscribeFormEmbed placement="middle" />
+
+---
+
+## 💸 Sponsor {#sponsor2}
+
+[![CoderPad: Code together before you work together](/emails/issues/154/coderpad.png)](https://coderpad.io/?utm_medium=3pmedia&utm_source=ThisWeekInReact&utm_campaign=23-Q3-3PMedia-ThisWeekInReact-ACQ-All-Global-Newsletter)
+
+[**CoderPad: Code together before you work together**](https://coderpad.io/?utm_medium=3pmedia&utm_source=ThisWeekInReact&utm_campaign=23-Q3-3PMedia-ThisWeekInReact-ACQ-All-Global-Newsletter)
+
+Hiring front-end developers is hard. 😩 But 4,000+ engineering teams — including at Netflix, Spotify and LinkedIn — have found a better way! 🤠 Skip the algorithm interviews and **run front-end interviews in a fully customizable and collaborative IDE** - where you can:
+
+- drag and drop a React (and Angular or Vue) repo
+- add packages with npm install
+- let candidates use ChatGPT live in the interview
+- watch & share code playback after the interview
+
+Use CoderPad to run fast, fair and real coding interviews that candidates and interviewers trust. [Sign up for free today & hire with confidence](https://coderpad.io/?utm_medium=3pmedia&utm_source=ThisWeekInReact&utm_campaign=23-Q3-3PMedia-ThisWeekInReact-ACQ-All-Global-Newsletter).
+
+---
+
+## 📱 React-Native {#react-native}
+
+[![Expo Preview - Fully customizable builds on EAS Build](/emails/issues/156/easbuild.jpg)](https://expo.dev/changelog/2023/08-10-custom-builds)
+
+[**Expo Preview - Fully customizable builds on EAS Build**](https://expo.dev/changelog/2023/08-10-custom-builds).
+
+Expo nous propose un nouveau système qui permet de customiser le build EAS avec un fichier Yaml, ce qui devrait donner beaucoup de flexibilité pour utiliser les outils monorepo de votre choix (Nx, Turbo, Rush...) ou encore rajouter vos propres étapes CI. Cela fait beaucoup penser à GitHub Actions. Marrant: on dirait que EAS utilise Fastlane sur le build iOS.
+
+---
+
+- 👀 [Expo Proof of concept - expo-sqlite integration with CR-SQLite](https://expo.dev/changelog/2023/08-10-cr-sqlite): intégration SQLite et CRDT qui facilite la création d'apps mobiles local-first.
+- 👀 [Expo Proof of concept - Expo CLI Dev Tools Plugins](https://expo.dev/changelog/2023/08-10-dev-tools-plugins): Expo souhaite proposer un système de plugin pour créer des DevTools, et propose une demo avec les Apollo DevTools. Cela devrait à terme permettre de remplacer Flipper.
+- 🐦 [Reanimated on react-native-windows demo](https://twitter.com/piaskowyk/status/1689982162886430721)
+- 🐦 [Async Components + use() hook demo](https://twitter.com/SzymonRybczak/status/1691037156712599552)
+- 🐦 [Half of the Top 20 iOS Sports apps are powered by React Native](https://twitter.com/Baconbrix/status/1690805340290301954)
+- 📜 [Tale of a Web Developer Improving Startup Performance for a large React Native App](https://medium.com/engineering-udaan/reacting-to-change-tale-of-a-web-developer-improving-startup-performance-for-a-large-react-native-854f8a4850fd)
+- 📜 [Adding React-Native to a complex app - 4-part series](https://www.nearform.com/blog/adding-react-native-to-a-complex-app-part-1-planning/)
+- 📜 [Getting started with react native storybook](https://dev.to/dannyhw/getting-started-with-react-native-storybook-96c)
+- 📜 [Exploring React Native's New Architecture: A Peek into the New Architecture](https://blog.devvivek.tech/exploring-react-natives-new-architecture-a-peek-into-the-new-architecture)
+- 🎙️ [The React Native Show Podcast #25 - Databases for mobile apps React Native & Realm](https://www.callstack.com/podcasts/databases-for-mobile-apps-react-native-realm)
+- 👥 [React Native EU 2023](https://www.react-native.eu/) (Wrocław, 7–8 September 2023) nous offre [-15% sur la conférence](https://ti.to/react-native-eu/2023/discount/thisweekinreact15) avec le code "thisweekinreact15".
+
+---
+
+## 🇫🇷 En français {#fr}
+
+- 📜 [Les modes d’authentification innovants](https://www.bam.tech/article/modes-authentification-innovants)
+- 🧵 [La meilleure lib CSS-in-JS?](https://twitter.com/melvynxdev/status/1689902731551707136)
+
+💡Tu peux m'envoyer ton contenu: [sebastien@thisweekinreact.com](mailto:sebastien@thisweekinreact.com?subject=Contenu%20en%20fran%C3%A7ais) !
+
+[![Pylote](/emails/issues/149/pylote.jpg)](https://pylote.io/?utm_source=newsletter&utm_medium=insert&utm_campaign=sebastienl)
+
+💸 **[Pylote - L'extension 100% gratuite pour être sur toutes les plateformes de freelance.](https://pylote.io/?utm_source=newsletter&utm_medium=insert&utm_campaign=sebastienl)**
+
+- **Importe** ton profil Comet ou LinkedIn en 5 secondes.
+- **Synchronise** ta dispo et** diffuse** ton profil auprès de 17 cabinets de recrutement : Comet, Crème, Cherry-Pick...
+- **Accède** à un jobboard centralisé regroupant un ensemble de missions.
+
+---
+
+## 🔀 Autre {#other}
+
+- 📣 [Gecko (Firefox) - Intent to Prototype: :has selector](https://twitter.com/intenttoship/status/1690045325539520523)
+- 📜 [What Does It Mean for Web Browsers to Have a Baseline](https://thenewstack.io/what-does-it-mean-for-web-browsers-to-have-a-baseline/)
+- 📜 [Deprecating the unload event](https://developer.chrome.com/blog/deprecating-unload/)
+- 📜 [A Blog Post With Every HTML Element](https://www.patrickweaver.net/blog/a-blog-post-with-every-html-element/)
+- 📜 [How layout position impacts three big web performance levers](https://performance.shopify.com/blogs/blog/how-layout-position-impacts-three-big-web-performance-levers)
+- 📦 [Announcing TypeScript 5.2 RC](https://devblogs.microsoft.com/typescript/announcing-typescript-5-2-rc/)
+- 📦 [Zod 3.22 - readonly()](https://twitter.com/colinhacks/status/1691172205516984322)
+- 👥 [ViteConf 2023 - October 5th](https://viteconf.org/23/)
+
+---
+
+## 🤭 Fun {#fun}
+
+[![alt](/emails/issues/156/meme.jpg)](https://twitter.com/DanStepanov/status/1689511613026775040)
+
+A plus 👋

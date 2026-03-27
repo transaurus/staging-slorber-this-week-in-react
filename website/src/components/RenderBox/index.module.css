@@ -1,0 +1,80 @@
+:root {
+    --render-box-border: solid var(--ifm-color-emphasis-300) 2px;
+    --render-box-border-radius: 5px;
+}
+
+.rerender {
+    animation: rerender 600ms linear forwards;
+    font-weight: bold;
+    margin-left: 5px;
+    color: green;
+}
+
+[data-theme="dark"] .rerender {
+    color: lime;
+}
+
+.renderBox {
+    animation: blink 600ms ease-out forwards;
+    position: relative;
+    border: var(--render-box-border);
+    border-radius: var(--render-box-border-radius);
+    box-shadow: var(--ifm-global-shadow-md);
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+.renderBox {
+    animation: blink 600ms ease-out forwards;
+}
+[data-theme="dark"] .renderBox {
+    animation: blinkDark 600ms ease-out forwards;
+}
+
+.renderTitle {
+    font-size: 20px;
+    font-weight: bold;
+    border-width: 2px;
+    border-bottom: var(--render-box-border);
+    border-right: var(--render-box-border);
+    border-bottom-right-radius: var(--render-box-border-radius);
+    padding: 0.4rem;
+}
+
+@keyframes rerender {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(2px);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-2px);
+    }
+}
+
+@keyframes blink {
+    0% {
+        background-color: rgba(0, 0, 0, 0.03);
+    }
+    50% {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+    100% {
+        background-color: rgba(0, 0, 0, 0.03);
+    }
+}
+
+@keyframes blinkDark {
+    0% {
+        background-color: rgba(255, 255, 255, 0.05);
+    }
+    50% {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+    100% {
+        background-color: rgba(255, 255, 255, 0.05);
+    }
+}

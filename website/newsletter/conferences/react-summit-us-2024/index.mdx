@@ -1,0 +1,143 @@
+---
+slug: /conferences/2024/react-summit-us-recap
+title: "📅 React Summit US 2024 - Conf Recap"
+authors:
+  - name: "Anton Meleshkin"
+    url: https://www.linkedin.com/in/anton-meleshkin-b226b5184/
+    image_url: https://github.com/Kragov.png
+    title: "Developer at FocusReactive"
+    socials:
+      github: https://github.com/Kragov
+      linkedin: https://www.linkedin.com/in/anton-meleshkin-b226b5184/
+      blog: https://focusreactive.com/blog/author/AntonMeleshkin/
+  - name: "Sergey Labuts"
+    url: https://www.linkedin.com/in/siarhei-labuts-aa3139125/
+    image_url: https://github.com/o8o0o8o.png
+    title: "Developer at FocusReactive"
+    socials:
+      github: https://github.com/o8o0o8o
+      linkedin: https://www.linkedin.com/in/siarhei-labuts-aa3139125/
+      blog: https://focusreactive.com/blog/author/SergeyLabuts/
+  - name: "Gleb Makhankov"
+    url: https://www.linkedin.com/in/gleb-makhankov/
+    image_url: https://github.com/user-attachments/assets/8235e2f0-c5d8-4dd5-89ea-305fb47a8285
+    title: "Developer at FocusReactive"
+    socials:
+      linkedin: https://www.linkedin.com/in/gleb-makhankov/
+      blog: https://focusreactive.com/blog/author/GlebMakhankov/
+  - slorber
+
+date: 11-26-2024
+---
+
+What's this fancy e-mail on a Monday? Well, we're trying something new!
+
+Last week, **[React Summit US 2024](https://reactsummit.us?utm_source=Newsletter&utm_medium=thisweekinreact)** took place in New York. The [videos will be online soon](https://gitnation.com/events/react-summit-us-2024/talks). In the meantime, we partnered with the organizers to send you a recap of a few selected talks.
+
+<!-- truncate -->
+
+![conf picture](/emails/conferences/2024/react-summit-us/conf.jpg)
+
+**[Focus Reactive](https://focusreactive.com?utm_source=Newsletter&utm_medium=thisweekinreact)** devs wrote the summaries. They are trusted technological partners delivering advanced content platforms optimized for performance, scalability, and SEO. Experts in Next.js, Headless CMS, eCommerce, and AI integrations, partners of Vercel, Shopify, Sanity. [Learn more](https://focusreactive.com?utm_source=Newsletter&utm_medium=thisweekinreact).
+
+The US edition of the conf may have wrapped up, but **[React Summit 2025](https://reactsummit.com?utm_source=Newsletter&utm_medium=thisweekinreact)** (🇳🇱 Amsterdam edition - June 13-17 2025) has just been announced! Get ready for another incredible event, just as cool as last year, but in a unique venue. Early-bird tickets are on sale now!
+
+It's the first time we send this type of content. Would you like to receive more React conf recaps like this one in the future?
+
+Without further ado, here are the 6 talks we've selected!
+
+<SubscribeFormEmbed placement="top" />
+
+---
+
+## Chrome DevTools: State of the Union 2024 - Debugging React & Beyond
+
+![Addy speaking](/emails/conferences/2024/react-summit-us/addy.jpg)
+
+**[Addy Osmani](https://bsky.app/profile/addyosmani.bsky.social)** (Head of Chrome DX) delivered an exciting review of the latest Chrome DevTools features and highlighted the INP metric. Here’s a summary of the main points covered:
+
+- **Gemini AI in DevTools**: You can now ask it to change the UI, help with errors, or assist with any challenges you might face during development.
+- **Server Components and the “Memo” Tag in React DevTools**: This, along with server logs in the browser console in Next.js, enables you to manage Suspense loading states more easily.
+- **useDebugValue**: Helps in debugging custom hooks.
+- **Font Color Contrast Fixing Tool**: Now built directly into the color picker.
+- **Override XHR and Fetch Requests**: Mock data can be injected into these requests, and even headers can be mocked.
+
+## Abracadabra: The Vanishing Network
+
+![Kent speaking](/emails/conferences/2024/react-summit-us/kent.jpg)
+
+Web app development has evolved to meet the growing demands of users and developers. **[Kent C. Dodds](https://bsky.app/profile/kentcdodds.com)** traces web app evolution from multi-page apps (MPAs) to React Server Components (RSC). Let’s look at the key stages of this evolution highlighted in the talk:
+
+- **Multi-Page Applications** (MPA) is simple and effective, but requires a full page reload.
+- **Progressively Enhanced MPAs** (PEMPA) introduced JavaScript for partial updates and UX improvement but added complexity and server-client duplication.
+- **Single-Page Applications** (SPA) improved interactivity but required client-side networking and managing loading states, increasing complexity.
+- **Progressively Enhanced SPAs** (PESPA) brought server-side fetching and rendering, improving UX. Yet, tying logic to routes limited reusable components.
+- **React Server Componentss** enable full-stack, reusable components, simplifying workflows while improving speed and scalability.
+
+## Out Of Order Streaming - The Secret Powering Modern React
+
+![Theo speaking](/emails/conferences/2024/react-summit-us/theo.jpg)
+
+**[Theo Browne](https://bsky.app/profile/t3.gg)** explores one of React's most innovative advancements—out-of-order streaming. Streaming HTML in web applications allows browsers to **progressively render incomplete HTML as it arrives**, significantly improving **perceived performance**. This is especially valuable for SSR. The only limitation was the order of the elements. HTML is linear, meaning that a slow component at the top of the HTML will block other components below.
+
+This limitation was solved by using RSC. The `<template/>` and `<script/>` tags are used to identify placeholders for unresolved content and replace them dynamically when data becomes available.
+
+Recent advancements, such as **partial pre-rendering and dynamic IO in Next.js**, combine static and dynamic rendering. This hybrid approach allows initial static content to be cached on CDNs for faster loads, with subsequent dynamic updates streamed from the server, optimizing both speed and developer workflow. These methods revolutionize SSR by enhancing UX and supporting complex web interactions seamlessly.
+
+<SubscribeFormEmbed placement="middle" />
+
+## Everything You Need to Know About React 19
+
+![Shruti speaking](/emails/conferences/2024/react-summit-us/shruti.jpg)
+
+**[Shruti Kapoor](https://bsky.app/profile/shrutikapoor08.bsky.social)** (Frontend engineer at Slack) provides an overview of the forthcoming stable update to the React library, which promises a lot of new and exciting things. The key features of this new version of React:
+
+- **React actions**: functions that use async transitions. It also supported on the server.
+- **New hooks**: `useActionState` and `useFormStatus` will make building forms easier. `useOptimistic` will provide fancy way to make UI smooth.
+- **React Compiler**: new plugin for React, that will say goodbye to `useMemo` and `useCallback`
+- **New API**: `use` \- read resources and Promises inside of your component.
+- **`ref` change**: finally it is a prop, so say goodbye to `forwardRef`
+- **Improved errors**: errors became more descriptive
+- **Context change**: Render `<Context>` instead of `<Context.Provider>`
+
+## AI Will Revolutionize UI
+
+![Jack speaking](/emails/conferences/2024/react-summit-us/jack.jpg)
+
+**[Jack Herrington](https://bsky.app/profile/jherr.dev)** shows common problems when we trying to use AI in our applications:
+
+- Super big context, that we need to provide to the model
+- How to get the right data?
+- AI can’t make multiple request for data
+- AI can’t manage UI
+
+He tells how to integrate AI into our applications and shows with clear examples that:
+
+- Using tools is the easiest way to do Retrieval Augmented Generation, known as RAG
+- You can use tools both on the server and on the client for UI
+- The AI can have chives on which tool to use
+- You don’t have to use the Vercel AI library or OpenAI. It is possible to use even the local LLM.
+
+## AI and Accessibility: A Conversation Worth Having
+
+![Cat speaking](/emails/conferences/2024/react-summit-us/cat.jpg)
+
+Accessibility is often overlooked in development, but **[Cat Johnson](https://www.linkedin.com/in/catandthemachines/)** highlights how AI is already making a difference and what developers can do now.
+
+AI has brought us tools like improved text-to-speech, automated meeting notes, and advanced voice commands. Apps like "Be My Eyes" use AI to describe objects captured with a phone camera, offering invaluable support for visually impaired users.
+
+Developers can enhance accessibility by writing clean HTML with proper tags and attributes. Accessibility tools can test and ensure your work is functional. Adding accessibility scans like **axe-core** or **lighthouse-cli** to your CI/CD pipeline can further streamline this process.
+
+By leveraging AI and following best practices, we can make technology more inclusive for everyone.
+
+---
+
+That's a wrap!
+
+Before you leave, make sure to:
+
+- Check [React Summit 2025](https://reactsummit.com?utm_source=Newsletter&utm_medium=thisweekinreact) for early bird tickets.
+- Hire [FocusReactive](https://focusreactive.com/?utm_source=Newsletter&utm_medium=thisweekinreact) for their Next.js CMS and e-commerce expertise.
+- Give us feedback - Did you like this email? Hit reply and tell us!
+
+See ya! 👋

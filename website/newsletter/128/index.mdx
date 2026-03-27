@@ -1,0 +1,174 @@
+---
+slug: /128
+title: "This Week In React #128: SWR, Vite, Codux, Storybook, Next.js, Forget, Nylon, Paper, align-deps, INP, Zod, Tauri..."
+authors: [slorber]
+date: 12-13-2022
+---
+
+Hi everyone!
+
+We are entering the Christmas season, and React bloggers are reducing the pace. On my side, I will skip 2 editions.
+
+Still, we have some nice releases and articles to discover. I really liked the article about font layout shifts.
+
+<!-- truncate -->
+
+**💡 [Check this newsletter on Twitter](https://slo.im/thread) - visual format 🎨**
+
+---
+
+import Support from "../_support.mdx";
+
+<Support />
+
+---
+
+## 💸 Sponsor {#sponsor1}
+
+[![React Bricks is a CMS with visual editing based on React components](/emails/issues/128/reactbricks.png)](https://reactbricks.com/?utm_source=this_week_in_react)
+
+**[React Bricks is a CMS with visual editing based on React components](https://reactbricks.com/?utm_source=this_week_in_react)**
+
+**It's flexible for Developers**: create your own design system using React components, add Visual editing in your JSX and add sidebar controls to edit props like the background color. Choose Next.js, Gatsby or Remix and any CSS framework you like!
+
+**It's easy for Content editors** who can directly edit in a visual way without breaking the design system: much easier than editing abstract entities using gray fields, as in a headless CMS. **And you save time**, as Content editors are autonomous!
+
+**It's enterprise-ready** with Collaboration, Time-machine, Single Sign-on, GDPR-compliant datacenters, Global CDN for optimized images, E-commerce integration, Scheduled publishing and more.
+
+Get started here: [ReactBricks.com](https://reactbricks.com/?utm_source=this_week_in_react)
+
+---
+
+## ⚛️ React {#react}
+
+[![SWR 2.0](/emails/issues/128/swr2.png)](https://swr.vercel.app/blog/swr-v2)
+
+**[SWR 2.0](https://swr.vercel.app/blog/swr-v2)**
+
+New major release for the Vercel data-fetching library. Various improvements listed, including:
+
+- New `useSWRMutation` hook
+- Simplified Optimistic UI
+- Browser extensions: [SWR DevTools](https://swr-devtools.vercel.app/)
+- An imperative preloading API
+- Improved React 18 support
+
+---
+
+[![Vite 4](/emails/issues/128/vite4.png)](https://vitejs.dev/blog/announcing-vite4.html)
+
+**[Vite 4](https://vitejs.dev/blog/announcing-vite4.html)**
+
+Vite is a frontend tool that keeps growing in popularity. This latest version now uses Rollup 3, which greatly simplifies the management of Vite's internal assets. There are now 2 React plugins with different tradeoffs:
+
+- [vite-plugin-react](https://github.com/vitejs/vite-plugin-react): esbuild + Babel
+- [vite-plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc): replace Babel by SWC in dev, which seems to improve cold start and HMR
+
+---
+
+[![Codux - Visual IDE for React projects](/emails/issues/128/codux.jpg)](https://dev.to/codux/introducing-codux-15j5)
+
+**[Codux - Visual IDE for React projects](https://dev.to/codux/introducing-codux-15j5)**
+
+Nadav is co-founder of Wix and presents us his new project, a visual IDE for React (and soon other frameworks). It's not about replacing your current IDE, but rather about completing it. Codux allows you to work on a component in isolation, including editing props and styles via a visual interface. The video [Meet Codux](https://www.youtube.com/watch?v=KG6i6cCz0P0) should help you understand better. It's a bit like Storybook, but with the ability to edit, and a bidirectional synchronization with your code.
+
+---
+
+- 📖 Beta docs: [team page updated](https://twitter.com/reactjs/status/1601328677677338624) + [useTransition demo](https://twitter.com/dan_abramov/status/1600709819648069632) + [useSyncExternalStore API ref](https://twitter.com/dan_abramov/status/1600530747550564354)
+- 📖 [New Supabase Docs, built with Next.js](https://supabase.com/blog/new-supabase-docs-built-with-nextjs): Supabase's doc is migrating from Docusaurus to Next.js, due to the growing need to build something custom. Nevertheless, they give a very positive feedback on Docusaurus.
+- 📖 [React Router website repository public](https://twitter.com/remix_run/status/1600979694622367744)
+- 📖 [React-Spring - New doc site](https://twitter.com/_josh_ellis_/status/1602253329526128641)
+- 📜 [Integrate Next.js and Storybook automatically](https://storybook.js.org/blog/integrate-nextjs-and-storybook-automatically/): introduce the automatic support of Next.js via the new [Framework API](https://storybook.js.org/blog/framework-api/) that comes in Storybook 7 (now in [beta](https://github.com/storybookjs/storybook/releases/tag/v7.0.0-beta.0)). Storybook is able to understand your Next.js project better. No more need to add decorators/addons for navigation, Link and Image components. The support will continue to improve over time: Server Components, next/font...
+- 📜 [Optimizing Web Fonts in Next.js 13](https://www.lydiahallie.io/blog/optimizing-webfonts-in-nextjs-13): probably the best illustrated article explaining font layout shifts. Explains at the end how Next.js optimizes this for us automatically. Worth reading!
+- 📜 [Migrating a large, open-source React application to Next.js and Vercel](https://vercel.com/blog/migrating-a-large-open-source-react-application-to-next-js-and-vercel): Vercel is doing a POC of migrating the BBC's open-source site, just for fun 😄 They're highlighting the benefits gained just by being on a Next.js stack and call BBC to action if they want to pursue this migration.
+- 📜 [Avoid These Common Pitfalls Of React useState](https://profy.dev/article/react-usestate-pitfalls): 6 common useState anti-patterns presented with solutions + embedded interactive exercice playgrounds
+- 📜 [The Evolution of urql](https://formidable.com/blog/2022/evolution-of-urql/)
+- 📜 [Publishing Docusaurus to dev.to with the dev.to API](https://dev.to/johnnyreilly/publishing-docusaurus-to-devto-with-the-devto-api-9bg)
+- 📜 [An Introduction To RedwoodJS](https://blog.openreplay.com/an-intro-to-redwoodjs/)
+- 📜 [Using Path Matching in React Router](https://www.taniarascia.com/path-matching-in-react-router/)
+- 📜 [Testing API Calls in useEffect using React Testing Library and Jest](https://www.taniarascia.com/how-to-test-useeffect-api-call/)
+- 💬 [Improve React Query hydration, Streaming SSR & Server Components](https://github.com/TanStack/query/discussions/4623)
+- 🐦 [Xuan Huang - "Forget is in good hands as we now have a team behind it"](https://twitter.com/Huxpro/status/1601345567493214208): Xuan also mentions that he left Meta
+- 🎨 [React-Three-Editor demo - Threejs Journey scene](https://twitter.com/0xca0a/status/1601315795006410752)
+- 🐦 ["I fixed vanilla-extract/sprinkles using a vite plugin"](https://twitter.com/astahmer_dev/status/1601246126396428289): new Vite plugin that could significantly reduce the CSS emitted by Vanilla-Extract / Sprinkles
+- 🐦 [Ryan Florence - "Next.js isn't really OSS"](https://twitter.com/ryanflorence/status/1600526114010845184)
+- 📦 [React-Nylon](https://github.com/CodyJasonBennett/react-nylon) + [Four](https://github.com/CodyJasonBennett/four): something is cooking. Soon, a lightweight [Three.js / React-Three-Fiber alternative](https://twitter.com/0xca0a/status/1602286391777546242)?
+- 📦 [Remix 1.8](https://github.com/remix-run/remix/releases/tag/remix%401.8.0): the "React-Router-ing" is progressing
+- 📦 [Chakra UI Figma Kit](https://twitter.com/chakra_ui/status/1602683717830512641)
+- 🎥 [Modern Component Library with React & Storybook](https://www.youtube.com/playlist?list=PLKBvDYynKmlWa59k8pnw-EHac2_miPagh)
+- 🎥 [MaterialUI + Qwikify demo](https://twitter.com/Steve8708/status/1601257653367209984)
+
+<SubscribeFormEmbed />
+
+---
+
+## 💸 Sponsor {#sponsor2}
+
+[![Developer Nation Survey - Do you want to make an impact on the developer ecosystem?](/emails/issues/128/dn-survey.png)](https://developereconomics.net/?member_id=thisweekinreact)
+
+**[Do you want to make an impact on the developer ecosystem?](https://developereconomics.net/?member_id=thisweekinreact)**
+
+Based on the latest State of the Developer Nation report, React is by far the most popular client-side library as it is used by 58% of web developers who use client-side web frameworks. What are your thoughts?
+
+Take part in the most complete [survey](https://developereconomics.net/?member_id=thisweekinreact) Developer Nation has ever created, shape the key trends among developers for 2023 and win amazing prizes! 🎁
+
+Upon completion you will get free access to our Virtual Goody Bag. Don't forget to sign up to enter the weekly draws. Among the 250 prizes you can find a ThinkPad L15 Gen 3, an Intel NUC 10 Performance Mini PC, IoT kits, an iPad Air, gift cards, Udemy courses, tech accessories, and many more.
+
+[Start here](https://developereconomics.net/?member_id=thisweekinreact)!
+
+---
+
+## 📱 React-Native {#react-native}
+
+- 📜 [React Native Paper 5.0 – What’s New?](https://www.callstack.com/blog/react-native-paper-5-0): add Material Design 3 "Material You" support, but also keeps the possibility to stay on Material Design 2. There are new components, and helpers to easily integrate the lib with React-Navigation.
+- 📜 [Microsoft - Announcing the evolution of dep-check: align-deps](https://devblogs.microsoft.com/react-native/2022-11-30-announcing-align-deps/): new version of the dep-check tool from Microsoft that allows to ensure that its monorepo uses the right package versions. Renamed because of a conflict with depcheck. Can now be more easily used on a project other than React-Native.
+- 📜 [Introducing: Maestro Studio](https://blog.mobile.dev/introducing-maestro-studio-96454c7ca98a): to create end-2-end black box tests via an interface
+- 🔗 [Microsoft - React-Native Devblog](https://devblogs.microsoft.com/react-native/): new blog dedicated to React-Native on the Microsoft website.
+- 🎨 [@expo-image demo](https://twitter.com/tsapeta/status/1600888339619799042): Software Mansion is working on an alternative to react-native-fast-image
+- 🎨 [React-Native-Skia-Gesture demo](https://twitter.com/reactiive_/status/1600494808048467973): gesture detector for Skia canvas elements
+- 📦 [android-performance-profiler](https://twitter.com/almouro/status/1600887206952198144): new API available
+- 📦 [expo-router@next - Shared Routes + Layout Clones (experimental)](https://twitter.com/Baconbrix/status/1601362300891328513)
+- 🎙️ [RNR 253 - We React to News: Kotlin's got a new daddy](https://reactnativeradio.com/episodes/rnr-253-we-react-to-news)
+- 🎥 [File-based navigation for Expo and React Native](https://www.youtube.com/watch?v=PW4-79MgSO0)
+- 📖 [Expo docs updates](https://twitter.com/amanhimself/status/1601177437546897408)
+- 🐦 ["Apple is preparing to allow alternative app stores and side-loading on iOS"](https://twitter.com/markgurman/status/1602744671737942016) + ["And allow non-Safari browser engines"](https://twitter.com/cramforce/status/1602765963937472513): this seems important for React-Native even if for the moment it seems limited to Europe.
+
+---
+
+## 🧑‍💻 Jobs {#jobs}
+
+🧑‍💼 [**Product Engineer at Causal, Remote/London/NY, $150-250k**](https://jobs.lever.co/causal-app/4acaafbe-ef3d-45a6-bbe6-687c022d727c?lever-origin=applied&lever-source%5B%5D=thisweekinreact.com)
+
+Causal is a Series A Startup (backed by Coatue/Accel) building an all-in-one tool for working with numbers and visualizing data. We're looking for strong React engineers who can solve difficult UX/performance challenges.
+
+🧑‍💼 [**Callstack - Senior React Native Developer - Fully Remote, PLN 21-32k net on B2B, monthly**](https://www.callstack.com/senior-react-native-developer)
+
+Do you want to work on the world's most used apps? Would you like to co-create the React Native technology? Join the Callstack team of React & React Native leaders. Check our website for more details. We are looking forward to seeing your application - show us what you've got!
+
+🧑‍💼 [**G2i - 100% Remote React Native Jobs**](https://twitter.com/gabe_g2i/status/1563204813881425926?s=20&t=ArRLC77BpRwXXCdx8fnUqw)
+
+We have several roles open for developers focused on React Native! Pay is ~160k plus 10% bonus. You must have production experience with RN and be based in the US. DM [@gabe_g2i](https://twitter.com/gabe_g2i) to learn more and don't forget to mention This Week in React.
+
+💡 [How to publish an offer?](https://thisweekinreact.com/sponsor)
+
+---
+
+## 🔀 Other {#other}
+
+- [Optimize Interaction to Next Paint](https://web.dev/optimize-inp/): Google devs explain how to improve the performance of our apps interactions (the new INP metric). This is particularly interesting for our React SPAs.
+- [2022 In Review: What’s New In Web Performance?](https://www.debugbear.com/blog/2022-in-web-performance):A nice overview of what's new in webperf in 2022. The 2023 predictions indicate work to better measure SPA performance, instead of just the initial page load metrics. TIL about the [soft-navigations](https://github.com/WICG/soft-navigations) repo.
+- [Ecma International welcomes new members](https://www.ecma-international.org/news/ecma-international-welcomes-new-members-6/): welcoming Shopify and Vercel
+- [Zod 3.20](https://twitter.com/colinhacks/status/1602238724120924160): glad to see the coercion coming, very useful to convert some query-string params (example: ?pageSize=10) into numbers automatically.
+- [Vitest 0.27.7](https://github.com/vitest-dev/vitest/releases/tag/v0.25.7): Vite 4 support
+- [Tauri Mobile Alpha Release](https://tauri.app/blog/2022/12/09/tauri-mobile-alpha): if I understand correctly it is using a WebView - new competitor to Cordova/Capacitor? 🤔
+- [New npm features for secure publishing and safe consumption](https://github.blog/2022-12-06-new-npm-features-for-secure-publishing-and-safe-consumption/): finally a code explorer on the npm site!
+- [WebKit Features in Safari 16.2](https://webkit.org/blog/13591/webkit-features-in-safari-16-2/)
+- [Bun 0.3.0](https://bun.sh/blog/bun-v0.3.0)
+- [Alma - a digital playground for generative graphics](https://twitter.com/emilwidlund/status/1600815398672211969)
+- [TypeScript: Should you use Types or Interfaces?](https://www.youtube.com/watch?v=zM9UPcIyyhQ)
+
+---
+
+## 🤭 Fun {#fun}
+
+[![alt](/emails/issues/128/meme.jpg)](https://twitter.com/ThePrimeagen/status/1601570856265650176)

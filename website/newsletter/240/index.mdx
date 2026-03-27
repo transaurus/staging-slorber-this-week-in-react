@@ -1,0 +1,126 @@
+---
+slug: /240
+title: "This Week In React #240: Radix, shadcn/ui, Next.js, MCP, Vite, RedwoodSDK, Apollo, Vercel, Recharts | Skia, WebGPU,  Radon IDE, React Navigation, Safe Area Context, iOS optimizations, Snapai | Prettier, Node, Biome, State of Devs"
+authors: [cyrilbo, matthieugicquel]
+date: 06-25-2025
+---
+
+Hi everyone!
+
+Cyril and Matthieu from [Theodo Apps](https://apps.theodo.com/en?utm_source=thisweekinreact) here 👋.
+
+This week in the React ecosystem, there's a bit of a stir around Radix and shadcn/ui. Some devs are weighing alternatives like Base UI, while shadcn highlights their long-term adaptability. We’ve also got fresh official guides from the Next.js team and some tooling updates like Vite 7, Apollo Client v4 RC, and Prettier 3.6’s fast CLI.
+
+On the React Native side, the graphics game is leveling up fast with WebGPU and Skia Graphite unlocking smoother 2D/3D rendering and broader platform support. And if you’re into performance tricks, don’t miss how Reddit shaved 20% off their iOS app size.
+
+Let's dive in!
+
+<!-- truncate -->
+
+import Support from "../_support.mdx";
+
+<Support />
+
+---
+
+## 💸 Sponsor {#sponsor1}
+
+[![AG Grid: The Best React Data Grid In The World.](/emails/issues/240/adgrid.jpg)](https://www.ag-grid.com/react-table?utm_source=thisweekinreact&utm_medium=newsletter&utm_campaign=2025-email-2)
+
+**[AG Grid: The Best React Data Grid In The World.](https://www.ag-grid.com/react-table?utm_source=thisweekinreact&utm_medium=newsletter&utm_campaign=2025-email-2)**
+
+AG Grid is a fast, free and fully customisable React Data Grid. Used by **90% of the Fortune 500**, AG Grid is **100% open source** with over **4 million npm downloads per month**:
+
+- 🆓 **Free:** Access 100s of features such as **Sorting**, **Filtering**, **Pagination**, **Cell Editing** and more, all for **free** - forever.
+- **🚀 Fast:** Display **millions of cells** out of the box, without compromising on performance.
+- **🎨 Customisable:** Add your own components to cells, rows & columns and use **100+ CSS variables** to style every element.
+- 🏢 **Enterprise Features:** Purchase a licence for lifetime access to advanced features including **Pivoting**, **Grouping**, **Master / Detail** and **Integrated Charts** (powered by our React Charting Library, [AG Charts](https://www.ag-grid.com/charts?utm_source=thisweekinreact&utm_medium=newsletter&utm_campaign=2025-email-2)). Try it for free - no trial license required.
+
+Learn More: [ag-grid.com](https://www.ag-grid.com/react-table?utm_source=thisweekinreact&utm_medium=newsletter&utm_campaign=2025-email-2)
+
+---
+
+## ⚛️ React {#react}
+
+- 💸 [Strapi - Open-source headless CMS now with AI powered Content Modeling](https://strapi.link/twir2)
+- 🐦 [The React community is re-evaluating Radix and shadcn/ui](https://x.com/colmtuite/status/1935629877069172861) due to concerns about Radix’s lack of recent development and active maintainership, with some developers exploring alternatives like Base UI. However, [shadcn emphasizes stability, urging teams not to switch libraries hastily and clarifying that shadcn/ui is a flexible, abstraction-driven system designed to evolve with or without Radix](https://x.com/shadcn/status/1936082723904565435). Theo also published a [video that distilled the topic](https://www.youtube.com/watch?v=vHFZFXtjKNE).
+- 📖 New Next.js [Linking and Navigating](https://nextjs.org/docs/app/getting-started/linking-and-navigating) and [Prefetching](https://nextjs.org/docs/app/guides/prefetching) guides.
+- 🗓 [React Advanced](https://reactadvanced.com/canada/?utm_source=thisweekinreact) - 🇨🇦 Toronto - March 24 & 26. Have you heard? React Advanced is coming to Canada with an incredible lineup including Wes Bos, Josh Comeau, and Henri Helvetica! Get a 10% discount with code "TWIR".
+- 📜 [i18n-check: Validating your Next.js internationalization](https://lingual.dev/blog/validating-your-nextjs-internationalization/): An open-source tool to check for missing, invalid and unused translation keys
+- 📜 [Towards React Server Components in Clojure, Part 3](https://romanliutikov.com/blog/towards-react-server-components-in-clojure-part-3): You’re probably not using clojure in production (we aren’t), but that’s an interesting experiment and explainer
+- 📜 [Next.js 15.1+ is unusable outside of Vercel](https://omarabid.com/nextjs-vercel): The post title is a bit extreme, but Next.js changed how it handles meta tags and this might break your search engine rankings.
+- 📜 [Connect any React application to an MCP server in three lines of code](https://blog.cloudflare.com/connect-any-react-application-to-an-mcp-server-in-three-lines-of-code/): Cloudflare has open-sourced a `use-mcp` package and their AI playground.
+- 📜 [How to take screenshots of your statically exported Next.js site in GitHub Actions workflow](https://www.nico.fyi/blog/how-to-take-screenshots-in-github-actions-workflow)
+- 📜 [Prefer Gaps To Margins](https://kyleshevlin.com/prefer-gaps-to-margins/)
+- 📜 [Frontend test coverage with Storybook 9](https://storybook.js.org/blog/frontend-test-coverage-with-storybook-9/)
+- 💸 [React Certification is Live - Created and reviewed by React Experts - Early Bird offer: 54% off during the next 24h!](https://certificates.dev/react?friend=TWIR)
+- 📦 [Vite 7.0 \- rolldown-vite package, dropped Node18, Default Browser Target Changed to Baseline Widely Available](https://vite.dev/blog/announcing-vite7.html)
+- 📦 [Recharts 3.0 - Custom React components inside a chart, portals for tooltips and legends](https://github.com/recharts/recharts/releases/tag/v3.0.0)
+- 📦 [Apollo Client 4.0-rc1](https://github.com/apollographql/apollo-client/releases/tag/%40apollo%2Fclient%404.0.0-rc.1): It will soon be stable, the biggest change being better bundle sizes with ESM and tree-shaking.
+- 📦 [Astro 5.10 - Experimental live collections that can be fetched at runtime instead of build time](https://astro.build/blog/astro-5100/)
+- 📦 [RedwoodSDK 0.1 \- React framework for building server-side web apps on Cloudflare](https://github.com/redwoodjs/sdk/releases/tag/v0.1.0)
+- 📦 [State in URL 5.0 \- Query Params lib adds Remix support](https://github.com/asmyshlyaev177/state-in-url/releases/tag/v5.0.0)
+- 🎥 [Vercel Ship 2025](https://vercel.com/ship): The keynote announcements are more platform/backend/AI-related, but there are a few talks about Next.js.
+
+<SubscribeFormEmbed placement="middle" />
+
+---
+
+## 💸 Sponsor {#sponsor2}
+
+[![How OAuth works](/emails/issues/240/clerck.jpg)](https://go.clerk.com/EeTc3Sg)
+
+**[How OAuth works](https://go.clerk.com/EeTc3Sg)**
+
+A practical guide to OAuth Scoped Access that walks through the Authorization Code Flow with real code examples, security best practices, and clear explanations of how third-party app integrations actually work.
+
+---
+
+## 📱 React-Native {#react-native}
+
+[![The Future of React Native Graphics: WebGPU, Skia, and Beyond](/emails/issues/240/skia.jpg)](https://shopify.engineering/webgpu-skia-web-graphics)
+
+[**The Future of React Native Graphics: WebGPU, Skia, and Beyond**](https://shopify.engineering/webgpu-skia-web-graphics)
+
+WebGPU and Skia Graphite are transforming React Native by enabling unified GPU-powered graphics, seamless 2D/3D rendering, and out-of-the-box support for libraries like Three.js and TensorFlow.js. These advancements bring massive performance gains, simplify shader development with TSL (Three.js Shading Language), and expand platform support to macOS, tvOS, and Node.js. Kudos to William Candillon and the Shopify team for this groundbreaking work \!
+
+- 💸 [AppZung CodePush - Migrate millions of users from retired AppCenter or cut expo-updates costs](https://appzung.com/?utm_source=newsletter&utm_medium=email&utm_campaign=this_week_in_react_250625)
+- 👀 [Reddit cut its iOS app size by 20% and improved startup time by reorganizing its binary using LLVM’s Profile-Guided Optimization and temporal profiling.](https://www.reddit.com/r/RedditEng/comments/1l7gv4t/reddits_ios_app_binary_optimization/)
+- 🐦 [iOS 26 / macOS 26 brings two-way interop between Java and Swift - Useful for RN?](https://x.com/birch_js/status/1932608731671642200)
+- 📜 [How to build universal app voice agents with Expo & ElevenLabs](https://expo.dev/blog/how-to-build-universal-app-voice-agents-with-expo-and-elevenlabs)
+- 📜 [Open source tool to speed up iOS app launch](https://blog.sentry.io/open-source-tool-speed-up-ios-app-launch/) : Sentry open-sourced FaultOrdering, a Swift package that helps iOS apps launch faster by automatically generating order files to optimize binary layout.
+- 📜 [React Server Components in Expo: A Practical Guide](https://blog.codeminer42.com/react-server-components-in-expo/)
+- 📜 [Expo \+ RevenueCat: The fastest way to make money with your app](https://expo.dev/blog/expo-revenuecat-in-app-purchase-tutorial)
+- 📦 [React Native Safe Area Context 5.5](https://github.com/AppAndFlow/react-native-safe-area-context/releases/tag/v5.5.0): introduces SafeAreaListener to get the insets and frame without using the hooks and control when state needs to be updated.
+- 📦 [React Native Unistyles 2.43 \- Add support for android 16KB pages](https://github.com/jpudysz/react-native-unistyles/releases/tag/v2.43.0)
+- 📦 [Radon IDE 1.8 \- RN v0.80, MCP support, allow running devices in the background](https://github.com/software-mansion/radon-ide/releases/tag/v1.8.0)
+- 📦 [React Navigation Core 7.11 \- Support merging params when navigating to nested navigator](https://github.com/react-navigation/react-navigation/releases/tag/%40react-navigation/core%407.11.0)
+- 📦 [React Navigation Core 7.12 \- You can now use useNavigationState at navigator level like in layouts](https://github.com/react-navigation/react-navigation/releases/tag/%40react-navigation/core%407.12.0)
+- 📦 [Snapai \- AI-powered icon generation CLI for React Native & Expo developers](https://github.com/betomoedano/snapai)
+- 🎙️ [RNR 335 \- State Management Revisited](https://infinite.red/react-native-radio/rnr-335-state-management-revisited)
+- 🎙️ [Rocket Ship 73 \- RN 0.80, EAS Alternative, AI Voice Agents & Apple vs React Native](https://share.transistor.fm/s/b4865cf1)
+- 🎥 [Simon Grimm \- Your First RSC with React Native (From Start to Deploy)](https://www.youtube.com/watch?v=YhVFlTRtf38)
+- 🎥 [Jack Herrington \- React Native Mac-OS Desktop AI Chatbot with MCP\!](https://www.youtube.com/watch?v=Apy672AQb4U)
+- 🎥 [App.js Conf 2025 \- YouTube playlist](https://www.youtube.com/watch?v=-fj-6WnjsG4&list=PLSk21zn8fFZBD3Kxg8Rw_n4LPIuA6TGHd)
+
+---
+
+## 🔀 Other {#other}
+
+- 📊 [State of Devs 2025 \- Survey results available (part1)](https://2025.stateofdevs.com/en-US)
+- 📜 [A guide to Scroll-driven Animations with just CSS](https://webkit.org/blog/17101/a-guide-to-scroll-driven-animations-with-just-css/)
+- 📦 [Prettier 3.6 \- Experimental fast CLI and new OXC and Hermes plugins](https://prettier.io/blog/2025/06/23/3.6.0): It can be up to [18 times faster than the actual implementation, thanks to parallelism and caching](https://e18e.dev/blog/prettier-speed-up.html).
+- 📦 [Node 24.3](https://nodejs.org/en/blog/release/v24.3.0): Removes the scary experimental warning for TypeScript type-stripping support, and it may be unflagged for v22 soon\!
+- 📦 [Biome 2.0 \- Codename Biotype](https://biomejs.dev/fr/blog/biome-v2/): Type-aware linter that doesn’t rely on the TypeScript compiler.
+- 📦 [GraphiQL 5.0 \- Now powered by the Monaco editor](https://github.com/graphql/graphiql/releases/tag/graphiql%405.0.0)
+- 🎙️ [Front-End Fire 101 \- Oxlint 1.0: The Linter That Leaves ESLint in the Dust](https://front-end-fire.com/episodes/101/)
+
+---
+
+## 🤭 Fun {#fun}
+
+[![alt](/emails/issues/240/merge-pr.jpg)](https://x.com/Steve8708/status/1928211253744255039)
+
+[![alt](/emails/issues/240/expo-atlas.jpg)](https://x.com/schlimmson/status/1891533122774413587)
+
+See ya! 👋

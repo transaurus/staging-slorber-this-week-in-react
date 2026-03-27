@@ -1,0 +1,26 @@
+{
+  "title": {
+    "message": "This Week In React",
+    "description": "The title in the navbar"
+  },
+  "logo.alt": {
+    "message": "This Week In React Logo",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.Articles": {
+    "message": "Articles",
+    "description": "Navbar item with label Articles"
+  },
+  "item.label.Newsletter": {
+    "message": "Newsletter",
+    "description": "Navbar item with label Newsletter"
+  },
+  "item.label.Thread": {
+    "message": "Thread",
+    "description": "Navbar item with label Thread"
+  },
+  "item.label.Sponsor": {
+    "message": "Sponsor",
+    "description": "Navbar item with label Sponsor"
+  }
+}

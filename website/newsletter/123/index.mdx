@@ -1,0 +1,225 @@
+---
+slug: /123
+title: "This Week In React #123: TanStack Router, Gatsby, Remix, Next.js, React-Three-Fiber, Astro, Expo, Open Native, Rome..."
+authors: [slorber]
+date: 11-08-2022
+---
+
+Hi everyone!
+
+It was [Jamstack Conf](https://jamstack.org/conf/) this week, and we had some nice announcements for the occasion, like Tanstack Router, Gatsby 5 or the results of their annual survey.
+
+Expo released its superb SDK 47. The 1st release-candidate React-Native 0.71 leads to some Android build issues 😅.
+
+Next.js and React-Native now both use TypeScript by default on new apps.
+
+Last chance to buy the [Three.js Journey](https://threejs-journey.com/) course with the promo code [TWIR](https://threejs-journey.com/join/TWIR) (-30%, expires tomorrow). It has just been [upgraded](https://twitter.com/bruno_simon/status/1585222892769497089) with 24 hours of React-Three-Fiber modules. I take this opportunity to highlight [Maxime Heckel's blog](https://blog.maximeheckel.com/) who took the course last year and is now able to do some pretty cool 3D! He has just published an impressive [article on particles](https://blog.maximeheckel.com/posts/the-magical-world-of-particles-with-react-three-fiber-and-shaders/).
+
+<!-- truncate -->
+
+**💡 [Check this newsletter on Twitter](https://slo.im/thread) - visual format 🎨**
+
+---
+
+import Support from "../_support.mdx";
+
+<Support />
+
+---
+
+## 💸 Sponsor {#sponsor1}
+
+[![Sizzy - the browser for developers](/emails/issues/220/sizzy.jpg)](https://sizzy.co/?utm_campaign=newsletter&utm_source=thisweekinreact)
+
+How come professionals in every other industry have specialized tools, but web developers are still stuck using the browser that their grandma is using for shopping on Amazon?
+
+If you're opening localhost:3000 in any other browser except Sizzy, you're wasting hours of your precious time.
+
+**Before Sizzy:** web development is stressing you out, responsive design is hard, you have an overwhelming amount of opened tabs and apps.
+
+**After Sizzy:** all the tools you need are in one place, responsive design is a breeze, no more context switching.
+
+You can [download it here](https://sizzy.co/?utm_campaign=newsletter&utm_source=thisweekinreact) and try it for free for 14 days!
+
+---
+
+## ⚛️ React {#react}
+
+[![TanStack Router](/emails/issues/123/tanstack-router.png)](https://tanstack.com/router/v1)
+
+**[TanStack Router](https://tanstack.com/router/v1)**
+
+Tanner unveils his new project: a 100% typesafe, framework-agnostic router. An impressive list of features, including:
+
+- URL State Management
+- Built-in Caching
+- Search Param Schema/Validation
+- Auto Prefetching
+- Loaders/Actions
+- Async Elements + Code-Splitting
+
+At first glance, it looks like there is some inspiration from Remix or React-Router, but the API is quite different and not based on JSX, which probably help to make the solution agnostic and typesafe. For now there is only the React adapter, and the doc is incomplete, but it looks quite promising!
+
+🔗 **Useful links**:
+
+- 🐦 [Tanner Linsley](https://twitter.com/tannerlinsley/status/1590101866385489929) launches his project on Twitter with a great trailer!
+- 🐦 [Ryan Florence](https://twitter.com/ryanflorence/status/1590194770936463362) could use some inspiration from his work to improve Remix type-safety.
+
+---
+
+[![Gatsby 5: The Fastest Gatsby Yet](/emails/issues/123/gatsby5.png)](https://www.gatsbyjs.com/blog/gatsby-5/)
+
+**[Gatsby 5: The Fastest Gatsby Yet](https://www.gatsbyjs.com/blog/gatsby-5/)**
+
+Gatsby 5.0 has just been officially released. It includes the Gatsby Slice API which allows to improve the build time when modifying a layout element (header, footer...), and the support in beta of the Server Components which allow partial hydration. There are also new Head/Script components, GraphiQL v2, and more.
+
+Gatsby also presented [Valhalla](https://www.gatsbyjs.com/products/valhalla-content-hub/), a new service on their cloud that proposes to use Gatsby source plugins to create a content hub and a unified GraphQL API decoupled, from Gatsby. It is [possible to use Valhalla with Next.js](<https://github.com/gatsby-inc/valhalla-examples/blob/main/frameworks/nextjs/app/(pets)/page.tsx>).
+
+Static site generators are not very popular at the moment, despite still being suitable for many sites, I think it's good that at least one big player continues to innovate in the field. The Slice API looks like a good idea. I wish Valhalla could run locally, but I think it's a cloud service only.
+
+🔗 **Useful links**:
+
+- 📜 [Gatsby 5.0 - Release Notes](https://www.gatsbyjs.com/docs/reference/release-notes/v5.0/)
+- 📜 [Valhalla Content Hub Explained](https://www.gatsbyjs.com/blog/valhalla-content-hub-explained/)
+- 📜 [Gatsby 5 Upgrade. Say No to YOLO](https://www.gatsbyjs.com/blog/gatsby-5-upgrade-say-no-to-yolo/)
+- 📜 [Partial Hydration (Beta) Explained](https://www.gatsbyjs.com/blog/partial-hydration-beta-explained/)
+- 📜 [The Gatsby Slice API: High Precision Incremental Builds](https://www.gatsbyjs.com/blog/gatsby-slice-api/)
+- 🎥 [Valhalla Content Hub video](https://www.youtube.com/watch?v=JvHvwZZAOl0)
+
+---
+
+[![React Router-ing Remix](/emails/issues/123/reactroutering.png)](https://remix.run/blog/react-routering-remix)
+
+**[React Router-ing Remix](https://remix.run/blog/react-routering-remix)**
+
+Many Remix data APIs have been added in React-Router 6.4, and much more. Now it's Remix's turn to officially rely on these new React-Router APIs. The upgrade will be done in 4 incremental and backwards compatible steps delivered in Remix v1.x with feature flags. The vision is to make Remix v2 a compiler for React-Router 6.4.
+
+🔗 **Useful links**:
+
+- 🗺 [Remix on Router v6.4](https://github.com/remix-run/remix/issues/4485)
+- 💬 [Remix RFC - v2 meta API](https://github.com/remix-run/remix/discussions/4462)
+- 💬 [Remix RFC - Flat Routes](https://github.com/remix-run/remix/discussions/4482)
+- 🎙️ [Remix + Shopify - Twitter Space](https://twitter.com/i/spaces/1MnxnpombqBGO)
+
+---
+
+- 👀 [React Core PR - Support Promise as a renderable node](https://github.com/facebook/react/pull/25634)
+- 📊 [Jamstack Community Survey 2022](https://jamstack.org/survey/2022/): React is widely used at 71%, Next.js accounts for 1 in 2 projects, Remix is growing nicely, and [Docusaurus is doing well](https://twitter.com/sebastienlorber/status/1590042329255391232) too 😜
+- 📜 [React Router 6 Deferred Fetch](https://dev.to/infoxicator/react-router-6-deferred-fetch-4k68): pretty cool article that shows how to use the `defer` API, and highlights some subtleties to understand for error handling and avoiding waterfalls.
+- 📜 [Reduce cumulative layout shift in Docusaurus with fontaine](https://blog.logrocket.com/docusaurus-using-fontaine-reduce-cumulative-layout-shift/): the same technique used by [@next/font](https://nextjs.org/blog/next-13#nextfont) can be used in other contexts (not limited to Docusaurus) to improve the CLS score
+- 📜 [Playing with Astro: Sharing State Between React and Vue Components](https://blog.bitsrc.io/playing-with-astro-sharing-state-between-react-and-vue-components-2d5abc89f4b4): shows how React and Vue can cohabit on an Astro app, and share a state via nanostores.
+- 📜 [Remix Simplifies Things](https://bradgarropy.com/blog/remix-simplifies-things): Brad explains why he likes Remix. He can write less JavaScript/React, and more HTML. Using Tailwind seems easier than the links API with regular stylesheets.
+- 📜 [Why I Ditched Django for NextJS](https://billprin.com/2022/10/30/ditched-django-nextjs.html): Bill was a "Python guy" working on Google Compute Engine. Finally, he recommends using Next.js (or at least JS/TS) and avoiding Python/Ruby for web projects.
+- 📜 [How to Integrate Storybook with Hydrogen](https://wemakewebsites.com/blog/devguide-how-to-integrate-storybook-with-hydrogen/): the integration is not so simple and requires to configure Vite correctly.
+- 📜 [What's New in Next.js 13](https://blog.appsignal.com/2022/11/02/whats-new-in-nextjs-13.html): a good overview of Next.js v13 new features
+- 📜 [What does CSR, SSR, SSG and ISR means and why should you care?](https://www.flavienbonvin.com/data-building-strategy-for-nextjs-app/): now a good overview of Next.js rendering features before Next.js v13
+- 📜 [Implementing 3D Graphics In React](https://blog.openreplay.com/implementing-3d-graphics-in-react/): intro to React-Three-Fiber
+- 📜 [The magical world of Particles with React Three Fiber and Shaders](https://blog.maximeheckel.com/posts/the-magical-world-of-particles-with-react-three-fiber-and-shaders/): advanced article on creating particle scenes with React-Three-Fiber and Frame Buffer Objects
+- 🎨 [Taxonomy - An open source application using everything new in Next.js 13](https://github.com/shadcn/taxonomy)
+- 🐦 [TanStack Query for Angular](https://twitter.com/NetanelBasal/status/1587704203178295297): React-Query is progressively ported to other frameworks
+- 🐦 [scheduler.yield() - Upcoming Web API, useful for React?](https://twitter.com/sebastienlorber/status/1589939130225475584)
+- 🐦 [Next-Auth - `getServerSession()` in Server Components](https://twitter.com/shadcn/status/1589671069732196352)
+- 🧵 [Meet the new `create-next-app`](https://twitter.com/leeerob/status/1589810583444287490): uses TypeScript by default
+- 🧵 [You might not need Context in Server Components in Next.js 13](https://twitter.com/sebmarkbage/status/1587615484870098945): Sebastian gives different alternatives to the React context for use in Server Components
+- 🎥 [NextJS 13 Warning: Easy Mistake = Infinite Loops](https://www.youtube.com/watch?v=zwQs4wXr9Bg)
+- 📦 [React-Three-Next - updated to Next.js v13](https://twitter.com/onirenaud/status/1587830274175295488)
+- 📦 [Redux ToolKit 1.9](https://github.com/reduxjs/redux-toolkit/releases/tag/v1.9.0)
+- 📦 [derive-zustand](https://github.com/dai-shi/derive-zustand/)
+- 📦 [Generouted 1.6 - file-based routes for Vite](https://twitter.com/oedotme/status/1589720850051522561)
+- 📦 [udomsay - A stricter, signals driven, JSX based library](https://github.com/WebReflection/udomsay)
+
+<SubscribeFormEmbed />
+
+---
+
+## 💸 Sponsor {#sponsor2}
+
+[![Jamf - Easily Secure and Manage Your Apple Devices](https://ucarecdn.com/f5a0c637-c59e-4b81-92d1-31bc896020c0/-/crop/250x146/0,52/-/resize/240x140/)](https://vpdae.com/redirect/p6sxgodi71psw70ruh4ypz7tfc9)
+
+**[Jamf - Easily Secure and Manage Your Apple Devices](https://vpdae.com/redirect/p6sxgodi71psw70ruh4ypz7tfc9)**
+
+Jamf Now is a mobile device management (MDM) solution for Apple devices. This solution makes device management tasks easy such as configuring Wi-Fi and email settings, deploying apps, securing sensitive company data, and enforcing passcodes. The Jamf Fundamentals plan contains additional security features including Malware Prevention to prevent malicious threats from running on your devices. Sign up and manage up to 3 devices for free and add more for just $2 per device, per month. For more power, upgrade to Jamf Fundamentals to manage 3 devices for free and add more for $4 a month per device.
+
+<img src="https://www.vpdae.com/open/5031.gif?opens=1" width="1" height="1" />
+
+---
+
+## 📱 React-Native {#react-native}
+
+[![Expo SDK 47](/emails/issues/123/expo47.png)](https://blog.expo.dev/expo-sdk-47-a0f6f5c038af)
+
+**[Expo SDK 47](https://blog.expo.dev/expo-sdk-47-a0f6f5c038af)**
+
+The new SDK 47 has just been officially released, with a more detailed article on what's new.
+
+- React Native 0.70.5 and React 18.1.0
+- Expo Modules API 1.0 allows to create very easily native Fabric modules in Swift/Kotlin
+- Hermes available on Expo Go iOS, simplified debugging experience. Hermes will be the default engine in the next SDK
+- Fabric support in several Expo modules
+- Expo Router in beta: file-system routing for React-Navigation
+- Various EAS improvements: end-to-end security, M1 workers...
+
+In short, a very nice release! With Expo Modules, it seems easier to adopt the new architecture compared to official tools like react-native-codegen which doesn't support Swift yet.
+
+---
+
+- 📦 [React-Native 0.71 RC.0](https://twitter.com/CipolleschiR/status/1588578757857533952): includes TypeScript types, uses TypeScript by default for new apps, Flex gap support... A release that also [broke Android builds](https://twitter.com/reactnative/status/1589296764678705155) (now [fixed](https://twitter.com/reactnative/status/1589394317126565888))
+- 👥 [Open Native: Native Modules, for all](https://github.com/OpenNative/open-native): an interesting initiative that proposes to de-duplicate the effort of creating native modules between different ecosystems (React-Native, Flutter, Capacitor, NativeScript...) via agnostic native modules and adapters.
+- 📜 [Migrating a React Native Library to the New Architecture](https://www.callstack.com/blog/migrating-a-react-native-library-to-the-new-architecture): Oscar migrated React-Native Slider to Fabric, lists the challenges he encountered, and explains the 4 main steps to migrate an existing library, or create a new one.
+- 📜 [Introducing End-to-end Security to EAS Update with Code Signing](https://blog.expo.dev/introducing-end-to-end-security-to-eas-update-with-code-signing-b6a14d0d88d4)
+- 📜 [Flutter vs. React Native: Which is the right cross-platform framework for you?](https://stackoverflow.blog/2022/10/31/comparing-frameworks-for-cross-platform-apps-flutter-vs-react-native/)
+- 💬 [RFC: Metro package exports support](https://github.com/react-native-community/discussions-and-proposals/pull/534) + [Node.js - define "react-native" community condition](https://github.com/nodejs/node/pull/45367)
+- 💬 [RFC: Vision for Layout Conformance/Parity](https://github.com/react-native-community/discussions-and-proposals/pull/540/)
+- 🎉 [React-Native - Use TypeScript by default for new applications](https://github.com/facebook/react-native/pull/35165)
+- 🎙️ [RNR 251 - Examining React Native 0.70](https://reactnativeradio.com/episodes/rnr-251-examining-react-native-070)
+- 🎥 [React-Native and Bluetooth Low Energy ( BLE ) - Send and Receive Data](https://www.youtube.com/watch?v=jeH2QmZ8T14)
+- 🎥 [Animated FlatList in React Native](https://www.youtube.com/watch?v=3ox0R5jPb04)
+- 📦 [Storybook-Solito](https://github.com/dannyhw/storybook-solito)
+
+---
+
+## 🧑‍💻 Jobs {#jobs}
+
+🧑‍💼 [**Product Engineer at Causal, Remote/London/NY, $150-250k**](https://jobs.lever.co/causal-app/4acaafbe-ef3d-45a6-bbe6-687c022d727c?lever-origin=applied&lever-source%5B%5D=thisweekinreact.com)
+
+Causal is a Series A Startup (backed by Coatue/Accel) building an all-in-one tool for working with numbers and visualizing data. We're looking for strong React engineers who can solve difficult UX/performance challenges.
+
+🧑‍💼 [**G2i - 100% Remote React Native Jobs**](https://twitter.com/gabe_g2i/status/1563204813881425926?s=20&t=ArRLC77BpRwXXCdx8fnUqw)
+
+We have several roles open for developers focused on React Native! Pay is ~160k plus 10% bonus. You must have production experience with RN and be based in the US. DM [@gabe_g2i](https://twitter.com/gabe_g2i) to learn more and don't forget to mention This Week in React.
+
+💡 [How to publish an offer?](https://thisweekinreact.com/sponsor)
+
+---
+
+## 🔀 Other {#other}
+
+- [Announcing Rome v10](https://rome.tools/blog/2022/11/08/rome-10.html): first stable release of the Rome toolchain, which proposes to replace ESLint/Prettier by a faster and easier to use Rust alternative. What attracts me the most is not the speed but especially the part about Error Recovery and error messages.
+- [Introducing the CodeSandbox GitHub App](https://codesandbox.io/post/introducing-the-codesandbox-github-app): offers an integration to facilitate contributions and review of pull-requests. This is reminiscent of the recently launched [StackBlitz Codeflow](https://stackblitz.com/codeflow), but with a rather different technology.
+- [Jest over Vitest](https://bradgarropy.com/blog/jest-over-vitest): Brad decided to stay on Jest for now, after an attempt to migrate to Vitest that didn't really improve the execution speed and presented some challenges.
+- [Vitest 0.25](https://github.com/vitest-dev/vitest/releases/tag/v0.25.0):allows you to write tests for its TypeScript types
+- [TypeScript PR - Convert TypeScript to modules](https://twitter.com/sebastienlorber/status/1589958856561434624): in TypeScript 5.0, tsc will be 10-25% faster
+- [Xata - Serverless Data Platform for modern web builders](https://twitter.com/xata/status/1587794475274969088)
+- [Tina CMS 1.0](https://tina.io/blog/tina-1-0-announcement/)
+- [Safari Technology Preview 157](https://webkit.org/blog/13575/release-notes-for-safari-technology-preview-157/)
+- [ESLint - consistent-type-imports](https://github.com/typescript-eslint/typescript-eslint/pull/5050)
+- [Client-side Routing without the JavaScript](https://dev.to/this-is-learning/client-side-routing-without-the-javascript-3k1i)
+- [Performance: Rust and its relationship with Node.js](https://sprkl.dev/performance-rust-node-js/)
+- [What is a realm in JavaScript?](https://weizman.github.io/page-what-is-a-realm-in-js/)
+- [Tailwind CSS turns 5 years old](https://twitter.com/adamwathan/status/1587128677724291074)
+- [New to the web platform in October](https://web.dev/web-platform-10-2022/)
+- [Protobuf-ES: The Protocol Buffers TypeScript/JavaScript runtime we all deserve](https://buf.build/blog/protobuf-es-the-protocol-buffers-typescript-javascript-runtime-we-all-deserve)
+- [ESLint v8.27](https://eslint.org/blog/2022/11/eslint-v8.27.0-released/)
+- [Node.js - drop fetch experimental warning](https://twitter.com/matteocollina/status/1588966117393203203)
+- [Node.js - Nov 3 2022 Security Releases](https://nodejs.org/en/blog/vulnerability/november-2022-security-releases/)
+- [Playwright now has new getBy APIs](https://dev.to/playwright/playwright-now-has-new-getby-apis-1iad)
+
+---
+
+## 🤭 Fun {#fun}
+
+[![Last weekend be like - small React-Native 0.71 domino falls larger React-Native dominos of previopus releases](/emails/issues/123/meme.png)](https://twitter.com/swmansion/status/1589571114048851968)
+
+For even more fun, this new [Twitter thread](https://slo.im/fun) lists all my finds. Many of them have never been published in the newsletter, as I only include one per week.
+
+[![This Week In React - Fun Thread](/emails/fun-banner.png)](https://slo.im/fun)

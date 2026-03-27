@@ -1,0 +1,140 @@
+---
+slug: /216
+title: "This Week In React #216: Next.js, ViewTransition, RSC, Compiler, React Router, Recoil, Bippy, Docusaurus, A11y, Static Hermes, Nitro, Radon, SQLite, Edge-to-Edge, Node, TypeScript, pnpm, htmx..."
+authors: [matthieugicquel, cyrilbo]
+date: 01-08-2025
+---
+
+Hi everyone!
+
+Cyril and Matthieu from Theodo Apps here 👋, standing in for Seb to bring you the latest news from React and React Native!
+
+The previous edition was last Friday, so this one will be a bit shorter than usual. We’re resuming the usual pace of one newsletter every week after the holidays.
+
+The [2024 edition of JS rising stars](https://risingstars.js.org/2024/en) is out, you can start by having a look at which libraries performed well on this flawed but still useful metric of GitHub starts. Spoiler: `shadcn/ui` gained the most stars (again). Sébastien commented the [Tooling section](https://risingstars.js.org/2024/en#section-build).
+
+Make sure to check our partner 🗓️ [Paris TypeScript La Conf'](https://la-conf.typescript.paris/?utm_source=thisweekinreact) - 🇫🇷 Paris - 28 February - Full speaker line up just dropped! Join Mateusz Burzyński, Elise Patrikainen and David Rousset! Get 20% off tickets with code "TWIR"!
+
+<!-- truncate -->
+
+import Support from "../_support.mdx";
+
+<Support />
+
+---
+
+## 💸 Sponsor {#sponsor1}
+
+[![PropelAuth: Make Authentication Your Advantage](/emails/issues/216/PropelAuth.jpg)](https://www.propelauth.com/?utm_source=newsletter&utm_campaign=twinrjan82024)
+
+**[PropelAuth: Make Authentication Your Advantage](https://www.propelauth.com/?utm_source=newsletter&utm_campaign=twinrjan82024)**
+
+If your authentication isn't **helping you grow**, it's **holding you back**.
+
+With [PropelAuth](https://www.propelauth.com/?utm_source=newsletter&utm_campaign=twinrjan82024), you get everything you need to launch and scale your B2B product:
+
+- **Easy to understand** [documentation](https://docs.propelauth.com/?utm_source=newsletter&utm_campaign=twinrjan82024) and **friendly, fast support**.
+- **UIs that cover all your use cases** - signup, login, MFA, organization management and more.
+- **User impersonation** so you can provide top-notch support to your users.
+- **Enterprise SAML/SSO** and **advanced security features** so you can be upmarket-ready.
+- **User insights** to help you strategize and expand.
+
+[Get started today](https://www.propelauth.com/?utm_source=newsletter&utm_campaign=twinrjan82024)
+
+---
+
+## ⚛️ React {#react}
+
+[![Composable Caching with Next.js](/emails/issues/216/nextjscache.jpg)](https://nextjs.org/blog/composable-caching)
+
+**[Composable Caching with Next.js](https://nextjs.org/blog/composable-caching)**
+
+Explains what Next.js is trying to accomplish, and why `”use cache”` is a compiler directive and not a function (to be able to analyze closures and determine the right cache key).
+
+---
+
+[![React Core PR - Add `<ViewTransition>` Component](/emails/issues/216/viewTransitions.jpg)](https://github.com/facebook/react/pull/31975)
+
+**[React Core PR - Add `<ViewTransition>` Component](https://github.com/facebook/react/pull/31975)**
+
+React is adding support for View transitions with a `<ViewTransition />` component that integrates with all the async features like Suspense and `startTransition`.
+
+---
+
+- 💸 [daily.dev: Your personal dev news feed. Free!](https://daily.dev/w/this-week-in-react)
+- 🐦 [Recoil (state manager by meta) has been archived](https://x.com/dai_shi/status/1875910305802514649)
+- 📜 [RSC and Server Action Bundle Practice](https://github.com/orgs/web-infra-dev/discussions/23): An Rspack maintainer shared a comprehensive deep dive on how bundlers implement React Server Components in practice, notably webpack and Turbopack.
+- 📜 [Automated Accessibility Testing at Slack](https://slack.engineering/automated-accessibility-testing-at-slack/): They tried to do it with testing-library but ended up using Playwright.
+- 📜 [Thoughts on State Management Libraries in the React Compiler Era](https://blog.axlight.com/posts/thoughts-on-state-management-libraries-in-the-react-compiler-era/): The compiler makes React Context much more attractive, are they still useful?
+- 📜 [All kinds of state management in React](https://www.typeonce.dev/article/all-kinds-of-state-management-in-react): url state, server state, client state…
+- 📜 [React Router 7 Tutorial](https://www.robinwieruch.de/react-router/): A 3-part series covering the introduction, descendent routes and search params.
+- 📜 [How React's Render, Effects and Refs work under the hood](https://tigerabrodi.blog/how-reacts-render-effects-and-refs-work-under-the-hood)
+- 📜 [Redux Saga Is Hard Until You Look Under The Hood](https://janhesters.com/blog/redux-saga-is-hard-until-you-look-under-the-hood)
+- 📦 [Bippy \- A toolkit to hack into react internals](https://www.bippy.dev/): It’s what [react-scan](https://github.com/aidenybai/react-scan) uses under the hood to access the Fiber tree.
+- 📦 [Docusaurus 3.7](https://docusaurus.io/blog/releases/3.7) adds support for React 19 and a new svgr plugin.
+- 📦 [React Admin 5.4 (and 5.3)](https://marmelab.com/blog/2025/01/08/react-admin-january-2025-update.html)
+- 🎥 [Cosden \- The Biggest Mistake Intermediate React Developers Make](https://www.youtube.com/watch?v=jqcbIgQBn34)
+- 🎥 [Alem Tuzlak \- The Benefits of React Router V7 Nobody Told You About](https://www.youtube.com/watch?v=EGuYKL8puRI)
+- 🎥 [Theo \- Inertia 2.0: It's like Next but better (and you can use React\!)](https://www.youtube.com/watch?v=OpXLWJd2iO0)
+- 🎙️ [Syntax.fm - 2025 Web Development Predictions](https://syntax.fm/show/866/2025-web-development-predictions)
+
+<SubscribeFormEmbed placement="middle" />
+
+---
+
+## 💸 Sponsor {#sponsor2}
+
+[![Rethink your React apps' UX with Reactile](/emails/issues/216/reactile.jpg)](https://www.reactile.net/?utm_source=ThisweekinReact)
+
+**[Rethink your React apps' UX with Reactile](https://www.reactile.net/?utm_source=ThisweekinReact)**
+
+Reactile is an UI/UX turnkey framework which features an out-of-the-box, intuitive tiling display with workspaces. It encourages parallel workloads for large web solutions within a single browser tab. Implement your own view containers, widgets and logic using React and let Reactile handle the display for you.
+
+On top of that, Reactile also offers:
+
+- A promise-based persistence mechanism which permits a uniform workflow across time and on multiple devices.
+- The possibility to use nested tabs for your tiles.
+- A simplified global search mechanism.
+- CSS @container based responsiveness.
+- And much more.
+
+Version 2 coming out soon. Get started with your unique 30-day free trial. Learn more about it on reactile.net.
+
+[Reactile - The new React UI management system](https://www.reactile.net/price?utm_source=ThisweekinReact)
+
+---
+
+## 📱 React-Native {#react-native}
+
+- 💸 [PostHog - How to set up React Native session replay](https://dub.link/twir-jan8)
+- 🐦 [Nitro Views will be released along with React Native 0.78](https://x.com/mrousavy/status/1876559810784833930)
+- 🐦 [Network debugging tools will land in Radon IDE](https://x.com/kzzzf/status/1875211071231025353)
+- 👀 [React Native PR - Static Hermes for React Native](https://github.com/facebook/react-native/pull/48531): The integration of the new Hermes implementation has started! The initial benchmarks shows a great 30%+ perf improvement, but it's not even using typed code or JIT yet, which should give even more significant numbers.
+- 📖 [You can highlight live re-renders in React Native DevTools](https://reactnative.dev/docs/react-native-devtools#react-components)
+- 📜 [Modern SQLite for React Native apps - DrizzleORM with expo-sqlite setup, type-safe queries, live queries, migrations, Drizzle Studio Expo Dev Tool Plugin.](https://expo.dev/blog/modern-sqlite-for-react-native-apps)
+- 📦 [React Native 0.77.0-rc.6](https://github.com/facebook/react-native/releases/tag/v0.77.0-rc.6) is the golden RC and a stable release is scheduled for next week.
+- 📦 [React Native Edge to Edge 1.2](https://github.com/zoontek/react-native-edge-to-edge/releases/tag/1.2.0) adds support for light theme variants on android.
+- 🎥 [React Universe On Air 45 - Evan Bacon on Universal React Native Apps, DOM & React Server Components](https://www.youtube.com/watch?v=rA7E3rGKSZw)
+
+---
+
+## 🔀 Other {#other}
+
+- 📜 [JavaScript Frameworks - Heading into 2025](https://dev.to/this-is-learning/javascript-frameworks-heading-into-2025-hkb)
+- 📜 [The future of htmx](https://htmx.org/essays/future/): (almost) no new features
+- 📜 [Relatively New Things You Should Know about HTML Heading Into 2025](https://frontendmasters.com/blog/bone-up-html-2025/)
+- 📜 [Testing Accessibility with Screen Readers](https://www.epicweb.dev/testing-accessibility-with-screen-readers)
+- 📜 [Balancing Text In CSS](https://ishadeed.com/article/balancing-text-css/)
+- 📜 [Using Forced Reflows, the Event Loop, and the Repaint Cycle to Slide Open a Box](https://macarthur.me/posts/box/)
+- 📜 [Node’s new built-in support for TypeScript](https://2ality.com/2025/01/nodejs-strip-type.html)
+- 📦 [Node 23.6](https://nodejs.org/en/blog/release/v23.6.0) with TS types stripping, and [Node 22.13 (LTS)](https://nodejs.org/en/blog/release/v22.13.0) with stable security model.
+- 📦 [pnpm 10.0 - Increased security, `onlyBuiltDependencies`](https://github.com/pnpm/pnpm/releases/tag/v10.0.0)
+- 📦 [Prisma 6.2 - omit, SQLite json/enum fields](https://github.com/prisma/prisma/releases/tag/6.2.0)
+
+---
+
+## 🤭 Fun {#fun}
+
+[![alt](/emails/issues/216/meme.jpg)](https://x.com/jordwalke/status/1875336115009573268)
+
+See ya! 👋

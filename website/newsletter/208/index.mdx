@@ -1,0 +1,166 @@
+---
+slug: /208
+title: "This Week In React #208: Compiler, Next.js, Docusaurus, TanStack, nuqs, Storybook, StyleX, React Navigation, Shopify, Reanimated, Nitro, BottomTabs, CocoaPods, Maestro, Rolldown, Container Queries..."
+authors: [slorber]
+date: 11-06-2024
+---
+
+Hi everyone!
+
+No major React announcements this week, probably due to the US presidential election.
+
+But we still had a bunch of exciting React and React Native and great community articles. I'm particularly excited about the React Compiler direction, and the release of React Navigation 7 with a new screen preloading API. Shopify's React Native endorsement is also great news for our ecosystem. Of course, I'm happy to unveil what I've been working on for months on Docusaurus too!
+
+Don't forget to answer the [State of React 2024 survey](https://survey.devographics.com/en-US/survey/state-of-react/2024?source=this_week_in_react). It's closing next week, and we still have less answers than last year so far. If you have an audience, please help spread the word, and add a [`?source=my_name` parameter](https://github.com/Devographics/surveys/issues/250#issuecomment-2423485429) so that survey bias can be tracked.
+
+<!-- truncate -->
+
+**💡 [Check this newsletter on Twitter](https://slo.im/thread) - visual format 🎨**
+
+---
+
+import Support from "../_support.mdx";
+
+<Support />
+
+---
+
+## 💸 Sponsor {#sponsor1}
+
+[![AG Grid: The best React Table in the world](/emails/issues/208/aggrid.jpg)](https://www.ag-grid.com/react-table?utm_source=thisweekinreact&utm_medium=newsletter&utm_campaign=2024-email-3)
+
+**[AG Grid: The best React Table in the world](https://www.ag-grid.com/react-table?utm_source=thisweekinreact&utm_medium=newsletter&utm_campaign=2024-email-3)**
+
+AG Grid is a fast, free and fully customisable React Table. Used by **90% of the Fortune 500**, AG Grid is **100% open source** with over **4 million npm downloads per month**:
+
+- 🆓 **Free:** Access 100s of features such as **Sorting**, **Filtering**, **Pagination**, **Cell Editing** and more, all for **free** - forever.
+- **🚀 Fast:** Display **millions of cells** out of the box, without compromising on performance.
+- **🎨 Customisable:** Add your own components to cells, rows & columns and use the **Theming API** to build & customise Themes.
+- 🏢 **Enterprise Features:** Purchase a licence for lifetime access to advanced features including **Pivoting**, **Grouping**, **Master / Detail** and **Integrated Charts** (powered by our React Charting Library, [AG Charts](https://www.ag-grid.com/charts?utm_source=thisweekinreact&utm_medium=newsletter&utm_campaign=2024-email-1)). Try it for free - no trial license required.
+
+Learn More: [ag-grid.com](https://www.ag-grid.com/react-table?utm_source=thisweekinreact&utm_medium=newsletter&utm_campaign=2024-email-1)
+
+---
+
+## ⚛️ React {#react}
+
+[![Sathya Gunasekaran - What's next for the React Compiler?](/emails/issues/208/compiler.jpg)](https://www.youtube.com/watch?v=qd5yk2gxbtg)
+
+🎥 [**Sathya Gunasekaran \- What's next for the React Compiler?**](https://www.youtube.com/watch?v=qd5yk2gxbtg)
+
+I finally caught up with this great talk that announced the [React compiler beta](https://react.dev/blog/2024/10/21/react-compiler-beta-release), but also unveiled a few other interesting. The compiler is not just about auto-memoization, but is a platform to build more optimizations on. 3 upcoming features presented:
+
+- Type config: You can help the compiler do a better job by providing extra type information.
+- JSX Inlining: The compiler can remove useless JSX runtime calls, replace them with pre-built JSX objects. `jsx('div')` becomes `{type: 'div'}`.
+- JSX Outlining: The compiler can extract subcomponents automatically, that can then be optimized independently. This is particularly useful for list elements when using `array.map` and inlined JSX, the compiler can create an `<Item>` component (see the talk screenshot, otherwise [this PR](https://github.com/facebook/react/pull/30956) explains it well).
+
+---
+
+- 💸 [Omlet – Scan your repos and measure how and where components are used](https://omlet.dev/?utm_campaign=partner_this-week-in-react_newsletter-quick-link-oct-2024)
+- 📜 [Managing Advanced Search Param Filtering in the Next.js App Router](https://aurorascharff.no/posts/managing-advanced-search-param-filtering-next-app-router/): Great interactive article showing that lifting state to the URL is not so easy when using RSC-based routing. To obtain a good UX, you have to use startTransition and useOptimistic. The nuqs library can help simplify.
+- 📜 [Two ways to the two Reacts](https://bobaekang.com/blog/two-ways-to-the-two-reacts/): Interesting thoughts on the different visions that Next.js and TanStack Start are adopting to integrate modern React features. TanStack Start is more client-centric and less disruptive.
+- 📜 [How to (not) reset a form after a Server Action in React](https://www.robinwieruch.de/react-server-action-reset-form/): React Actions automatically reset the uncontrolled form inputs, but it might not be what you want on action errors.
+- 📜 [Storybook Test sneak peek](https://storybook.js.org/blog/storybook-test-sneak-peek/): Testing components and stories in your browsers.
+- 📜 [Upgrading React with micro-frontend](https://alexocallaghan.com/upgrading-react-with-microfrontends): Using a Module Federation React bridge to allow using different React versions.
+- 📜 [React Router Brand Update](https://remix.run/blog/react-router-brand-update): Updating the logo/wordmark for the upcoming v7 release.
+- 📜 [How headless components became the future for building UI libraries](https://www.subframe.com/blog/how-headless-components-became-the-future-for-building-ui-libraries): In particular focusing on Radix.
+- 📜 [Integrating Large Language Models into Frontends](https://www.manuelsanchezdev.com/blog/integrating-llm-frontend)
+- 📜 [XState in React: Look Ma, no useState or useEffect\!](https://www.frontendundefined.com/posts/monthly/xstate-in-react/)
+- 📜 [How To Build And Deploy A Headless WordPress With Next.js?](https://scientyficworld.org/how-to-deploy-headless-wordpress-with-next-js/)
+- 📜 [On Crafting Painterly Shaders (React Three Fiber)](https://blog.maximeheckel.com/posts/on-crafting-painterly-shaders/)
+- 📜 [Preact \- Simplifying Islands Architecture](https://preactjs.com/blog/simplifying-islands-arch/)
+- 📦 [Docusaurus 3.6 \- Docusaurus Faster](https://docusaurus.io/blog/releases/3.6): The project I’ve been working on for a few months now, upgrading Docusaurus to Rust tooling (Rspack, SWC, LightningCSS) makes it 3x faster to build your static site\!
+- 📦 [next-validate-link \- Validate Your Markdown Links with Ease](https://next-validate-link.vercel.app/): It understands Next.js (App Router) conventions and reports broken links/anchors found in MD/MDX files.
+- 📦 [StyleX 0.9.3 \- Improves theming APIs and dynamic styles](https://stylexjs.com/blog/v0.9.3)
+- 📦 [nuqs 2.1 \- Type-safe search params \- Vitest 2 support, parseAsISODate, serializer urlKeys and clearAsDefaults](https://github.com/47ng/nuqs/releases/tag/v2.1.0)
+- 📦 [uikit 0.8 \- Performant 3D user interfaces using React-Three-Fiber and Yoga](https://github.com/pmndrs/uikit/releases/tag/v0.8.0)
+- 📦 [Quicky \- Deploy Next.js and Node.js to your own server](https://quicky.dev/)
+- 📦 [Shopify Hydrogen \- October 2024 release \- Storefront API](https://hydrogen.shopify.dev/update/october-2024-release-storefront-api-2024-10)
+- 📦 [Monicon \- Universal Icon Library](https://monicon-docs.vercel.app/)
+- 🎥 [Ethan Niser \- The secret to why React feels so fast](https://www.youtube.com/watch?v=vtotu8p9DWw): More about functional programming than React but still worth watching to understand the underlying techniques that allow Concurrent React to split work into smaller chunks and regularly yield to the main thread.
+- 🎥 [Delba \- Next.js 'use cache' in 100 seconds](https://www.youtube.com/watch?v=OWmRn74CQKY)
+- 🎙️ [This Month in React \- React Devtools, RN 0.76, Web Components...](https://podcasters.spotify.com/pod/show/reactiflux/episodes/TMiR-2024-10-React-DevTools-update--React-Native-0-76-new-architecture-dropped--Web-Components-arent-the-future-e2qi6bb)
+
+<SubscribeFormEmbed placement="middle" />
+
+---
+
+## 💸 Sponsor {#sponsor2}
+
+[![Introducing @clerk/nextjs v6 - Next.js 15 compatible](/emails/issues/208/clerk.jpg)](https://go.clerk.com/763LGC2)
+
+**[Introducing @clerk/nextjs v6 - Next.js 15 compatible](https://go.clerk.com/763LGC2)**
+
+The Next.js team has announced the stable release of Next.js 15, and Clerk is continuing the tradition of (nearly) same-day support for new major Next.js releases with the release of `@clerk/nextjs` v6. With v6, the `auth()` helper is now asynchronous, `<ClerkProvider>` defaults to static rendering instead of dynamic, and support for partial pre-rendering has been introduced.
+
+---
+
+## 📱 React-Native {#react-native}
+
+[![React Navigation 7.0](/emails/issues/208/reactnavigation7.jpg)](https://reactnavigation.org/blog/2024/11/06/react-navigation-7.0/)
+
+[**React Navigation 7.0**](https://reactnavigation.org/blog/2024/11/06/react-navigation-7.0/)
+
+React Navigation v7 is now out and should power the upcoming Expo Router v4 coming with Expo SDK 52, both in beta. My favorite highlights are:
+
+- Screen preloading: You can prepare screens ahead of time prior to navigating to them and improve the perceived performance. This one is really exciting and might be able to use Concurrent React features in the future.
+- Static API: Simplifies the navigator configuration, and makes it easier to work with TypeScript and deep linking.
+
+---
+
+[**We've just finished migrating the Shopify mobile app to React Native**](https://threadreaderapp.com/thread/1853619638141071573.html)
+
+Mustafa (Director of Engineering) announced on X that Shopify finished migrating their flagship app with 586 screens to React Native, with very positive results. I hope we'll get a detailed blog post soon.
+
+- 1.8 millions of lines of code removed
+- 86% of code sharing between iOS and Android
+- 59% faster screen loading
+- 44% faster app launch
+- 63% faster webviews
+- Reducing app crashes
+- Improving apps store ratings
+
+---
+
+- 💸 [Create a customizable PDF viewer in React using Puppeteer. Learn to generate styled PDFs easily with Node and any JavaScript framework.](https://apryse.com/blog/react/react-to-pdf?utm_source=thisweekinreact&utm_medium=newsletter&utm_campaign=1106)
+- 💬 [Replace CocoaPods with Tuist instead of Swift Package Manager](https://github.com/react-native-community/discussions-and-proposals/issues/587#issuecomment-2457647318): The creator of the iOS toolchain Tuist raises potential problems adopting SPM in React Native and suggests an alternative.
+- 📜 [Getting started with Nitro](https://www.renanmav.com/blog/getting-started-with-nitro)
+- 📜 [My plan to port Electron app CSS themes into React Native](https://www.devas.life/my-plan-to-port-electron-app-css-themes-into-react-native/)
+- 📜 [The architecture of a conference application built with Expo](https://expo.dev/blog/the-architecture-of-a-conference-application-built-with-expo)
+- 📦 [Reanimated 3.16 \- RN 0.76, new React-Compiler-safe get/set APIs, logging](https://github.com/software-mansion/react-native-reanimated/releases/tag/3.16.0)
+- 📦 [Nitro 0.14 \- RN 0.76, getHybridObjectConstructor](https://github.com/mrousavy/nitro/releases/tag/v0.14.0)
+- 📦 [Bottom Tabs 0.3 \- haptic feedback, Android back behavior props, preventDefault()](https://github.com/okwasniewski/react-native-bottom-tabs/releases)
+- 📦 [Vision Camera 4.6 \- RN 0.76, videoBitRate for Android, CameraX upgrade](https://github.com/mrousavy/react-native-vision-camera/releases/tag/v4.6.0)
+- 📦 [Skia 1.5.1 \- ProMotion 120 fps](https://github.com/Shopify/react-native-skia/releases/tag/v1.5.1)
+- 📦 [Screens 3.35 \- RN 0.76, add RSC ‘use client’, dynamic frameworks, blurEffect](https://github.com/software-mansion/react-native-screens/releases/tag/3.35.0)
+- 📦 [Safe Area Context 4.14 \- macOS support](https://github.com/th3rdwave/react-native-safe-area-context/releases/tag/v4.13.0)
+- 📦 [Maests \- Write and compose Maestro flows in TypeScript](https://github.com/shoma-mano/maests)
+- 🎥 [Expo \- How to run end to end tests on EAS Build](https://www.youtube.com/watch?v=-o-bfIRrg9U)
+- 🎥 [Simon Grimm \- Tailwind is going Mobile](https://www.youtube.com/watch?v=I_o17M30m5I)
+- 🎥 [Catalin Miron \- Wallpaper Reanimated Carousel](https://www.youtube.com/watch?v=qaGRabISXwI)
+- 🎥 [Beto \- Sending Over-the-Air (OTA) Updates with EAS Update](https://www.youtube.com/watch?v=DWpcD6bvTRA)
+- 🎙️ [Rocket Ship 53 \- Why Accessibility in React Native matters with Britta Evans-Fenton](https://share.transistor.fm/s/ccfd5491)
+
+---
+
+## 🔀 Other {#other}
+
+- 📜 [A Friendly Introduction to Container Queries](https://www.joshwcomeau.com/css/container-queries-introduction/)
+- 📜 [What's a Single-Page App?](https://jakelazaroff.com/words/whats-a-single-page-app/)
+- 📜 [Should masonry be part of CSS grid?](https://ishadeed.com/article/css-grid-masonry/)
+- 📜 [Your CSS reset should be layered](https://www.mayank.co/blog/css-reset-layer/)
+- 📜 [New to the web platform in October](https://web.dev/blog/web-platform-10-2024?hl=en)
+- 📦 [Lightning CSS 1.28](https://github.com/parcel-bundler/lightningcss/releases/tag/v1.28.0)
+- 📦 [Rolldown 0.14](https://github.com/rolldown/rolldown/releases/tag/v0.14.0): The upcoming Rollup-compatible Rust bundler for Vite is feature-complete, v1 beta is expected by the end of the year.
+
+---
+
+## 🤭 Fun {#fun}
+
+[![alt](/emails/issues/208/meme.jpg)](https://bsky.app/profile/brophdawg11.bsky.social/post/3l7ookbysyq2h)
+
+[![alt](/emails/issues/208/meme2.jpg)](https://x.com/sebastienlorber/status/1854177504891650303)
+
+[![alt](/emails/issues/208/meme3.jpg)](https://x.com/bunjavascript/status/1854005887817699831)
+
+See ya! 👋

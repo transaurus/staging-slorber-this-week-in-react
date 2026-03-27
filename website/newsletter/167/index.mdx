@@ -1,0 +1,146 @@
+---
+slug: /167
+title: "This Week In React #167: Aria Components, Hydration, Remix, Server Components, useSyncExternalStore, cache, perf, Glow, Unistyles, Expo, :has(), Tailwind, date-fns..."
+authors: [slorber, bndkt]
+date: 12-19-2023
+---
+
+Hi everyone!
+
+Once again this week, we have a good mix of articles and releases.
+
+Firefox 121 is out, making [CSS `:has()`](https://twitter.com/stefanjudis/status/1737366970566053927) officially cross-browser supported 🥲
+
+That's the last issue of the year. The newsletter should be back on January 3.
+
+Happy New Year and Merry Christmas everyone, and thank you for reading me throughout the year ❤️️
+
+<!-- truncate -->
+
+**💡 [Check this newsletter on Twitter](https://slo.im/thread) - visual format 🎨**
+
+---
+
+import Support from "../_support.mdx";
+
+<Support />
+
+---
+
+## 💸 Sponsor {#sponsor1}
+
+[![FrontendMasters – Complete React.js Learning Path to Senior React Developer](/emails/issues/158/frontendmasters.jpg)](https://frontendmasters.com/learn/react/?utm_source=newsletter&utm_medium=thisweekinreact&utm_campaign=reactpath)
+
+**[FrontendMasters – Complete React.js Learning Path to Senior React Developer](https://frontendmasters.com/learn/react/?utm_source=newsletter&utm_medium=thisweekinreact&utm_campaign=reactpath)**
+
+Learn React.js from the ground up to advanced topics like performance, testing, and code quality. Start by building a real-world app in the Complete Introduction to React. Continue with Intermediate React, integrating the most popular tools from the ecosystem. Then learn performance, TypeScript, and even Next.js, the fullstack React framework!
+
+---
+
+## ⚛️ React {#react}
+
+[![**React Aria Components 1.0**](/emails/issues/167/reactaria.jpg)](https://react-spectrum.adobe.com/releases/2023-12-20.html)
+
+[**React Aria Components 1.0**](https://react-spectrum.adobe.com/releases/2023-12-20.html)
+
+Devon just 🐦 [announced](https://twitter.com/devongovett/status/1737516074663362843) the stable release of React Aria Components 1.0. Over 40 components with built-in behavior, adaptive interactions, top-tier accessibility, and internationalization out of the box, ready for your styles.
+
+---
+
+[![**React Hydration Overlay**](/emails/issues/167/hydration.jpg)](https://www.builder.io/blog/announcing-react-hydration-overlay)
+
+[**React Hydration Overlay - Easily Squash Hydration Errors**](https://www.builder.io/blog/announcing-react-hydration-overlay)
+
+A brand-new project that permits to add a handy error overlay to help debugging hydration errors. For now, this can be added to Next.js sites thanks to a Webpack plugin, but this is a much-needed feature that we all hope to see land in React core.
+
+---
+
+- 💸 [Take the Developer Nation Survey - A virtual goody bag packed with free data, promo codes for event tickets, courses, tools & platforms is waiting at the end of the survey!](https://developereconomics.net/?member_id=thisweekinreact&utm_medium=nl_ad3)
+- 👀 [Remix PR - unstable_serverBundles - split your route tree](https://github.com/remix-run/remix/pull/8332)
+- 📖 [React Docs Update](https://github.com/reactwg/server-components/discussions/7): an overview of all the new official docs pages that were recently published on React.dev, including `use`, `cache`, `form` and many other experimental/canary APIs. There's even a "Coming Soon" section referencing docs for new [static resource preloading APIs](https://github.com/reactjs/react.dev/pull/6459).
+- 📖 [Updated Next.js testing docs - using App Router and TypeScript](https://nextjs.org/docs/app/building-your-application/testing)
+- 📜 [Concurrent React, External Stores, and Tearing](https://interbolt.org/blog/react-ui-tearing/): An advanced article explaining how React can end up displaying an inconsistent UI (tearing). `useSyncExternalStore` helps to render a consistent UI, but it can also de-optimize your React transitions. See also the [Tearable Dots interactive demo](https://tearabledots.com/).
+- 📜 [Explaining React's cache Function](https://unicorn-utterances.com/posts/explaining-reacts-cache-function): interactive article presenting the experimental React API, and how it differs from `useMemo`. It permits cross-component caching and can be used to preload data.
+- 📜 [How to Get Rid of “Window is Not Defined” and Hydration Mismatch Errors in Next.js](https://medium.com/@eric.burel/how-to-get-rid-of-window-is-not-defined-and-hydration-mismatch-errors-in-next-js-567cc51b4a17): Shares 5 tips to avoid React hydration problems.
+- 📜 [React Tricks: Fast, Fit and Fun](https://molefrog.com/notes/react-tricks): React perf lessons learned from building Wouter, a React router.
+- 📜 [Netlify’s Disingenuous Survey-based Attack on Next.js (and Eleventy, too)](https://www.zachleat.com/web/netlify-and-nextjs/): Eleventy creator's criticism of how Netlify presented their State of Web Dev survey results.
+- 📜 [Upcoming React and React-Native Conferences for 2024](https://thoughtbot.com/blog/upcoming-react-and-react-native-conferences-for-2024)
+- 📜 [What is Reactivity?](https://unicorn-utterances.com/posts/what-is-reactivity)
+- 📜 [What are React Server Actions?](https://unicorn-utterances.com/posts/what-are-react-server-actions)
+- 📜 [What is React Suspense and Async Rendering?](https://unicorn-utterances.com/posts/what-is-react-suspense-and-async-rendering)
+- 📜 [The Complete Guide To React Suspense](https://www.debugbear.com/blog/guide-to-react-suspense)
+- 📜 [Migrating from Jest to Vitest for your React Application](https://dev.to/opensauced/migrating-from-jest-to-vitest-for-your-react-application-1b75)
+- 📜 [Access the Search Params of a Request in Remix](https://sergiodxa.com/tutorials/access-the-search-params-of-a-request-in-remix)
+- 📦 [Remix 2.4.0 with client data](https://github.com/remix-run/remix/blob/main/CHANGELOG.md#v240): The first Remix release to land their Client Data RFC, which allows querying data APIs directly from the client (skipping the server).
+- 📦 [React-Glow - Mouse-tracing glow effect](https://github.com/codaworks/react-glow)
+- 📦 [next-export-i18n 3.0 - App Router support](https://github.com/martinkr/next-export-i18n)
+- 🎥 [Ben Holmes - React server components from scratch](https://www.youtube.com/watch?v=MaebEqhZR84): a great video showing how to implement a full RSC setup from scratch, including streaming, bundling, component routing, handling SSR, resolving client references...
+
+<SubscribeFormEmbed placement="middle" />
+
+---
+
+## 💸 Sponsor {#sponsor2}
+
+[![notJust Dev](/emails/issues/167/notjustdev.jpg)](https://www.youtube.com/@notjustdev/live?sub_confirmation=1)
+
+**[Are you a React Native developer or on your way to becoming one?](https://www.youtube.com/@notjustdev/live?sub_confirmation=1)**
+
+Good news! You’ve found your endless source of skills!
+
+🎄 [**Here**](https://www.youtube.com/watch?v=bIQII7gTXDE&list=PLY3ncAV1dSVA9ltOEMgzT8ZTZiccpOUkX) is #**DEVember -** a month-long Marathon of React Native Tutorials
+
+🚀 [**Here**](https://academy.notjust.dev/?utm_source=newsletter&utm_medium=Course&utm_campaign=thisweekinreact#section-1687709246499) is our **Full Stack Mobile Developer** course with more than 550 real success stories from graduates.
+
+💌 [**Here**](https://assets.notjust.dev/profile?utm_source=newsletter&utm_medium=OurNewsletter&utm_campaign=thisweekinreact) is our **Newsletter** with the TOP selection of news and life hacks about the world of React Native development.
+
+All our content is **Project-Based-Learning** - which means that you will be learning the **skills** and adding **projects** to your portfolio at the same time!
+
+_PS: Subscribe to our_ [**_YouTube channel_**](https://www.youtube.com/@notjustdev/live?sub_confirmation=1)_. Today we are building a_ **_ChatGPT Wrapper_** \_with Expo Router V3 & API Routes!
+
+---
+
+## 📱 React-Native {#react-native}
+
+[![Unistyles 2.0](/emails/issues/167/unistyles20.jpg)](https://www.youtube.com/@notjustdev/live?sub_confirmation=1)
+
+[**Welcome to Unistyles 2.0!**](https://www.reactnativecrossroads.com/posts/unistyles-2-preview)
+
+Unistyles is a cross-platform styling library. It is built as a superset of StyleSheet (if you use React Native, you’re probably familiar with StyleSheet.create …) similar to how TypeScript is a superset of JavaScript. First released just three months ago, it has since gained over 500 stars on GitHub and is now approaching its second major version with enhanced TypeScript types, no dependence on React Context anymore, and fresh C++ bindings to boost performance. A very interesting new feature is the addition of plugin support, which could enable some interesting new use cases.
+
+---
+
+- 💸 [AnimateReactNative - Premium and Custom React Native animations](https://www.animatereactnative.com/?utm_source=thisweekinreact.com)
+- 🐦 [Evan Bacon - "Expo Router v3 now has full support for popular web libraries like Radix, Tailwind, Shadcn UI, etc.](https://twitter.com/Baconbrix/status/1735011941431595149)
+- 📖 [Expo Guide on How to use the New Architecture](https://docs.expo.dev/guides/new-architecture/): All `expo-*` packages except expo-updates support the new architecture. Support for `expo-updates` is planned for Expo SDK 51.
+- 📜 [Expo 2023 - The year in review](https://expo.dev/changelog/2023/12-20-2023-year-in-review): An overview of everything Expo launched this year, including Expo Orbit, Expo Router, EAS improvements, 3 SDKs, Expo Modules API and much more.
+- 📜 [Xcode 15.1 image is now available on EAS Build](https://expo.dev/changelog/2023/12-19-eas-build-xcode-15.1-image): Xcode 15.1 primarily fixes bugs.
+- 📜 [Optimizing Performance in React-Native: Tips and Techniques](https://thoughtbot.com/blog/optimizing-performance-in-react-native-tips-and-techniques): Tutorial on how to apply memoization, use virtualized lists, optimize images, debounce, optimize bundle size and network requests
+- 📜 [Building AR face masks in React Native](https://blog.logrocket.com/building-ar-face-masks-react-native/): How to load and apply 3D face masks using DeepAR
+- 📜 [Introducing docs.infinite.red — A New Home for Infinite Red’s Documentation - Ignite, Reactotron, RN MLKit, Gluegun](https://shift.infinite.red/introducing-docs-infinite-red-a-new-home-for-infinite-reds-documentation-6f4b25f7a1a4)
+- 📜 [Universal Medusa: The why, when and how of universal e-commerce apps with Medusa.js, Expo and Next.js](https://bidah.hashnode.dev/universal-medusa-the-why-when-and-how-of-universal-e-commerce-apps-with-medusajs-expo-and-nextjs)
+- 📦 [React Native 0.73.1 is out](https://github.com/facebook/react-native/releases/tag/v0.73.1): Adds `enableNetworkInspector` to enable Network panel and CDP handlers in inspector proxy, bumps CLI to 12.3.0
+- 📦 [React Native Windows 0.73.1 is out](https://github.com/microsoft/react-native-windows/releases/tag/react-native-windows_v0.73.1): Brings React Native 0.73 to Windows
+- 📦 [Repack 3.7 - 0.73 compat](https://github.com/callstack/repack/releases/tag/%40callstack%2Frepack%403.7.0)
+- 🎥 [Ignite 9 video overview by Jamon Holmgren](https://youtu.be/QmkMsUYrTlk?si=p9rvLM-EMggZNcft)
+- 🎙️ [Rocket Ship #021 - The React Native IDE with Krzysztof Magiera](https://podcast.galaxies.dev/episodes/021-the-react-native-ide-with-krzysztof-magiera)
+- 🎙️ [React Native Radio 283 - From side-project to acquisition!](https://reactnativeradio.com/episodes/rnr-283-from-side-hustle-to-top-charts-with-simon-reggiani)
+
+---
+
+## 🔀 Other {#other}
+
+- 📖 [tsdocs.dev - browse type documentation for npm packages](https://tsdocs.dev/)
+- 📜 [New to the web platform in December](https://web.dev/blog/web-platform-12-2023)
+- 📜 [The await event horizon in JavaScript](https://frontside.com/blog/2023-12-11-await-event-horizon/)
+- 📦 [Node.js v21.5.0 - parse JSON efficiently, adding a `--trace-promises` flag](https://nodejs.org/en/blog/release/v21.5.0)
+- 📦 [Tailwind CSS v3.4: Dynamic viewport units, `:has()` support, balanced headlines, subgrid, and more](https://tailwindcss.com/blog/tailwindcss-v3-4)
+- 📦 [SvelteKit 2.0 - Vite 5, shallow routing, prepating for Svelte 5](https://svelte.dev/blog/sveltekit-2)
+- 📦 [date-fns 3.0 - TypeScript rewrite, ESM and other date features](https://blog.date-fns.org/v3-is-out/)
+- 📦 [TSDiagram - Create diagrams and plan your code with TypeScript](https://github.com/3rd/tsdiagram)
+
+## 🤭 Fun {#fun}
+
+[![alt](/emails/issues/167/meme.jpg)](https://twitter.com/sebastienlorber/status/1737380479383277636)
+
+See ya! 👋

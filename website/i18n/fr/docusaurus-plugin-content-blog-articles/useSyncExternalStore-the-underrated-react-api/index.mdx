@@ -1,0 +1,242 @@
+---
+slug: useSyncExternalStore-the-underrated-react-api
+title: useSyncExternalStore - L'API React sous-estimée
+authors: [slorber]
+date: 2022-09-06
+twitterThreadUrl: "https://slo.im/t/articles/useSyncExternalStore"
+image: ./social-card.png
+---
+
+# useSyncExternalStore - L'API React sous-estimée
+
+Tu as peut-être entendu parler de [`useSyncExternalStore()`](https://reactjs.org/docs/hooks-reference.html#usesyncexternalstore), un nouveau hook de React 18 permettant de s'abonner à des **sources de données externes**. Il est souvent utilisé en interne par les bibliothèques de gestion d'état - comme [Redux](https://github.com/reduxjs/react-redux/pull/1808) - pour mettre en place un **système de sélecteurs**.
+
+Mais pourquoi pas utiliser `useSyncExternalStore()` dans ton propre code?
+
+Dans cet article interactif, je souhaite te présenter un problème : **les hooks React qui retournent trop et déclenchant des re-renders inutiles**. On va aussi voir comment `useSyncExternalStore()` peut être une bonne solution.
+
+![social card](./social-card.png)
+
+<!-- truncate -->
+
+<SubscribeFormEmbed />
+
+import {
+  App,
+  AppFixed,
+  ScrollApp,
+} from "@site/articles/useSyncExternalStore-the-underrated-react-api/demos";
+
+## Les hooks qui retournent trop
+
+Nous pouvons illustrer le problème avec [`useLocation()`](https://reactrouter.com/en/main/hooks/use-location) de React-Router.
+
+Ce hook retourne un objet avec de nombreux attributs (`pathname`, `hash`, `search`...), mais tu n'as pas toujours besoin de toutes ces données. Le simple fait d'appeler ce hook va déclencher des re-renders à chaque fois qu'un de ces attributs est mis à jour.
+
+Prenons cette application:
+
+```tsx
+function CurrentPathname() {
+  const { pathname } = useLocation();
+  return <div>{pathname}</div>;
+}
+
+function CurrentHash() {
+  const { hash } = useLocation();
+  return <div>{hash}</div>;
+}
+
+function Links() {
+  return (
+    <div>
+      <Link to="#link1">#link1</Link>
+      <Link to="#link2">#link2</Link>
+      <Link to="#link3">#link3</Link>
+    </div>
+  );
+}
+
+function App() {
+  return (
+    <div>
+      <CurrentPathname />
+      <CurrentHash />
+      <Links />
+    </div>
+  );
+}
+```
+
+<App />
+
+Lors d'un clic sur un lien hash, le composant `CurrentPathname` sera rendu à nouveau, même s'il n'utilise pas l'attribut `hash` 😅.
+
+:::tip
+
+Chaque fois qu'un hook renvoie des données que tu n'affiches pas, pense aux re-renders de React. Si tu ne fais pas attention, un simple appel `useLocation()` au sommet de ton app React peut nuire aux performances de ton application.
+
+:::
+
+:::info
+
+Le but n'est pas de critiquer React-Router, mais plutôt d'illustrer le problème. `useLocation()` est simplement un bon candidat pour créer cet article interactif. Tes propres hooks React et d'autres librairies tierces pourraient également avoir ce problème.
+
+:::
+
+## `useSyncExternalStore` à la rescousse?
+
+La [documentation officielle](https://reactjs.org/docs/hooks-reference.html#usesyncexternalstore) dit:
+
+> useSyncExternalStore is a hook recommended for reading and subscribing from external data sources in a way that’s compatible with concurrent rendering features like selective hydration and time slicing.
+> This method returns the value of the store and accepts three arguments:
+>
+> - `subscribe`: function to register a callback that is called whenever the store changes.
+> - `getSnapshot`: function that returns the current value of the store.
+> - `getServerSnapshot`: function that returns the snapshot used during server rendering.
+
+```tsx
+function useSyncExternalStore<Snapshot>(
+  subscribe: (onStoreChange: () => void) => () => void,
+  getSnapshot: () => Snapshot,
+  getServerSnapshot?: () => Snapshot
+): Snapshot;
+```
+
+Bon, c'est pas très parlant. Cette [page de doc en beta](https://beta.reactjs.org/learn/you-might-not-need-an-effect#subscribing-to-an-external-store) donne un meilleur exemple:
+
+```tsx
+function subscribe(callback) {
+  window.addEventListener("online", callback);
+  window.addEventListener("offline", callback);
+  return () => {
+    window.removeEventListener("online", callback);
+    window.removeEventListener("offline", callback);
+  };
+}
+
+function useOnlineStatus() {
+  return useSyncExternalStore(
+    subscribe,
+    () => navigator.onLine,
+    () => true
+  );
+}
+
+function ChatIndicator() {
+  const isOnline = useOnlineStatus();
+  // ...
+}
+```
+
+Il s'avère que l'historique du navigateur peut également être considéré comme une source de données externe. Voyons comment utiliser `useSyncExternalStore` avec React-Router !
+
+## Implementation de `useHistorySelector()`
+
+React-Router expose tout ce dont on a besoin pour utiliser `useSyncExternalStore`:
+
+- accès à l'historique avec [`useHistory()`](https://v5.reactrouter.com/web/api/Hooks/usehistory)
+- abonnement aux mises à jour avec [`history.listen(callback)`](https://github.com/remix-run/history/blob/main/docs/api-reference.md#history.listen)
+- accès à l'état actuel avec [`history.location`](https://github.com/remix-run/history/blob/main/docs/api-reference.md#historylocation)
+
+:::caution
+
+Ce site web utilise React-Router v5 : la solution sera différente pour React-Router v6 ([voir](https://twitter.com/Zh0uzi/status/1567523679604539405)).
+
+:::
+
+L'implémentation de `useHistorySelector()` est relativement simple:
+
+```tsx
+function useHistorySelector(selector) {
+  const history = useHistory();
+  return useSyncExternalStore(history.listen, () =>
+    selector(history)
+  );
+}
+```
+
+Utilisons-le dans notre application:
+
+```tsx
+function CurrentPathname() {
+  const pathname = useHistorySelector(
+    (history) => history.location.pathname
+  );
+  return <div>{pathname}</div>;
+}
+
+function CurrentHash() {
+  const hash = useHistorySelector(
+    (history) => history.location.hash
+  );
+  return <div>{hash}</div>;
+}
+```
+
+<AppFixed />
+
+Maintenant, quand on clique sur un lien hash, le composant `CurrentPathname` ne sera **plus re-rendu** !
+
+## Un autre exemple: `scrollY`
+
+Il existe un grand nombre de sources de données externes auxquelles nous pouvons nous abonner, pour lesquelles l'implémentation d'un système de sélection pourrait te permettre d'optimiser les rendus de React.
+
+Par exemple, supposons que nous voulons utiliser la position `scrollY` d'une page. On peut implémenter ce hook React:
+
+```tsx
+// Une fonction constante permet d'éviter la re-souscription
+// En pratique, c'est souvent pas un problème
+function subscribe(onStoreChange) {
+  global.window?.addEventListener("scroll", onStoreChange);
+  return () =>
+    global.window?.removeEventListener(
+      "scroll",
+      onStoreChange
+    );
+}
+
+function useScrollY(selector = (id) => id) {
+  return useSyncExternalStore(
+    subscribe,
+    () => selector(global.window?.scrollY),
+    () => undefined
+  );
+}
+```
+
+Nous pouvons maintenant utiliser ce hook, avec un sélecteur optionnel:
+
+```tsx
+function ScrollY() {
+  const scrollY = useScrollY();
+  return <div>{scrollY}</div>;
+}
+
+function ScrollYFloored() {
+  const to = 100;
+  const scrollYFloored = useScrollY((y) =>
+    y ? Math.floor(y / to) * to : undefined
+  );
+  return <div>{scrollYFloored}</div>;
+}
+```
+
+<ScrollApp />
+
+Fais défiler la page et regarde comment les composants ci-dessus sont re-rendus ? L'un d'eux re-render beaucoup plus souvent!
+
+:::info
+
+Lorsque tu n'as pas besoin d'un niveau de précision de 1 pixel pour `scrollY`, retourner une valeur large comme `scrollY` peut aussi être considéré comme retourner trop de données. Il faut envisager de retourner une valeur plus étroite.
+
+Par exemple : un hook `useResponsiveBreakpoint()` qui ne renvoie qu'un ensemble limité de valeurs (`small`, `medium` ou `large`) sera plus optimisé qu'un hook `useViewportWidth()`.
+
+Si un composant React ne traite que les écrans `large` de manière différente, tu peux créer un hook `useIsLargeScreen()` encore plus restreint, retournant un booléen.
+
+:::
+
+## Conclusion
+
+J'espère que cet article t'as convaincu de jeter un coup œil à `useSyncExternalStore()`. Je trouve que ce hook est actuellement sous-utilisé dans l'écosystème React, et mérite un peu plus d'attention. Il existe de nombreuses sources de données externes auxquelles on peut s'abonner.
+
+Si tu n'as pas encore mis à jour ton app vers React 18, il y a un shim npm [use-sync-external-store](https://www.npmjs.com/package/use-sync-external-store) que tu peux déjà utiliser aujourd'hui dans tes applications. Il existe également un export `use-sync-external-store/with-selector` au cas où tu as besoin de retourner une valeur non primitive mémoisée.

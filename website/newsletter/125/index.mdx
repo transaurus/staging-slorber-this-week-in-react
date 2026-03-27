@@ -1,0 +1,206 @@
+---
+slug: /125
+title: "This Week In React #125: tRPC, T3, Remix, Zustand, Server Components, Drag & Drop, Forms, Gatsby, Remotion, React-Native, Skia..."
+authors: [slorber]
+date: 11-22-2022
+---
+
+Hi everyone!
+
+This week is **[Black Friday](/black-friday)**. I created a page with the best deals for a React dev. I already found some of them, but some are not announced yet, so come back on Friday ;)
+
+[![Black Friday 2022 Banner](/img/BLACK_FRIDAY_2022_v2.png)](/black-friday)
+
+I finally have the opportunity to put tRPC in the spotlight, with official releases and a great article comparing it to GraphQL!
+
+We also have some great Remix-related content in general.
+
+I like the direction React-Native takes!
+
+Don't forget to fill out the [State Of JS](https://survey.devographics.com/survey/state-of-js/2022) survey! Glad Docusaurus made it this year. Feel free to suggest the newsletter for the resources 😏 with some luck it will be featured next year 🙌
+
+<!-- truncate -->
+
+**💡 [Check this newsletter on Twitter](https://slo.im/thread) - visual format 🎨**
+
+---
+
+import Support from "../_support.mdx";
+
+<Support />
+
+---
+
+## 💸 Sponsor {#sponsor1}
+
+[![FlyCode Makes React Apps Editable without coding, Git based](/emails/issues/124/flycode.jpg)](https://bit.ly/3UPwAoJ)
+
+**[FlyCode Makes React Apps Editable without coding, Git based](https://bit.ly/3UPwAoJ)**
+
+[FlyCode](https://bit.ly/3wWSi00) (YC S22) makes React web apps editable in minutes so Product and UX teams can iterate and release products faster, so they don't have to wait on (or consume) developer time.
+
+FlyCode reads your regular React code and finds Texts, Images, Design tokens and Analytics event, then it let's non-coders collaborate and edit them and send back a pull request (they don't need access to GitHub!)
+
+- Saves development time
+- No code integration, it just reads your code!
+- GitHub based, a bot is scanning the code and creates pull requests
+- Use your own stack and components
+- Retain codebase ownership
+
+You can get started here: [flycode.com/developers](https://www.flycode.com/developers)
+
+---
+
+## ⚛️ React {#react}
+
+[![tRPC 10](/emails/issues/125/trpc10.jpg)](https://trpc.io/blog/announcing-trpc-10)
+
+**[tRPC 10](https://trpc.io/blog/announcing-trpc-10)**
+
+Nice refactor of tRPC which greatly improves DX and IDE support. This library that facilitates typesafe backend calls is gaining more and more followers. It can be easily used in the React ecosystem thanks to the integration packages (Next.js, React-Query...). I love the tagline "Move Fast and Break Nothing" 😄
+
+To understand the idea, I recommend reading [Why we ditched GraphQL for tRPC](https://echobind.com/post/why-we-ditched-graphql-for-trpc). Alex explains why they replaced GraphQL with tRPC in their [Bison](https://github.com/echobind/bisonapp) starter, in a React context. tRPC requires much less boilerplate, TypeScript codegen and JS bundle, while improving DX, IDE support and simplifying cache management. The way to handle over-fetching is different: you should not hesitate to create a new procedure. tRPC is ideal for a full-stack Node.js app in TypeScript with co-located backend/frontend code (Next.js for example). GraphQL remains a good solution to create a public API exposed to partners who do not necessarily use JavaScript and yet want to benefit from codegen (OpenAPI is also a good solution for this).
+
+I take this opportunity to also mention [T3-App](https://create.t3.gg/), an end-to-end typesafe stack for Next.js based on tRPC, Prisma, Tailwind... It greatly helped tRPC grow in popularity this year, and now has an official docs site. Its [tRPC tdocs](https://create.t3.gg/en/usage/trpc) explain well the advantages compared to a classic Next.js Route API. See also [create-t3-turbo](https://github.com/t3-oss/create-t3-turbo): a Turborepo monorepo with Next.js + Expo, both using tRPC.
+
+---
+
+[![Working with Zustand](/emails/issues/125/zustand.jpg)](https://tkdodo.eu/blog/working-with-zustand)
+
+**[Working with Zustand](https://tkdodo.eu/blog/working-with-zustand)**
+
+Dominik reminds us where we come from in terms of state management. He explains why he likes Zustand, a minimalist and magic-free solution in the React philosophy. He gives some tips on how to best use it, like exposing custom hooks, using atomic selectors, or grouping actions in an immutable object. Good pragmatic tips I can definitively agree with!
+
+---
+
+[![Remix dual reponses](/emails/issues/125/remix-dual.png)](https://blog.jim-nielsen.com/2022/remix-alternate-timeline-of-web-dev/)
+
+**[Remix and the Alternate Timeline of Web Development](https://blog.jim-nielsen.com/2022/remix-alternate-timeline-of-web-dev/)**
+
+Jim explains that Remix has taken a few steps back to rethink our entire frontend app model. With Remix, progressive enhancement support does not require writing our app in 2 different ways (client + server) like with other frameworks, as Remix routes can return both JSON and HTML from the same code.
+
+---
+
+[![Taming the dragon: Accessible drag and drop](/emails/issues/125/dnd.jpg)](https://react-spectrum.adobe.com/blog/drag-and-drop.html)
+
+**[Taming the dragon: Accessible drag and drop](https://react-spectrum.adobe.com/blog/drag-and-drop.html)**
+
+Devon (Adobe) just announced the release of accessible drag & drop hooks for React-Aria and React-Spectrum. He explains how the keyboard and screen reader support works to allow users to select an element, and find potential targets with Tab, or the mobile experience. All this with many demos. It feels once again that there is a lot of work behind this React-Aria API, which is the first to try to solve this complex problem.
+
+---
+
+- 📖 [Beta docs update - createRef, PureComponents, useDebugValue](https://twitter.com/dan_abramov/status/1593007695703207936): Dan Abramov is close to the end of his documentation work, and the new doc will probably be officially released soon.
+- 📜 [Fetching and caching Supabase data in Next.js 13 Server Components](https://supabase.com/blog/fetching-and-caching-supabase-data-in-next-js-server-components): shows how easily React Server Components can be used to make requests on a cloud/serverless DB, and also gives some good Next.js caching tips to reduce response times.
+- 📜 [Conditionally Render Fields Using React Hook Form](https://echobind.com/post/conditionally-render-fields-using-react-hook-form): how to use the watch and register/unregister functions to manage a conditional field
+- 📜 [Offline dev and testing for Remix](https://github.com/pcattori/blog/blob/main/posts/offline-dev-and-testing-for-remix/index.md): Pedro explains why he likes Mock Service Worker in dev/test and explains the way to integrate it with Remix.
+- 📜 [Migrate from Webpack to Remix](https://remix.run/blog/migrate-from-webpack): the team is working on a Webpack compiler for Remix to facilitate incremental migration.
+- 📜 [Remix site with Valhalla](https://www.gatsbyjs.com/blog/what-is-gatsbys-valhalla-content-hub/): Paul introduce Valhalla, the new Gatsby Cloud data layer, and then explains how it can be used with Remix. Valhalla exposes a public GraphQL API. The demo calls this API from a Remix loader via Urql. It looks like it's still the early days of Valhalla, but really curious to see how all this unfold.
+- 📜 [Gatsby - Using the Slice API for Internationalization (i18n)](https://www.gatsbyjs.com/blog/using-the-slice-api-for-internationalization-i18n/)
+- 📜 [useReducer or XState?](https://swizec.com/blog/reader-question-usereducer-or-xstate/)
+- 🎥 [React Brussels Playlist](https://www.youtube.com/watch?v=uZnXwuhYZBc&list=PL53Z0yyYnpWjIoe0wNozVbuRXOnVcETPw): my Belgian friends have published the videos of the conference. I liked the [keynote](https://www.youtube.com/watch?v=uZnXwuhYZBc&list=PL53Z0yyYnpWjIoe0wNozVbuRXOnVcETPw&index=2) where Tejas explains how React meta-frameworks use the latest React 18 features like Suspense for data fetching or transitions.
+- 🎥 [RIP React Router?](https://www.youtube.com/watch?v=LVzG3nncE4M): highlights the great typesafe and DX properties of the brand new [TanStack Router](https://tanstack.com/router/v1)
+- 🎥 [Using Fonts in Next.js](https://www.youtube.com/watch?v=L8_98i_bMMA)
+- 📦 [Remotion 3.3](https://twitter.com/remotion_dev/status/1593156143249260544): no more need to install ffmpeg, various new packages (font, paths, noise, motion blur), and nice DX improvements.
+- 📦 [Openblocks - The Open Source Retool Alternative](https://github.com/openblocks-dev/openblocks)
+- 📦 [Jotai 1.10](https://twitter.com/jotaijs/status/1593647952672608257)
+
+<SubscribeFormEmbed />
+
+---
+
+## 💸 Sponsor {#sponsor2}
+
+[![The React Native Show - a podcast series](/emails/issues/125/the-rn-show.jpg)](https://www.callstack.com/podcast-react-native-show?utm_campaign=Podcast&utm_source=email&utm_content=This_Week_in_React)
+
+**[The React Native Show - a podcast series](https://www.callstack.com/podcast-react-native-show?utm_campaign=Podcast&utm_source=email&utm_content=This_Week_in_React)**
+
+Since you are here, you surely like to stay up to date with the greatest React news ! 🔥 If you want to delve into React and React Native, play the latest episodes of **The React Native Show**:
+
+- [Module Federation](https://www.callstack.com/podcasts/module-federation?utm_campaign=Podcast&utm_source=email&utm_content=This_Week_in_React) in React Native, with Zack Jackson, maintainer of Webpack
+- [React Native New Architecture](https://www.callstack.com/podcasts/react-native-new-architecture-ep-17?utm_campaign=Podcast&utm_source=email&utm_content=This_Week_in_React), with Nicola Corti from Meta
+- [React Native at Microsoft](https://www.callstack.com/podcasts/react-native-at-microsoft-ep-16?utm_campaign=Podcast&utm_source=email&utm_content=This_Week_in_React), with Lorenzo Sciandra from Microsoft
+
+**[The React Native Show](https://www.callstack.com/podcast-react-native-show?utm_campaign=Podcast&utm_source=email&utm_content=This_Week_in_React)** is a podcast series hosted by Callstack. Each episode explores a different topic in detail. The host dives deep into every discussion with his guests - world experts in the field.
+
+---
+
+## 📱 React-Native {#react-native}
+
+**[\[Reply\] 2022: How can we improve React Native?](https://github.com/react-native-community/discussions-and-proposals/discussions/546)**
+
+The React-Native team has officially responded to the discussion on [how to improve React-Native](https://github.com/react-native-community/discussions-and-proposals/discussions/528). We learn many details about the roadmap. The investment on React-Native seems to be accelerating. The points I'm particularly interested in are:
+
+- Metro should catch up: swc, pnpm, symlinks, ESM support "exports"...
+- Yoga and CSS support will be improved: flex gap, boxShadow...
+- Cross-platform, unified APIs, React-Native-Web now under Meta ownership
+- DX improvements: debugging, stacktraces, sourcemaps, LogBox...
+
+---
+
+- 🎨 [React-Native-Skia + VisionCamera Frame Processor demo](https://twitter.com/mrousavy/status/1592943223751999488): impressive demo that allows to use React-Native-Skia on VisionCamera frames. Allows for example to apply filters/shaders in real time without writing native code.
+- 📦 [React-Native-Skia 0.1.159](https://twitter.com/wcandillon/status/1593591452491194370): the library goes into beta, now rendering on the UI thread, greatly improving performances
+- 📦 [burnt – native toasts & alerts for react native](https://twitter.com/FernandoTheRojo/status/1593632122069291008): Fernando Rojo created his 1st native React-Native library based on Swift in less than a day, without any prior knowledge of Swift. This shows how easy [Expo Modules API](https://twitter.com/tsapeta/status/1593705970781356035) makes things!
+- 📦 [React-Native-Testing-Library v11.5](https://twitter.com/mdj_dev/status/1593250914965794817)
+- 📜 [Automatic args in React Native Storybook](https://dev.to/dannyhw/automatic-args-in-react-native-storybook-140a)
+- 🎥 [Path Gradients with Skia](https://www.youtube.com/watch?v=7SCzL-XnfUU)
+- 🎥 [Rolling Menu in React-Native Re-Animated 2](https://www.youtube.com/watch?v=sOKMytwWeKE)
+- 📖 [Expo Docs update - Universal apps tutorial](https://twitter.com/amanhimself/status/1593669242892988417)
+- 📊 [New Reanimated Shared Value implementation](https://twitter.com/kzzzf/status/1594095497123434497): improved performance through JSI call reduction
+- 📊 [React-Native Yoga Layout VS iOS alternatives](https://twitter.com/Baconbrix/status/1593561645858623488): the React-Native layout engine is quite fast!
+- 🐦 [Hirbod - "the Layout Animation rewrite has been merged"](https://twitter.com/nightstomp/status/1593207173496320000)
+- 🐦 [Jamon Holmgren - "at this point there's very little reason _not_ to use Expo"](https://twitter.com/jamonholmgren/status/1593319397573394432)
+
+---
+
+## 🧑‍💻 Jobs {#jobs}
+
+🧑‍💼 [**Product Engineer at Causal, Remote/London/NY, $150-250k**](https://jobs.lever.co/causal-app/4acaafbe-ef3d-45a6-bbe6-687c022d727c?lever-origin=applied&lever-source%5B%5D=thisweekinreact.com)
+
+Causal is a Series A Startup (backed by Coatue/Accel) building an all-in-one tool for working with numbers and visualizing data. We're looking for strong React engineers who can solve difficult UX/performance challenges.
+
+🧑‍💼 [**Callstack - Senior React Native Developer - Fully Remote, PLN 21-32k net on B2B, monthly**](https://www.callstack.com/senior-react-native-developer)
+
+Do you want to work on the world's most used apps? Would you like to co-create the React Native technology? Join the Callstack team of React & React Native leaders. Check our website for more details. We are looking forward to seeing your application - show us what you've got!
+
+🧑‍💼 [**G2i - 100% Remote React Native Jobs**](https://twitter.com/gabe_g2i/status/1563204813881425926?s=20&t=ArRLC77BpRwXXCdx8fnUqw)
+
+We have several roles open for developers focused on React Native! Pay is ~160k plus 10% bonus. You must have production experience with RN and be based in the US. DM [@gabe_g2i](https://twitter.com/gabe_g2i) to learn more and don't forget to mention This Week in React.
+
+💡 [How to publish an offer?](https://thisweekinreact.com/sponsor)
+
+---
+
+## 🔀 Other {#other}
+
+- [An Interactive Guide to Flexbox](https://www.joshwcomeau.com/css/interactive-guide-to-flexbox/): great article by Josh Comeau, not to be read if you are hungry 😄
+- [Browsers, JSON, and FormData](https://blog.jim-nielsen.com/2022/browsers-json-formdata/): interesting ideas about progressive enhancement, which encourages creating APIS based on FormData rather than JSON. This speaks to me, and by the way my newsletter signup forms also work without JavaScript 🤗 The article is not React related but is written by Jim who works on Remix.
+- [Cloudflare Developer Week 2022 announcements](https://blog.cloudflare.com/icymi-developer-week-2022-announcements/): a lot of announcements. I especially like the possibility to make Puppeteer screenshots from a Worker edge: this can be useful for Remotion, or generate social previews in an efficient way, and compete with the new [Vercel's og image service](https://vercel.com/docs/concepts/functions/edge-functions/og-image-generation).
+- [Top-level promise handling in Node.js ES modules](https://www.stefanjudis.com/today-i-learned/top-level-promise-handling-in-node-js/): I discover this behavior of Node.js not hyper intuitive and the exit 13 code.
+- [State Of JavaScript 2022 Survey](https://survey.devographics.com/survey/state-of-js/2022): glad to see [Docusaurus making an entry](https://twitter.com/sebastienlorber/status/1594748405280116738) this year! I hope my newsletter will be in the resources next year, feel free to send it as a suggestion 😏
+- [The 2022 State of JavaScript Survey Is Now Open. Here's What's New](https://dev.to/sachagreif/take-the-2022-state-of-javascript-survey-5ap6)
+- [Prettier 2.8: improve --cache CLI option and TypeScript 4.9 satisfies operator!](https://prettier.io/blog/2022/11/23/2.8.0.html): good timing to adopt TS 4.9 (already supported in Babel)
+- [Web technology optimism hour](https://macwright.com/2022/11/18/optimism-updates.html)
+- [Movies app in 7 frameworks - which is fastest and why?](https://www.builder.io/blog/movies-app-in-7-frameworks-which-is-fastest-and-why)
+- [HTML Elements Visualized](https://julesblom.com/writing/html-elements)
+- [Complete rewrite of ESLint](https://twitter.com/slicknet/status/1594870586605391872)
+- [MPA View Transitions - First demo - Chrome canary](https://twitter.com/addyosmani/status/1592907811968626688)
+- [Mock Service Worker - Fetch API Support Beta](https://github.com/mswjs/msw/discussions/1464)
+- [What’s so great about functional programming anyway?](https://jrsinclair.com/articles/2022/whats-so-great-about-functional-programming-anyway/)
+- [Angular 15](https://blog.angular.io/angular-v15-is-now-available-df7be7f2f4c8)
+- [Nuxt 3.0](https://nuxt.com/v3)
+- [Playwright 1.28](https://github.com/microsoft/playwright/releases/tag/v1.28.0)
+- [Firefox 107](https://developer.mozilla.org/en-US/docs/Mozilla/Firefox/Releases/107)
+- [Safari Technology Preview 158](https://webkit.org/blog/13584/release-notes-for-safari-technology-preview-158/)
+- [Assembly interpreter inside of TypeScript's type system](https://judehunter.dev/blog/assembly-interpreter-in-typescripts-type-system)
+- [On Migrating from Cypress to Playwright](https://mtlynch.io/notes/cypress-vs-playwright/)
+- [Node.js 18 available in AWS Lambda](https://aws.amazon.com/fr/blogs/compute/node-js-18-x-runtime-now-available-in-aws-lambda/)
+- [Build a More Secure Web using npm with Deno](https://deno.com/blog/a-more-secure-npm)
+- [From Bootstrapped to Venture-Backed: Nx Raises $8.6M](https://blog.nrwl.io/from-bootstrapped-to-venture-backed-nx-raises-8-6m-2ae2228eff76)
+- [Why you should never use px to set font-size in CSS](https://joshcollinsworth.com/blog/never-use-px-for-font-size)
+- [The Windows Subsystem for Linux is now generally available](https://devblogs.microsoft.com/commandline/the-windows-subsystem-for-linux-in-the-microsoft-store-is-now-generally-available-on-windows-10-and-11/)
+
+---
+
+## 🤭 Fun {#fun}
+
+[![Life is short - Make sure to spend it arguing about JS frameworks with strangers on the internet](/emails/issues/125/meme.png)](https://twitter.com/fireship_dev/status/1587587531154989056)

@@ -1,0 +1,132 @@
+slorber:
+  name: Sébastien Lorber
+  title: Newsletter creator - Docusaurus maintainer
+  url: https://sebastienlorber.com
+  image_url: https://github.com/slorber.png
+  page: true
+  socials:
+    x: sebastienlorber
+    bluesky: sebastienlorber.com
+    github: slorber
+    linkedin: sebastienlorber
+
+armandpetit:
+  name: Armand Petit
+  title: React Native Developer - LinkedIn creator
+  image_url: https://github.com/VirtuozTM.png
+  page: true
+  socials:
+    x: armandpasgrand
+    github: VirtuozTM
+    linkedin: armandpetit
+
+bndkt:
+  name: Benedikt Müller
+  title: Indie Hacker
+  url: https://bndkt.com
+  image_url: https://github.com/bndkt.png
+  page: true
+  socials:
+    x: bndkt
+    bluesky: bndkt.com
+    github: bndkt
+    linkedin: benediktmueller
+
+matthieugicquel:
+  name: Matthieu Gicquel
+  title: Staff Engineer - Theodo
+  url: https://x.com/matthieu_g
+  image_url: https://github.com/matthieugicquel.png
+  page: true
+  socials:
+    x: matthieu_g
+    bluesky: matthieugc.bsky.social
+    github: matthieugicquel
+    linkedin: matthieugc
+
+cyrilbo:
+  name: Cyril Bonaccini
+  title: Staff Engineer - Theodo
+  url: https://x.com/BonacciniCyril
+  image_url: https://github.com/cyrilbo.png
+  page: true
+  socials:
+    x: BonacciniCyril
+    bluesky: cyrilbo.bsky.social
+    github: cyrilbo
+    linkedin: cyril-b-1ba240151
+
+kacperkapusciak:
+  name: Kacper Kapuściak
+  title: Software Engineer - Software Mansion
+  url: https://x.com/kacperkapusciak
+  image_url: https://github.com/kacperkapusciak.png
+  page: true
+  socials:
+    x: kacperkapusciak
+    bluesky: kacperkapusciak.bsky.social
+    github: kacperkapusciak
+    linkedin: kacperkapusciak
+
+tomekzaw:
+  name: Tomasz Zawadzki
+  title: Software Engineer - Software Mansion
+  url: https://x.com/tomekzaw_
+  image_url: https://github.com/tomekzaw.png
+  page: true
+  socials:
+    x: tomekzaw_
+    bluesky: tomekzaw.bsky.social
+    github: tomekzaw
+    linkedin: tomekzaw
+
+tboba:
+  name: Tymoteusz Boba
+  title: Software Engineer - Software Mansion
+  url: https://x.com/tboba_
+  image_url: https://github.com/tboba.png
+  page: true
+  socials:
+    x: tboba_
+    bluesky: tboba.pl
+    github: tboba
+    linkedin: tymoteusz-boba-70503b157
+
+piaskowyk:
+  name: Krzysztof Piaskowy
+  title: Software Engineer - Software Mansion
+  url: https://x.com/piaskowyk
+  image_url: https://github.com/piaskowyk.png
+  page: true
+  socials:
+    x: piaskowyk
+    bluesky: piaskowyk.bsky.social
+    github: piaskowyk
+    linkedin: krzysztof-piaskowy
+
+filipkaminski:
+  name: Filip Kamiński
+  title: Software Engineer - Software Mansion
+  url: https://x.com/FilipKaminski
+  image_url: https://pbs.twimg.com/profile_images/1933203713339904000/cvSRnMD__400x400.jpg
+  page: true
+  socials:
+    x: FilipKaminski
+    bluesky: filipkaminski.com
+    github: filip131311
+    linkedin: filip-kamiński-6987a0210
+
+janjaworski:
+  name: Jan Jaworski
+  title: React Native Developer
+  url: https://x.com/jaworek3211
+  image_url: https://github.com/jaworek.png
+  page: true
+  socials:
+    x: jaworek3211
+    bluesky: jwr.ski
+    github: jaworek
+    linkedin: jan-jaworski
+
+# Note: don't forget to add newly added authors to the localized authors files
+# i18n/fr/docusaurus-plugin-content-blog-articles/authors.yml file

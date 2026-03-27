@@ -1,0 +1,176 @@
+---
+slug: /118
+title: "React Hebdo #118: Gatsby, Beta Docs, Reactivity, Lazy Maps, Ezno, Whyframe, Reassure, Node.js, TypeScript, WASM..."
+authors: [slorber]
+date: 10-03-2022
+---
+
+Salut à tous !
+
+Bonne nouvelle: l'arrivée prochaine de la nouvelle doc React en beta! Un lien sur l'ancienne doc invite à consulter le nouveau site. Gatsby v5 sort alpha.
+
+La tendance du moment: apporter la réactivité à React.
+
+Quelques contenus React-Native sympa également. On surveille de près l'arrivée de Expo Router, WishList et du support web dans Reassure.
+
+TypeScript fête ses 10 ans. Un mode `--watch` arrive dans Node.js. Du contenu intéressant sur WebAssembly.
+
+La conférence [React Brussels](https://www.react.brussels/) a lieu dans à peine 2 semaine, le 14 Octobre 2022. Il ne reste que [quelques places disponibles](https://ti.to/bejs/react-brussels-2022/with/in-person-ticket-copy,group-3-tickets-20,group-4-tickets-25,group-5-tickets-30,student-junior-pass?source=undefined), mais il est aussi possible d'y [assister en ligne](https://ti.to/bejs/react-brussels-2022/discount/online_lastweek).
+
+<!-- truncate -->
+
+**💡 [Consulter cette newsletter sur Twitter](https://slo.im/thread) - format visuel 🎨**
+
+---
+
+import Support from "../_support.mdx";
+
+<Support />
+
+---
+
+## 💸 Sponsor {#sponsor1}
+
+[![Storyblok](/emails/issues/116/storyblok.png)](https://www.storyblok.com/?utm_source=thisweekinreact&utm_medium=display&utm_campaign=AWA_SPON_TWIREACT_TRA&utm_content=thisweekinreact_fr)
+
+Avez-vous déjà essayé [Storyblok](https://www.storyblok.com/?utm_source=thisweekinreact&utm_medium=display&utm_campaign=AWA_SPON_TWIREACT_TRA&utm_content=thisweekinreact_fr) ? C'est le CMS headless avec un éditeur visuel conçu pour les développeurs et les spécialistes du marketing !
+
+Utilisez Storyblok React SDK pour construire rapidement des composants réutilisables et récupérer le contenu pour créer vos applications, sites Web ou eCommerces React, Next.js, Remix, ou même React-Native.
+
+Consultez le [Hub Technologique](https://www.storyblok.com/technologies?utm_source=thisweekinreact&utm_medium=display&utm_campaign=AWA_SPON_TWIREACT_TRA&utm_content=thisweekinreact_fr) et découvrez-le vous-même !
+
+---
+
+## ⚛️ React {#react}
+
+**[Gatsby v5 Alpha](https://www.gatsbyjs.com/blog/gatsby-v5-alpha-is-here-and-its-pretty-exciting/)**
+
+La v5 de Gatsby est sortie en alpha avec comme principales nouveautés:
+
+- le support de [partial hydration](https://www.gatsbyjs.com/blog/a-look-at-partial-hydration-in-gatsby-5/) basé sur les React Server Components et une directive `"client export"` déclarée en haut des composants client
+- la Gatsby Slices API, qui permet d'améliorer significativement les temps de build lorsqu'un composant partagé (layout/navbar/footer) doit être re-rendu
+
+**[Making React fast by default and truly reactive](https://legendapp.com/open-source/legend-state/)**
+
+Article interactif qui illustre les problèmes de re-render dans React qui n'est pas optimisé par défaut. Montre comment la librairie Legend-State, basée sur des observables, permet d'apporter la réactivité à React (un peu comme SolidJS). Le code est alors optimisé par défaut et permet d'éviter des re-renders inutiles.
+
+**[Ezno - Experimental compiler](https://kaleidawave.github.io/posts/introducing-ezno/)**
+
+Un nouveau type-checking compiler expérimental pour JavaScript, compatible avec les annotations TypeScript et le JSX de React. Se base sur le "dependent typing" pour faire une analyse statique plus poussée. Le but semble être de pouvoir compiler une app qui ressemble à React dans une forme réactive, et se passer de VDOM. Lecture assez technique.
+
+**[(Lazy) Components Maps](https://julesblom.com/writing/lazy-component-maps)**
+
+Présente une technique utile à connaitre pour favoriser le code-splitting lorsque vous faites du rendu conditionnel. A utiliser en particulier sur de larges enums/union-types, comme les composants type `<Icon name="my-icon-name"/>`.
+
+**[Whyframe](https://whyframe.dev/)**
+
+Une technologie qui permet d'isoler le rendu de composants frontend dans une iframe, qui supporte maintenant [Webpack, Next.js et Docusaurus](https://twitter.com/bluwyoo/status/1576947013450539008). Cela semble pratique pour les sites de documentation de composants, pour que le CSS global du site n'affecte pas le rendu du composant présenté.
+
+- 📖 Beta React docs: [useEffect](https://twitter.com/dan_abramov/status/1575320847279071232) + [useId](https://twitter.com/dan_abramov/status/1577283961763467265) + ["All the commonly used APIs documented"](https://twitter.com/dan_abramov/status/1575367224541560833)
+- 📜 [How to use Serverless Functions with SSR](https://paulie.dev/posts/2022/09/how-to-use-serverless-fucntions-with-ssr/): explique comment partager correctement une fonction entre la partie server/client dans Gatsby
+- 📜 [Fastest Frontend Tooling in 2022](https://cpojer.net/posts/fastest-frontend-tooling-in-2022): Christoph Nakazawa justifie les choix derrière son starter minimaliste [vite-ts-react-tailwind-template](https://github.com/cpojer/vite-ts-react-tailwind-template)
+- 📜 [Improving the accessibility of our Next.js site](https://vercel.com/blog/improving-the-accessibility-of-our-nextjs-site)
+- 📜 [The Orton Effect - dreamy photo effect in CSS and React](https://mikebifulco.com/posts/orton-effect-css-react)
+- 📜 [Mark Erikson - Guide to React Rendering Behavior - updated for React 18](https://twitter.com/acemarke/status/1577301648850014210)
+- 🚧 [no-nested-components ESLint rule](https://github.com/facebook/react/pull/25360): une nouvelle règle pourrait arriver prochainement et éviter de déclarer des composants à la volée (mauvaise pratique).
+- 🧵 [Dan Abramov - "skipping re-renders (eg with memo) is a performance optimization only"](https://twitter.com/dan_abramov/status/1575553047408902147)
+- 🧵 [Andrew Clark - "We've looked very seriously at a WASM rewrite of React"](https://twitter.com/acdlite/status/1576302675766804480)
+- [React Spectrum - React Aria - October 4 releases](https://twitter.com/devongovett/status/1577370727849680896)
+- 📦 [Redwood v3](https://community.redwoodjs.com/t/redwood-3-0-0-is-now-available/3989) + [What's new in Redwood v3?](https://www.youtube.com/watch?v=o9LFWOxMlTs)
+- 📦 [Supabase Pre-built React Auth UI](https://twitter.com/supabase/status/1577215238792916992)
+
+<SubscribeFormEmbed />
+
+---
+
+## 💸 Sponsor {#sponsor2}
+
+[**Progressez dans votre anglais professionnel avec Cambly**](https://cambly.info/reacthebdo1)
+
+Cambly, c'est la plateforme pour progresser à l'oral en anglais avec des tuteurs anglophones, quand et où vous voulez. Maîtriser le vocabulaire technique, interagir avec vos collègues ou clients à l'international ou travailler depuis n'importe où dans le monde, nos tuteurs s'adaptent à vos besoins, votre niveau et vos objectifs.
+
+👉 [Faites un cours d'essai gratuit de 15 minutes et profitez de 50% de réduction sur votre abonnement](https://cambly.info/reacthebdo1)
+
+---
+
+## 📱 React-Native {#react-native}
+
+**[Reassure - Continuous App Performance Monitoring Made Simple](https://www.callstack.com/blog/app-performance-monitoring)**
+
+Pour Callstack, 80% des problèmes de performance sur React-Native viennent du JS, et en particulier d'un mauvais usage de React. Pour y remédier, ils ont créé Reassure, une nouvelle librairie de performance regression testing. Elle s'intègre à votre CI pour éviter que les performances de vos apps ne se dégradent dans le temps. Le [support web](https://github.com/callstack/reassure/issues/39) n'est pas encore disponible.
+
+- 📒 [BAM Mobile Tech Radar 2022](https://www.bam.tech/en-tech-radar): un rapport complet sur le développement mobile en 2022, avec une grosse partie sur React-Native
+- 🔗 [fabric-library-with-custom-cpp-example](https://github.com/callstack/fabric-library-with-custom-cpp-example/)
+- 📦 React-Native [v0.70.2](https://twitter.com/Kelset/status/1577262972396744704) + [v0.69.6](https://twitter.com/titozzz/status/1574744371865346049)
+- 📦 [Jest-Native 5.0](https://github.com/testing-library/jest-native/releases): support natif TypeScript
+- 🎥 [React-Native EU playlist](https://www.youtube.com/watch?v=7QeINTWLUkc&list=PLZ3MwD-soTTE-qcA0MrcvZBdmkHJSIjJX): les vidéos découpées sont en ligne
+- 🎥 [Arc Slider with React-Native Skia, React-Native Gesture Handler and Reanimated 2](https://www.youtube.com/watch?v=fWLyKzEXaJI)
+- 📜 [How to specify pre-processor flags to the JSI-based React Native libraries](https://dev.to/craftzdog/how-to-specify-pre-processor-flags-to-the-jsi-based-react-native-libraries-51m5)
+- 📖 [Expo Router](https://expo.github.io/router/): la doc est dispo pour se familiariser avec ce nouveau routeur
+- 📖 [Expo App Icons and Splash Screen guides updated](https://twitter.com/amanhimself/status/1575589181237043200)
+- 🎨 [Native iOS bottom sheet demo - iOS detents](https://twitter.com/FernandoTheRojo/status/1575247583634935808)
+- 🎨 [React-Native WishList demo - alpha soon](https://twitter.com/margelo_io/status/1576887456024043520)
+- 🎨 [Experimental support for debugging Reanimated’s worklet runtime (Hermes) in Flipper](https://twitter.com/swmansion/status/1577308811890610176)
+
+---
+
+## 🧑‍💻Jobs {#jobs}
+
+🧑‍💼 [**Masteos - Lead ReactJS - Hybride ou Remote - 75-90k€**](https://www.welcometothejungle.com/fr/companies/masteos/jobs/lead-front-reactjs-h-f_paris?q=97ae44f44512e0f1968e134f33de64ea&o=1376093)
+
+Masteos réinvente l’expérience de l’investissement locatif, en proposant un parcours entièrement dématérialisé et un accompagnement de haut niveau aux particuliers qui souhaitent acheter un bien pour le louer.
+
+🧑‍💼 [**Matters - Senior Software Engineer (React/Node)**](https://bit.ly/NLReactH)
+
+Envie de challenges et de contribuer à des réussites entrepreneuriales ? Rejoins notre startup studio pour construire des produits variés et complexes dans une culture devOps, une stack JS, des code reviews, tests et déploiements automatisés. Paris, remote flexible, 50K€-65K€.
+
+🧑‍💼 [**Linxea - Lead Dev React.js - 60-75k€**](https://www.welcometothejungle.com/fr/companies/linxea/jobs/lead-dev-react_paris)
+
+Plateforme leader de l’épargne en ligne.
+Stack tech : ReactJS, Redux, Saga, Formik, Storybook, Webpack, Typescript.
+Skills : architecture, développement, pratiques craft (clean architecture, clean code ,TDD), mentoring et formation des équipes.
+Paris 75008 - 2j de TT/sem.
+
+💡 [Comment publier une offre d'emploi ?](https://thisweekinreact.com/fr/sponsor)
+
+---
+
+## 🇫🇷 En français {#fr}
+
+- 🎥 [JavaScript : 7 choses à maîtriser pour React](https://www.youtube.com/watch?v=HrrBtXKWtlg)
+- 🎥 [React + Three.js, le combo parfait pour la 3D dans ton navigateur](https://www.youtube.com/watch?v=TU_k0658vYc)
+- 📜 [Recapt Q3 2022](https://buchet.tech/blog/recapt-q3-2022)
+
+💡Tu peux m'envoyer ton contenu: [sebastien@thisweekinreact.com](mailto:sebastien@thisweekinreact.com?subject=Contenu%20en%20fran%C3%A7ais) !
+
+---
+
+## 🔀 Autre {#other}
+
+- [Ten Years of TypeScript](https://devblogs.microsoft.com/typescript/ten-years-of-typescript)
+- [TotalTypeScript - Beginner's TypeScript](https://www.totaltypescript.com/tutorials/beginners-typescript)
+- [Why I don't use Prettier](https://antfu.me/posts/why-not-prettier)
+- [Gifs without the .gif - The most performant image and video options](https://css-tricks.com/gifs-without-the-gif-the-most-performant-image-and-video-options-right-now/)
+- [Use cases for CSS comparison functions](https://ishadeed.com/article/use-cases-css-comparison-functions/)
+- [Node.js 18 - `node --watch`](https://github.com/nodejs/node/pull/44366)
+- [Node.js 19 RC.0](https://twitter.com/ruyadorno/status/1575628377372823552)
+- [Astro 1.4](https://astro.build/blog/astro-140/)
+- [Deno 1.26](https://deno.com/blog/v1.26)
+- [Rome 0.10](https://twitter.com/rometools/status/1577296196502278150)
+- [State of CSS 2022 - Survey open](https://stateofcss.com/en-us/)
+- [State of GraphQL 2022 - Results](https://2022.stateofgraphql.com/en-US/)
+- [Progressively enhance for a more resilient web](https://jjenzz.com/progressively-enhance-for-a-more-resilient-web)
+- [New in Chrome 106](https://developer.chrome.com/blog/new-in-chrome-106/)
+- [New to the web platform in September](https://web.dev/web-platform-09-2022/)
+- [Minimize Heap Allocations in Node.js](https://blog.appsignal.com/2022/09/28/minimize-heap-allocations-in-nodejs.html)
+- [Will Serving Real HTML Content Make A Website Faster?](https://blog.webpagetest.org/posts/will-html-content-make-site-faster/)
+- [What’s Stopping WebAssembly from Widespread Adoption?](https://thenewstack.io/whats-stopping-webassembly-from-widespread-adoption/)
+- [Blink - Intent to prototype - CSS Nesting](https://twitter.com/intenttoship/status/1576951638325186565)
+- [Postgres-WASM](https://supabase.com/blog/postgres-wasm)
+- [I turned JS into a compiled language (for fun and Wasm)](https://surma.dev/things/compile-js/)
+
+---
+
+## 🤭 Fun {#fun}
+
+[![Theo T3 best clickbait](/emails/issues/118/meme.png)](https://twitter.com/t3dotgg/status/1576467328606253057)

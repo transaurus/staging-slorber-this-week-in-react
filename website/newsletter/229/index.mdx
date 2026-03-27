@@ -1,0 +1,155 @@
+---
+slug: /229
+title: "This Week In React #229: React Conf, React Router, Next.js Adapters, Redwood, Apollo, Fastify, Vite, Waku | RN v0.79, Deep Imports, Builder Bob, Fingerprinting | TC39, Tailwind, Rspack, Rstest, Turborepo, Bun"
+authors: [kacperkapusciak, tomekzaw]
+date: 04-09-2025
+---
+
+Hi everyone!
+
+This week, I'm excited to introduce 2 new contributors to help me with the newsletter!
+
+**Tomasz and Kacper from [Software Mansion](https://swmansion.com/?utm_source=thisweekinreact)** here – you may already know us from libraries like Reanimated or Gesture Handler. We're happy to be among the authors of the This Week in React newsletter!
+
+We were about to call it a fairly calm week… until React Conf 2025 was officially announced and React Native 0.79 dropped with Swift-compatible native modules for iOS, faster app startup on Android, and many more. Let's dive in!
+
+<!-- truncate -->
+
+import Support from "../_support.mdx";
+
+<Support />
+
+---
+
+## 💸 Sponsor {#sponsor1}
+
+[![React-admin: Yes, You Could Build It Yourself… But Why?](/emails/issues/229/marmelab.jpg)](https://marmelab.com/react-admin/)
+
+**[React-admin: Yes, You Could Build It Yourself… But Why?](https://marmelab.com/react-admin/)**
+
+You didn’t spend years mastering React just to build CRUD apps on repeat. Yet here you are—facing another request for an admin panel and questioning your life choices.
+
+We've been there ourselves. That’s why we built [**react-admin**](https://marmelab.com/react-admin/)—an open-source framework that handles the boring parts (data fetching, forms, auth, permissions…) so you can focus on the real dev work.
+
+Powered by **Material UI, react-hook-form, react-router, react-query, and TypeScript**, it lets you build admins on top of any REST/GraphQL API—fast.
+
+So next time your PM asks for a new dashboard, skip the existential crisis. [Just use react-admin.](https://github.com/marmelab/react-admin)
+
+---
+
+## ⚛️ React {#react}
+
+[![React Conf 2025](/emails/issues/229/react-conf-2025.png)](https://conf.react.dev/)
+
+**[React Conf is back for 2025](https://conf.react.dev/)**
+
+The React conference is happening on October 7-8, 2025 in Henderson, Nevada, 🇺🇸 US. It’s where the React & React Native team shares official announcements live.
+
+The only way to attend the conference in person is to win a ticket lottery that lets you purchase up to 2 tickets. Fortunately, if you’re not one of the lucky ones, the event will be livestreamed for free.
+
+---
+
+- 💸 [Product for Engineers - Good taste makes great products: Simple design principles every engineer should know](https://go.posthog.com/twir-apr9)
+- 📣 [The Future of Redwood Launches Today](https://community.redwoodjs.com/t/the-future-of-redwood-launches-today/7938): The former project gets renamed to Redwood GraphQL and enters maintenance mode. [RedwoodSDK](https://redwoodjs.com/) is the new path for the framework under new leadership.
+- 💬 [Next.js RFC – Deployment Adapters API](https://github.com/vercel/next.js/discussions/77740): Vercel plans to support adapters to deploy Next.js to any hosting provider.
+- 🐦 [Tanner Linsley – TanStack Router \`intent\` preloading will predict where your users cursor will go](https://x.com/tannerlinsley/status/1908723776650355111)
+- 🔐 [React Router and the Remix’ed path](https://zhero-web-sec.github.io/research-and-things/react-router-and-the-remixed-path): Vulnerability discovered affecting both React Router and Remix, a flaw for a potential DoS attack through cache poisoning.
+- 📜 [React for Two Computers](https://overreacted.io/react-for-two-computers/): Dan Abramov expands on his React Conf talk with fresh insights to help you build a solid mental model of React Server Components and their origins.
+- 📜 [Advanced React in the Wild](https://largeapps.dev/case-studies/advanced/): A great case study outlining 5 companies that have significantly improved the performance metrics of their React & Next.js sites and how they did it.
+- 📜 [React & live streaming: How to include video mixing in your app](https://blog.swmansion.com/react-live-streaming-how-to-include-video-mixing-in-your-app-c460e09da7a8). A short tutorial explaining how to mix live video with React syntax and stream the output directly from the browser.
+- 📜 [Why We Moved off Next.js](https://documenso.com/blog/why-we-moved-off-next-js): Quick feedback from the Documenso project, moving from Next.js App Router to Vite and React Router.
+- 📜 [React.memo Demystified: When It Helps and When It Hurts](https://cekrem.github.io/posts/react-memo-when-it-helps-when-it-hurts): A concise explanation of common misconceptions and hidden pitfalls of memoization.
+- 📜 [React Reconciliation: The Hidden Engine Behind Your Components](https://cekrem.github.io/posts/react-reconciliation-deep-dive/): Practical guidelines and clean architecture tips to ensure best performance with React reconciler
+- 📜 [Why you need a custom context provider](https://gabrielpichot.fr/blog/why-you-need-a-custom-context-provider/): A nice interactive article that shows creating a custom Context Provider wrapper component can reduce un-necessary re-renders.
+- 💸 [Supabase breaks the norms of traditional software architecture. Learn how.](https://go.clerk.com/pkKoKSg)
+- 📦 [React Router 7.5 – new `route.lazy` API](https://github.com/remix-run/react-router/blob/main/CHANGELOG.md#v750): Allows for more granular lazy loading.
+- 📦 [Cloudflare Vite Plugin 1.0](https://blog.cloudflare.com/introducing-the-cloudflare-vite-plugin/): Brings official support for React Router v7. Leverages Vite v6 Environment API so that your local dev server matches the production Cloudflare Workers runtime.
+- 📦 [Fastify React 1.0](https://github.com/fastify/fastify-vite/releases/tag/react-v1.0.0): This new package might help you assemble your custom React meta-framework based on the Fastify web server and Vite (creating your own “Mini Next.js”). It supports React 19, and RSCs will come later. See also the related launch post ([React Server Confusion](https://hire.jonasgalvez.com.br/2025/apr/8/react-server-confusion/)) which also gives a good overview of the state of RSC support outside Webpack.
+- 📦 [Apollo Client Next.js integration](https://www.apollographql.com/blog/apollo-client-integration-nextjs-officially-released): The experimental GraphQL client integration package is now officially stable, including a new implementation for `PreloadQuery` to help you avoid request waterfalls. Apollo Client v4 is now in alpha, and integration packages for React Router / TanStack Start being worked on.
+- 📦 [Waku 0.22 – Announcing API routes](https://waku.gg/blog/api-routes)
+- 📦 [Astro 5.6 – Global `astro:env` and experimental sessions on Cloudflare, experimental cookie-less sessions](https://astro.build/blog/astro-560/)
+- 📦 [Hydrogen – March 2025 release – Support for Vite 6, turn on Remix `v3_routeConfig` flag 6](https://hydrogen.shopify.dev/update/march-2025)
+- 🎥 [Theo – A breakdown of style solutions for 2025](https://www.youtube.com/watch?v=lIUp8bdKiq4)
+- 🎥 [Youssef Benlemlih – The Magic Of Compound Components in React](https://www.youtube.com/watch?v=WSM2MpJIwFg)
+
+<SubscribeFormEmbed placement="middle" />
+
+---
+
+## 💸 Sponsor {#sponsor2}
+
+[![AppZung: the enterprise-ready CodePush alternative](/emails/issues/229/AppZ.jpg)](https://appzung.com/?utm_source=newsletter&utm_medium=email&utm_campaign=this_week_in_react_250409)
+
+**[AppZung: the enterprise-ready CodePush alternative](https://appzung.com/?utm_source=newsletter&utm_medium=email&utm_campaign=this_week_in_react_250409)**
+
+With Microsoft AppCenter shutdown, choose the reliable and robust alternative that doesn't compromise on security, privacy or performance.
+
+AppZung CodePush delivers:
+
+- ✅ Seamless transition: One-command migration from AppCenter
+- ✅ Enterprise-grade security: Code signing, SAML SSO, IP allowlisting and more
+- ✅ Performance at scale: High-availability architecture with fast global CDN
+- ✅ Privacy-first approach: EU-based infrastructure with built-in GDPR compliance features
+- ✅ Dedicated support: Priority handling and satisfied customers
+
+Our platform is built by developers managing high-traffic applications who understand what's at stake when pushing critical updates.
+
+[Start deploying](https://appzung.com/?utm_source=newsletter&utm_medium=email&utm_campaign=this_week_in_react_250409) with AppZung today!
+
+---
+
+## 📱 React-Native {#react-native}
+
+[![React Native 0.79](/emails/issues/229/react-native-0.79.png)](https://reactnative.dev/blog/2025/04/08/react-native-0.79)
+
+**[React Native 0.79 – Faster tooling and much more](https://reactnative.dev/blog/2025/04/08/react-native-0.79)**
+
+Recently, the React Native core team switched to more frequent release cycles, so this is a smaller release, but nonetheless exciting in terms of performance improvements. Here are the highlights:
+
+- Metro: 3x faster cold startup and package exports support
+- JavaScriptCore (JSC) moving to a Community Package
+- iOS: Swift-Compatible Native Modules registration
+- Android: Faster app startup thanks to skipping the JS bundle compression
+- Removal of Remote JS Debugging
+
+---
+
+- 💸 [Radon IDE – More than 20,000 engineers have already chosen it for a smoother, all-in-one development experience. It's your turn.](https://ide.swmansion.com/?utm_source=thisweekinreact.com)
+- 👀 [Expo – React 19.1 `captureOwnerStack` will enable improved error messages](https://github.com/expo/expo/pull/35866#issuecomment-2789891297)
+- 💬 [React Native RFC – Removing deep imports from react-native](https://github.com/huntie/react-native-discussions-and-proposals/blob/proposal-deprecate-subpath-imports/proposals/0894-deprecate-subpath-imports.md): This change allows to define what functions are exported from packages shrinking the API surface area. The goal is to provide a more stable API throughout the ecosystem.
+- 🐦 [Ben Awad – describes his journey to reduce Application Not Responding (ANR) errors on Android](https://x.com/benawad/status/1908860185113665889)
+- ☂️ [Help React Native core team Kotlin-ify React Native tests](https://github.com/facebook/react-native/issues/50513): Great way to start contributing to an open source project.
+- 📅 [React Native London Meetup – April 17th, 2025](https://guild.host/events/react-native-london-e0q1f1)
+- 📜 [Understanding and comparing fingerprints in Expo apps](https://expo.dev/blog/understanding-and-comparing-fingerprints-in-expo-apps): Using hashes to compare whether there was a change in a native build of a React Native & Expo app.
+- 📜 [Cut CI from 20 minutes to 6 with EAS Workflows and EAS Updates](https://shift.infinite.red/cut-ci-from-20-minutes-to-6-with-eas-workflows-and-eas-updates-8d928fe5dcfc): Infinite Red shows how they improved their CI time by fingerprinting native builds.
+- 📜 [Playing Audio in React Native with react-native-track-player](https://addjam.com/blog/2025-04-04/playing-audio-in-react-native/)
+- 📜 [Vercel & React Native – A New Era of Mobile Development?](https://www.thisdot.co/blog/vercel-and-react-native-a-new-era-of-mobile-development): Speculation on what steps Vercel might take in the React Native space.
+- 📜 [A Guide to Logging in React Native](https://blog.sentry.io/a-guide-to-logging-in-react-native/): Including console, native and system logs.
+- 📦 [Builder Bob 0.40](https://github.com/callstack/react-native-builder-bob/releases/tag/react-native-builder-bob%400.40.0)
+- 🎥 [Simon Grimm – The ultimate way to build apps in 2025](https://www.youtube.com/watch?v=acj7-3-EQWM)
+- 🎥 [Catalin Miron – Expo Router: Tabs, Stacks, Deep Linking Fix](https://www.youtube.com/watch?v=HmbBzw0rF6w)
+- 🎙️ [React Native Radio 327 – Automating App Releases with Pratul Kalia](https://infinite.red/react-native-radio/rnr-327-automating-app-releases-with-pratul-kalia)
+
+---
+
+## 🔀 Other {#other}
+
+- 👀 [Agenda for the 107th meeting of Ecma TC39](https://github.com/tc39/agendas/blob/main/2025/04.md): Next week the TC39 committee meets again to discuss many new exciting proposals, including Enums, Composites, `export defer`, and more.
+- 📜 [Debugging JavaScript Memory Leaks](https://bun.sh/blog/debugging-memory-leaks)
+- 📜 [First Look at The Modern CSS `attr()`](https://ishadeed.com/article/modern-attr/)
+- 📜 [A Deep Dive into OSI, TCP/UDP, HTTP, and More](https://www.deepintodev.com/blog/how-data-travels-the-world-to-reach-your-screen)
+- 📦 [Tailwind CSS 4.1 – Text shadows, masks, and tons more](https://tailwindcss.com/blog/tailwindcss-v4-1)
+- 📦 [Rspack 1.3.1 – Run JS loaders in parallel](https://x.com/rspack_dev/status/1907336863096123484)
+- 📦 [Turborepo 2.5](https://turbo.build/blog/turbo-2-5)
+- 📦 [Rstest – The testing framework powered by Rspack (WIP)](https://github.com/web-infra-dev/rstest)
+- 📦 [Bun 1.2.9 – Redis client, Node.js compatibility, `require` improvements](https://bun.sh/blog/bun-v1.2.9)
+
+---
+
+## 🤭 Fun {#fun}
+
+[![alt](/emails/issues/229/meme1.jpg)](https://x.com/thekitze/status/1907508349442339078)
+
+[![alt](/emails/issues/229/meme2.jpg)](https://x.com/sebastienlorber/status/1909916465190383982)
+
+See ya! 👋

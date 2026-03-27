@@ -1,0 +1,11 @@
+node_modules
+.idea
+yarn-error.log
+.env
+
+
+.vercel
+
+
+package-lock.json
+nbprojects

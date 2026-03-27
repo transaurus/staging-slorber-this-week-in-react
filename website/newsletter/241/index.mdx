@@ -1,0 +1,146 @@
+---
+slug: /241
+title: "This Week In React #241: Remix, Next.js, Turbopack, Radix  DOM templating, Ultracite, Stack, StyleX, MUI | Nitro Week, Skia, App Generator, Swift, Kotlin | ES2025, Rspack, Babel, TypeScript, Effect, Deno, Three.js"
+authors: [slorber]
+date: 07-02-2025
+---
+
+Hi everyone!
+
+It's been a hot C° week here, but pretty calm in terms of React news. We still got various little releases, interesting blog posts and weak signals that show us what the future might look like.
+
+On the React Native side, the community is adopting Nitro Modules in various libraries, and Skia got built-in support for Lottie animations.
+
+ES2025 has been approved, and TS 5.9 beta should come anytime soon.
+
+<!-- truncate -->
+
+import Support from "../_support.mdx";
+
+<Support />
+
+---
+
+## 💸 Sponsor {#sponsor1}
+
+[![Embrace: User-Focused Observability for Mobile and Web](/emails/issues/241/embrace.jpg)](https://embrace.io/?utm_source=newsletter&utm_medium=paid&utm_campaign=twir-7-2-2025)
+
+**[Embrace: User-Focused Observability for Mobile and Web](https://embrace.io/?utm_source=newsletter&utm_medium=paid&utm_campaign=twir-7-2-2025)**
+
+Embrace connects technical performance to real user impact across mobile, web, and backend so that engineering teams can deliver fast, reliable, and exceptional digital experiences.
+
+- 📊 Track Core Web Vitals, crashes, network requests, and custom events—all tied to full user sessions. 
+- 👤 Get deep insights into users with session stitching and play-by-plays of every user experience. 
+- 🔍 Discover the root cause faster with high-fidelity data, including session timelines, performance traces, and user journeys. 
+- 🔭 Embrace is built on OpenTelemetry. Own your data, integrate it anywhere, and avoid the rigid pricing and limitations of all-in-one platforms.
+
+Try Embrace today and get your first 1 million sessions free. Learn more at [embrace.io](https://embrace.io/?utm_source=newsletter&utm_medium=paid&utm_campaign=twir-7-2-2025).
+
+---
+
+## ⚛️ React {#react}
+
+[![Remixing Shopify's Admin: How We Made It 30% Faster and AI-Ready](/emails/issues/241/remix.jpg)](https://shopify.engineering/remixing-admin)
+
+**[Remixing Shopify's Admin: How We Made It 30% Faster and AI-Ready](https://shopify.engineering/remixing-admin)**
+
+Interesting feedback from Shopify migrating their flagship Admin app to Remix, dogfooding the framework on a massive codebase with strong needs in terms of scalability. It looks to me many recent React Router features were things Shopify actually needed.
+
+---
+
+- 💸 [The Road to Next - Master Full-Stack Web Development with Next.js 15 and React 19](https://www.road-to-next.com/?utm_source=newsletter&utm_medium=email&utm_campaign=this_week_in_react_1.1)
+- 📖 [TanStack Start \- Cloudflare Workers docs](https://developers.cloudflare.com/workers/framework-guides/web-apps/tanstack/)
+- 🐦 [Radix kicking off a weekly stream to show how Radix is developed and maintained](https://x.com/radix_ui/status/1940123605272244674): A good transparency move from the WorkOS team, probably in reaction to last week’s [“Radis is a liability”](https://x.com/ccccjjjjeeee/status/1935163290998722660) drama. Meanwhile, its upcoming competitor BaseUI released [beta.1](https://github.com/mui/base-ui/releases/tag/v1.0.0-beta.1).
+- 🐦 [Guillermo Rauch \- “All areweturboyet.com tests are passing for Next.js production builds“](https://x.com/rauchg/status/1938668763525849298): So far, only dev builds were stable, but we can expect an upcoming Next.js release announcing much faster and production builds on Turbopack instead of Webpack. Note that [Rspack 1.4 also announced \~99% coverage of dev/production builds](https://rspack.rs/blog/announcing-1-4#next-rspack), and it will be interesting to see which tool performs faster once both bundlers are at 100%.
+- 🐦 [Ryan Florence is studying React alternativese](https://x.com/ryanflorence/status/1938994450035789941) and [Michael Jackson is growing increasingly disillusioned with React hooks](https://x.com/mjackson/status/1937979887815692465), and it looks like they are brainstorming publicly what they plan to build for Remix v3, likely based on a fork of Preact.
+- 😠 Alex Russell [rants about React Summit talks](https://infrequently.org/2025/06/conferences-clarity-and-smokescreens/) and Mario says [React Still Feels Insane](https://mbrizic.com/blog/react-is-insane/).
+- 📜 [The time is right for a DOM templating API](https://justinfagnani.com/2025/06/26/the-time-is-right-for-a-dom-templating-api/): Interesting thoughts on the lack of a templating language in JS from one of the original creators of Lit (Web Components), who also created a [proposal based on tagged template literals](https://justinfagnani.com/2025/06/30/what-should-a-dom-templating-api-look-like/). This also discusses how all this could integrate with React and JSX.
+- 📜 [Next.js Promise Racing](https://playfulprogramming.com/posts/nextjs-promise-race): A really cool trick if you want to fully resolve promises on the server, unless they take too long, in which case it’s nice to show a Suspense fallback.
+- 📜 [Astro Live Content Collections: A Deep Dive](https://astro.build/blog/live-content-collections-deep-dive/)
+- 📜 [How Storybook 9 integrates accessibility into every part of the development lifecycle](https://storybook.js.org/blog/the-accessibility-pipeline-for-frontend-teams/)
+- 📜 [How to add Stripe to Next.js in 5 minutes](https://tomdekan.com/articles/stripe-with-nextjs)
+- 💸 [Build a custom React PDF editor in minutes with Apryse SDK – Powered by React and Vite](https://apryse.com/blog/pdf-editor-using-vite-and-react?utm_source=newsletter&utm_medium=email&utm_campaign=thisweekinreact_2025_07_02&utm_content=email_textlink)
+- 📦 [Stack \- Streamlining flexbox usage in React & React Native](https://github.com/nkzw-tech/stack): Convenient flexbox interface. It could also be helpful for cross-platform usage by reverting the default `flex-direction: column` from React Native.
+- 📦 [Create Context Hook \- Simplify creating React Context with hooks](https://github.com/nkzw-tech/create-context-hook): A tiny but convenient pattern to ensure work is only done once per tree instead of once per hook call.
+- 📦 [Ultracite 5.0 \- Zero-config Biome linter and formatter preset](https://www.ultracite.ai/): It comes with preconfigured rules optimized for Next.js, React and TypeScript projects, and can also help LLMs to generate correctly formatted code.
+- 📦 [StyleX 0.14 \- New `viewTransitionClass()` API, easy to integrate with React’s `<ViewTransition>`](https://stylexjs.com/blog/v0.14.0)
+- 📦 [React-Scan 0.4 \- Hide the toolbar by throwing it off the page](https://github.com/aidenybai/react-scan/releases/tag/v0.4.0)
+- 📦 [TanStack Router 1.124 \- Support inline styles in route `head`](https://github.com/TanStack/router/releases/tag/v1.124.0)
+- 📦 [MUI 7.2 \- `modularCssLayers` to use CSS Cascade Layers](https://github.com/mui/material-ui/releases/tag/v7.2.0)
+- 📦 [oRPC 1.6 \- Support for tRPC](https://github.com/unnoq/orpc/releases/tag/v1.6.0)
+- 📦 [Better-T-Stack \- Modern CLI for scaffolding end-to-end type-safe TypeScript projects](https://github.com/AmanVarshney01/create-better-t-stack)
+- 📦 [nuqs 2.5 beta.2 \- Standard Schema generation, strict mode for loaders and caches](https://github.com/47ng/nuqs/releases/tag/v2.5.0-beta.2)
+- 🎥 [Youssef Benlemlih \- Advanced React Query Patterns for Modern Applications](https://www.youtube.com/watch?v=9Vuz4BbPkXc)
+- 🎥 [Jack Herrington \- Deploy TanStack Start in Less Than A Minute](https://www.youtube.com/watch?v=gBEZ9SYfFDU)
+
+<SubscribeFormEmbed placement="middle" />
+
+---
+
+## 💸 Sponsor {#sponsor2}
+
+[![No breakpoints, no console.log — just AI & time travel](/emails/issues/241/wallaby.jpg)](https://wallabyjs.com/?referrer=ThisWeekInReactJul25)
+
+**[No breakpoints, no console.log — just AI & time travel](https://wallabyjs.com/?referrer=ThisWeekInReactJul25)**
+
+15x faster TypeScript and JavaScript debugging than with breakpoints and `console.log`, while upgrading your AI agent 🤖 into an expert debugger with real-time context.
+
+Wallaby.js runs your tests as you type, feeding your AI assistant real-time runtime values, code coverage, error details, and execution paths — all right next to your code.
+
+Designed specifically for testing, Wallaby features include a **Time Travel Debugger**, the ability to run only opened test files, full-context AI integration, smart test runs, and more. **Better context. Smarter debugging.**
+
+👉 **Check It Now:** [Here](https://wallabyjs.com/?referrer=ThisWeekInReactJul25)
+
+---
+
+## 📱 React-Native {#react-native}
+
+[![Nitro modules banner](/emails/issues/241/nitro.jpg)](https://nitro.margelo.com/)
+
+**Nitro Week**
+
+[Nitro Modules](https://nitro.margelo.com/) are trending among React Native lib developers, with 3 new releases this week:
+
+- 📦 [React Native Nitro Image \- Superfast in-memory Image type and view component for React Native](https://github.com/mrousavy/react-native-nitro-image): Marc Rousavy releasing his new Image library that allows resizing/croping images without any file IO and should integrate later with VisionCamera (that will also use Nitro in the future).
+- 📦 [React Native Video 7.0 alpha \- Rebuilt with Nitro modules, faster, supports preloading and player separated from view](https://github.com/TheWidlarzGroup/react-native-video/releases/tag/v7.0.0-alpha.0)
+- 📦 [React Native HealthKit 9.0 \- Rebuilt with Nitro modules, improving performance and type-safety](https://github.com/kingstinct/react-native-healthkit/releases/tag/%40kingstinct%2Freact-native-healthkit%409.0.0)
+
+---
+
+- 🌐 In other universes, 🎥 [Compose Multiplatform for iOS is ready for production](https://www.youtube.com/watch?v=YKTlW8Qkj0w), based on Kotlin/Skia. And 📣 [Swift announced an Android Working Group](https://forums.swift.org/t/announcing-the-android-workgroup/80666) and its intent to support the Android platform officially. I doubt this will significantly compete with React Native but it’s worth to be aware of\!
+- 👀 [React Native PR \- background-size, position and repeat styles](https://github.com/facebook/react-native/pull/52284)
+- 📜 [React Native Legal \- CLI & programmatic API \- A unified tooling for license attributions](https://www.callstack.com/blog/react-native-legal-cli-programmatic-api---unified-tooling-for-license-attributions)
+- 📦 [React Native Skia 2.1 \- Skottie support, new image filters, perspective camera for 2d scenes](https://github.com/Shopify/react-native-skia/releases/tag/v2.1.0): Lottie animations are now supported out of the box ([docs](https://shopify.github.io/react-native-skia/docs/skottie/)). It can compose with other Skia drawings, unlike [react-native-skottie](https://github.com/margelo/react-native-skottie).
+- 📦 [Expo Router AI App Generator](https://github.com/EvanBacon/app-that-builds-apps): Evan built an app that can build other Expo apps and websites.
+- 📦 [Gesture Handler 2.27 \- Complete `Pressable` refactor, deprecate `ForceTouch` gesture](https://github.com/software-mansion/react-native-gesture-handler/releases/tag/2.27.0)
+- 📦 [React Native Fast Confetti 1.0 \- Based on Skia Atlas API](https://github.com/AlirezaHadjar/react-native-fast-confetti/releases/tag/v1.0.0)
+- 🎥 [Expo \- Build a Local-First Sketch App with Expo, Instant & Reanimated](https://www.youtube.com/watch?v=DEJIcaGN3vY)
+- 🎙️ [Rocket Ship 74 \- Expo AI App Template, Icon Creator, Background Tasks, RSC & Triathlon Success](https://share.transistor.fm/s/512935c9)
+- 🎙️ [RNR 336 \- RLRN: Building Boca Socios with Solito ft. Nahue Alberti](https://infinite.red/react-native-radio/rnr-336-rlrn-building-boca-socios-with-solito-ft-nahue-alberti)
+
+---
+
+## 🔀 Other {#other}
+
+- 👀 [TypeScript 5.9 when?](https://github.com/microsoft/TypeScript/issues/61648#issuecomment-3025890436): It’s off schedule but the beta is coming.
+- 📜 [Ecma International approves ECMAScript 2025: What’s new?](https://2ality.com/2025/06/ecmascript-2025.html): Great year for ES, I particularly like Iterator Helpers, Set union/intersection methods, import attributes and `RegExp.escape`.
+- 📜 [New to the web platform in June](https://web.dev/blog/web-platform-06-2025?hl=en): With Firefox 140, the CookieStore API and CSS Custom Highlight API are now available everywhere.
+- 📜 [CSS conditionals with the new if() function](https://developer.chrome.com/blog/if-article)
+- 📜 [Stop Using CustomEvent](https://justinfagnani.com/2025/06/25/stop-using-custom-event/)
+- 📜 [The difference between ordinary functions and arrow functions in JavaScript?](https://jrsinclair.com/articles/2025/whats-the-difference-between-named-functions-and-arrow-functions/)
+- 📦 [Rspack 1.4 \- Run in the browser, Faster SWC, smaller bundles, incremental build, CSS chunking, multi lazyCompilation, inputFileSystem](https://rspack.dev/blog/announcing-1-4)
+- 📦 [Babel 7.28 \- TypeScript config file, `void` discard binding, enables `using` by default](https://babeljs.io/blog/2025/06/30/7.28.0)
+- 📦 [Deno 2.4 - deno bundle, bytes/text imports, OTel, `--preload` flag and more](https://deno.com/blog/v2.4)
+- 📦 [Three.js 178](https://github.com/mrdoob/three.js/releases/tag/r178)
+- 🎥 [Matt Pocock \- Effect: the unreadable library that captured my heart](https://www.youtube.com/watch?v=S2GChOwivwQ)
+- 🎙️ [PodRocket \- Node 24 with Rafael Gonzaga](https://podrocket.logrocket.com/node-24-rafael-gonzaga)
+
+---
+
+## 🤭 Fun {#fun}
+
+[![alt](/emails/issues/241/meme.jpg)](https://x.com/andrii_sherman/status/1939670935885259222)
+
+[![alt](/emails/issues/241/meme2.jpg)](https://x.com/birch_js/status/1939540713760563635)
+
+See ya! 👋

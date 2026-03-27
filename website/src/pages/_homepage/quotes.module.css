@@ -1,0 +1,43 @@
+.quotesContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@media (min-width: 1500px) {
+  .quotesContainer {
+    width: 85%;
+    max-width: 1800px;
+  }
+}
+
+.quoteContainer {
+  max-width: 550px;
+  flex-basis: 450px;
+  flex-grow: 1;
+  flex-shrink: 1;
+  margin: 1rem 2rem;
+}
+
+@media screen and (max-width: 700px) {
+  .quoteContainer {
+    margin: 0.4rem 0.4rem;
+  }
+}
+
+.quoteContainer blockquote {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*
+For large screens, make all 1/2 line quotes the same height
+ */
+@media screen and (min-width: 996px) {
+  .quoteContainer {
+    min-height: 3.5rem;
+  }
+}
+

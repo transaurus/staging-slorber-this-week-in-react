@@ -1,0 +1,167 @@
+---
+slug: /163
+title: "This Week In React #163: React-Query, React-Forget, Rspress, Remix Vite, Next.js Barrels, Storybook, Memo, Transitions, Gluestack, VisionCamera, Unistyles, VisionOS, Expo debugging..."
+authors: [slorber]
+date: 10-17-2023
+---
+
+Hi everyone!
+
+There's a lot of content this week! Releases, but also some very good React articles. And there's no end in sight, with some great React conferences coming up: React Advanced, Next.js Conf, reactjsday...
+
+I've also got some great news to share with you in advance: I'm about to become the father of a little girl 🤗
+
+For the 1st time ever, the newsletter will be taking a long break of several weeks, starting now. The next newsletter issue is scheduled for November 29.
+
+Otherwise I'm staying on course to pass 30,000 subscribers by the end of the year. While I'm away, you can keep bringing me new mates 😜
+
+Thank you and see you soon 👋
+
+<!-- truncate -->
+
+**💡 [Check this newsletter on Twitter](https://slo.im/thread) - visual format 🎨**
+
+---
+
+import Support from "../_support.mdx";
+
+<Support />
+
+---
+
+## 💸 Sponsor {#sponsor1}
+
+[![Frontendmasters](/emails/issues/158/frontendmasters.jpg)](https://frontendmasters.com/learn/react/?utm_source=newsletter&utm_medium=thisweekinreact&utm_campaign=reactpath)
+
+**[FrontendMasters – Complete React.js Learning Path to Senior React Developer](https://frontendmasters.com/learn/react/?utm_source=newsletter&utm_medium=thisweekinreact&utm_campaign=reactpath)**
+
+Learn React.js from the ground up to advanced topics like performance, testing, and code quality. Start by building a real-world app in the Complete Introduction to React. Continue with Intermediate React, integrating the most popular tools from the ecosystem. Then learn performance, TypeScript, and even Next.js, the fullstack React framework!
+
+---
+
+## ⚛️ React {#react}
+
+[![TanStack Query v5](/emails/issues/163/tanstack-query-v5.jpg)](https://tanstack.com/blog/announcing-tanstack-query-v5)
+
+[**TanStack Query v5**](https://tanstack.com/blog/announcing-tanstack-query-v5)
+
+After many pre-releases, TanStack Query v5.0 stable is out, including the React Query package. In particular, it includes
+
+- a unified, better-typed API, with no overloads
+- stable Suspense support. Streaming, React Server Components (experimental)
+- many other improvements: infinite queries, persistence, devtools, optimistic updates, useMutationState...
+
+---
+
+[![Rspress v1.0 - A fast Rspack-based static site generator](/emails/issues/163/rspress.jpg)](https://github.com/orgs/web-infra-dev/discussions/5)
+
+[**Rspress v1.0 - A fast Rspack-based static site generator**](https://github.com/orgs/web-infra-dev/discussions/5)
+
+First stable release for this new static site generator from the ByteDance team. Based on Rust, React and MDX. A serious contender for Docusaurus, Nextra, Vitepress, Starlight and other content-oriented solutions. Rspress is performant, while offering an impressive list of features: i18n, versioning, search, etc. The competition is getting tough, and that's motivating me even more to add some Rust to Docusaurus 😄!
+
+---
+
+[![Remix - Vite Support](/emails/issues/163/remix-vite.jpg)](https://remix.run/docs/en/dev/future/vite)
+
+[**Remix - Vite Support (Unstable)**](https://remix.run/docs/en/dev/future/vite)
+
+Remix explains its decision to become a Vite plugin in this [proposal](https://github.com/remix-run/remix/discussions/7632). This enables to open up its compiler and become more flexible by allowing users to add their own Vite plugins, and handle various scenarios: MDX, GraphQL, Tailwind, path aliases, etc.
+
+---
+
+[![Statically analysing React components for fun and profit](/emails/issues/163/react-forget.jpg)](https://www.youtube.com/watch?v=kjOacmVsLSE)
+
+🎥 [**Statically analysing React components for fun and profit**](https://www.youtube.com/watch?v=kjOacmVsLSE)
+
+Sathya is working on React-Forget, the long-awaited compiler. This talk reveals some interesting details:
+
+- Compiling is possible thanks to React's new model, which no longer uses classes or `this`
+- It reasons locally, is able to optimise in parallel, and can be adopted incrementally
+- It works on untyped JavaScript, and understands React conventions such as hooks and the "use" prefix
+- Its alias analysis system is even more complete than that of the V8 engine
+
+Sathya says we should be hearing more about React-Forget in the coming weeks, including in the talk ["Understanding Idiomatic React" at React Advanced](https://reactadvanced.com/schedule-offline) in just 2 days. In short, we can't wait to hear more!
+
+---
+
+- 💸 [Create collaborative applications like Figma and Miro in a few lines of code with Ably's in-app collaboration SDK](https://hubs.la/Q023nqgg0)
+- 📜 [Vercel - How we optimized package imports in Next.js](https://vercel.com/blog/how-we-optimized-package-imports-in-next-js): explains how `optimizePackageImports` works, an option added in the latest version of Next.js to optimize the import of "Barrel files", those `index.js` that re-export several modules and cause performance problems.
+- 📜 [Unlocking the Power of Storybook](https://formidable.com/blog/2023/unlocking-the-power-of-storybook/): an excellent article that shares many pragmatic tips on using Storybook to iterate faster. If you have a Storybook, I strongly advise you to try visual regression tests.
+- 📜 [React useTransition: performance game changer or...?](https://www.developerway.com/posts/use-transition): great interactive article illustrating a classic case where a React update blocks the main thread. Explains how to use transitions and concurrent rendering correctly to improve the UX.
+- 📜 [React memo is good actually](https://timtech.blog/posts/react-memo-is-good-actually/): interesting reflections on the use of memoization in React. One point on which I disagree: for me [🐦 optimisations should be encapsulated](https://twitter.com/sebastienlorber/status/1709258823582564644).
+- 📜 [A love letter to the Remix loader](https://laconicwit.com/a-love-letter-to-the-remix-loader/): an apology for the Remix loader, an elegant, dynamic abstraction that's easy to type. It also describes some of the challenges to be overcome.
+- 📜 [Programmatic SEO in Next.js](https://practicalprogrammatic.com/blog/programmatic-seo-in-nextjs/): generates Next.js pages with RSCs based on a dataset.
+- 📜 [Classed Components](https://flexible.dev/blog/single-line-components/): proposes to simplify the use of Tailwind by re-using a styled-components api and `@tw-classed/react`.
+- 📜 [The Rise of Next.js: Why It's the Full-Stack Framework of Choice for Modern Websites](https://www.felixvemmer.com/blog/why-next-js/): well-documented article giving good reasons to use Next.js
+- 📜 [Embedding Remix in Directus](https://echobind.com/post/embedding-remix-in-directus)
+- 📜 [Storybook - Introducing the Theme Switcher addon](https://storybook.js.org/blog/introducing-theme-switcher-addon/)
+- 📜 [Benchmarking MobX-State-Tree Performance](https://coolsoftware.dev/blog/benchmarking-mobx-state-tree/)
+- 📦 [Remix v2.1 - Experimental support for View Transitions](https://github.com/remix-run/remix/releases/tag/remix%402.1.0)
+- 📦 [Astro v3.3 - New experimental Picture component, shikiji syntax highlighting](https://astro.build/blog/astro-330/)
+- 📦 [create-t3-app v7.22 - add Next.js App Router option](https://github.com/t3-oss/create-t3-app/releases/tag/create-t3-app%407.22.0)
+- 📦 [Legend-State v2.0 - Performance, Persistence, DX improvements](https://legendapp.com/open-source/legend-state-v2/)
+- 📦 [Next-international v1.1 - Improved App Router support](https://github.com/QuiiBz/next-international/releases/tag/1.1.0)
+- 👥 [Next.js Conf - 26 October - Speakers announced](https://nextjs.org/conf/speakers)
+- 👥 [React Advanced](https://reactadvanced.com/?utm_source=email&utm_medium=thisweekinreact) (London 🇬🇧, October 20-23) is offering us [\-10% - code "REACT10"](https://ti.to/gitnation/react-advanced-london-2023/discount/REACT10)
+
+<SubscribeFormEmbed placement="middle" />
+
+---
+
+## 💸 Sponsor {#sponsor2}
+
+[![CoderPad: Code together before you work together](/emails/issues/154/coderpad.png)](https://coderpad.io/?utm_medium=3pmedia&utm_source=ThisWeekInReact&utm_campaign=23-Q3-3PMedia-ThisWeekInReact-ACQ-All-Global-Newsletter)
+
+**[CoderPad: Code together before you work together](https://coderpad.io/?utm_medium=3pmedia&utm_source=ThisWeekInReact&utm_campaign=23-Q3-3PMedia-ThisWeekInReact-ACQ-All-Global-Newsletter)**
+
+Hiring front-end developers is hard. 😩 But 4,000+ engineering teams — including at Netflix, Spotify and LinkedIn — have found a better way! 🤠 Skip the algorithm interviews and **run front-end interviews in a fully customizable and collaborative IDE** - where you can:
+
+- drag and drop a React (and Angular or Vue) repo
+- add packages with npm install
+- let candidates use ChatGPT live in the interview
+- watch & share code playback after the interview
+
+Use CoderPad to run fast, fair and real coding interviews that candidates and interviewers trust. [Sign up for free today & hire with confidence](https://coderpad.io/?utm_medium=3pmedia&utm_source=ThisWeekInReact&utm_campaign=23-Q3-3PMedia-ThisWeekInReact-ACQ-All-Global-Newsletter).
+
+---
+
+## 📱 React-Native {#react-native}
+
+[![Gluestack](/emails/issues/163/gluestack.jpg)](https://gluestack.io/ui/v1)
+
+[**Gluestack-ui v1.0 - Universal & Accessible UI Components for React Native & Web, Unstyled & Themed**](https://gluestack.io/ui/v1)
+
+Stable v1.0 release for this new cross-platform styling solution and component library in React-Native. There's already quite a lot included in this first version: VSCode plugin, Figma kit, Expo and Next.js support, headless and styled primitives. We're going to have to take a closer look at all that! I think the RSC support with Next.js is still limited and will require the 'use client' directive.
+
+---
+
+- 💸 [Moropo - build and scale open-source React Native tests 10x quicker](https://www.moropo.com/for-react-native?utm_source=newsletter&utm_medium=emails&utm_campaign=twir-20231018)
+- 📜 [Expo - Three ways to use network debugging](https://blog.expo.dev/three-ways-to-use-network-debugging-75fa6118fac6)
+- 📦 [React-Native 0.72.6 - CocoaPods installs fix](https://github.com/facebook/react-native/releases/tag/v0.72.6)
+- 📦 [react-native-visionos](https://github.com/callstack/react-native-visionos): Callstack's React-Native fork, which runs React-Native on VisionOS, has been open-sourced.
+- 📦 [react-native-unistyles v1.0](https://github.com/jpudysz/react-native-unistyles): stable version of this new cross-platform styling solution, which improves on React-Native StyleSheet DX.
+- 📦 [VisionCamera v3.4 - 7x faster](https://github.com/mrousavy/react-native-vision-camera/releases/tag/v3.4.0)
+- 📦 [React-Native-Screens v3.26 - useAnimatedHeaderHeight](https://github.com/software-mansion/react-native-screens/releases/tag/3.26.0)
+- 📦 [react-native-vercel-ai - cross-platform interface to Vercel AI](https://github.com/bidah/react-native-vercel-ai)
+- 📦 [radix-ui-react-native-icons](https://github.com/Eronred/radix-ui-react-native-icons)
+
+---
+
+## 🔀 Other {#other}
+
+- 👀 [TC39-TG4 - New Task Group created to standardize Source Maps](https://www.ecma-international.org/news/ecma-tc39-ecmascript-initiates-a-new-task-group-to-standardize-source-maps//)
+- 📜 [You can't get faster than No Build](https://world.hey.com/dhh/you-can-t-get-faster-than-no-build-7a44131c)
+- 📜 [Why Fetch Promise Doesn't Reject on Error Responses](https://kettanaito.com/blog/why-fetch-promise-doesnt-reject-on-error-responses)
+- 📜 [DefinitelyTyped is a monorepo!](https://jakebailey.dev/posts/pnpm-dt-3/)
+- 📦 [Node.js v21 - stable fetch/WebStreams, default module system flag, V8 11.8, v20 going LTS...](https://openjsf.org/announcement/2023/10/17/node-js-21-available-now/)
+- 📦 [Parcel v2.10 - big performance improvements](https://github.com/parcel-bundler/parcel/releases/tag/v2.10.0)
+- 📦 [Oslo - A collection of auth-related utilities](https://github.com/pilcrowOnPaper/oslo)
+- 📦 [async-cache-dedupe v2](https://github.com/mcollina/async-cache-dedupe)
+
+---
+
+## 🤭 Fun {#fun}
+
+[![alt](/emails/issues/163/meme.jpg)](https://twitter.com/BHolmesDev/status/1713177728143241403)
+
+See ya! 👋

@@ -1,0 +1,186 @@
+---
+slug: /140
+title: "This Week In React #140: React Labs, Server Components, Next.js, Remix, Storybook, Astro, refs, Ark, Impala, Docusaurus, Expo-Blur, WebView, AsyncContext..."
+authors: [slorber]
+date: 04-04-2023
+---
+
+Hi everyone!
+
+I'm just back from vacations: we catch up with 2 weeks of news!
+
+A new React Labs post now presents React Forget as a reactivity compiler.
+
+Server Components never cease to surprise. Many related innovations are not yet highlighted outside a few tweets.
+
+For React-Native developers, **[Chain React](https://chainreactconf.com/)** is a great conf in the USA (Portland, May 18-19). They offer us a 10% discount with code `thisweekinreact`.
+
+<!-- truncate -->
+
+**💡 [Check this newsletter on Twitter](https://slo.im/thread) - visual format 🎨**
+
+---
+
+import Support from "../_support.mdx";
+
+<Support />
+
+---
+
+## 💸 Sponsor {#sponsor1}
+
+[![React-admin](/emails/issues/140/reactadmin.jpg)](https://marmelab.com/react-admin/?utm_source=newsletter&utm_term=this-week-in-react)
+
+**[React-admin - The Open-Source Framework for B2B apps](https://marmelab.com/react-admin/?utm_source=newsletter&utm_term=this-week-in-react)**
+
+Single-Page-Apps are still the best choice to create admin panels, B2B apps, and ERP systems on top of REST/GraphQL APIs. [React-admin](https://marmelab.com/react-admin/?utm_source=newsletter&utm_term=this-week-in-react) is **the open-source framework of reference for building SPAs**.
+
+React-admin offers a library of 150+ business-oriented components. It's not a UI kit: it leverages the best UI kit for React, MUI. React-admin boosts developer productivity by assembling the best-in-class libraries, managing all the repetitive stuff you shouldn’t have to deal with.
+
+Its strongest point? The best developer experience you'll ever have, backed by an awesome documentation and a vibrant community. [And it only takes 30 minutes to get started](https://marmelab.com/react-admin/Tutorial.html) 🚀
+
+React-admin has been actively **maintained for 5 years**, and has already convinced more than 20,000 developers worldwide. Come try it, it is free, forever! 😁
+
+---
+
+## ⚛️ React {#react}
+
+[![React Labs](/emails/issues/140/reactlabs.jpg)](https://react.dev/blog/2023/03/22/react-labs-what-we-have-been-working-on-march-2023)
+
+**[React Labs: What We've Been Working On – March 2023](https://react.dev/blog/2023/03/22/react-labs-what-we-have-been-working-on-march-2023)**
+
+An official update from the R&D around React that addresses different topics:
+
+- React Server Components. A nice implementation is already available in Next.js via App Router. RSCs with async/await should also be able to run in a client app. I have the impression they want to unify client/server side model and I think [AsyncContext](https://twitter.com/sebastienlorber/status/1639183216799100928) will be great for that!
+- Asset loading: integration with Suspense for loading CSS, font and images ([more details](https://twitter.com/acdlite/status/1637102880850059264)).
+- Document Metadata: first-class support for an API for `<head>` metadata with streaming support.
+- React Optimizing Compiler: no longer presented as an auto-memoizing compiler, but as a reactivity compiler. [React Forget has reached a milestone](https://twitter.com/en_JS/status/1641494974893281282), and they are focusing on integration.
+- Offscreen Rendering: an innovation I'm really looking forward to, which differentiates React from other frameworks. Meta is testing prerendering on React-Native apps with positive results.
+- Transition Tracing: permits to detect slow transitions.
+
+---
+
+- 🥇 [React.dev on ProductHunt - Product of the day](https://twitter.com/ProductHunt/status/1640956972450328577)
+- 👤 [Tom Occhino](https://twitter.com/tomocchino/status/1640800001625411606) and [Dominic Gannaway](https://twitter.com/trueadm/status/1640761270566633472) joined Vercel.
+- 👀 Server Components can [lazily send modules](https://twitter.com/dan_abramov/status/1638760757239087104) to client.
+- 👀 [Jarred Summer - "Server Components is coming in Bun v0.6.0"](https://twitter.com/jarredsumner/status/1642821108402630657)
+- 👀 [Lee Robinson - "Improved sitemap support is coming to Nextjs"](https://twitter.com/leeerob/status/1639639575843729409)
+- 👀 [Lee Robinson - "The Next.js App Router now supports static exports!"](https://twitter.com/leeerob/status/1640445075959484418)
+- 👀 [Astro roadmap - Client-side Routing](https://github.com/withastro/roadmap/issues/532): Astro plans to implement client-side navigation. Opt-in: Astro remains by default an MPA framework.
+- 👀 [Vercel - Remix without Limits](https://vercel.com/blog/vercel-remix-integration-with-edge-functions-support): Vercel now offers first-class integration with Remix.
+- 🐦 [Dan Abramov - "we’ve changed our forms recommendations to emphasize uncontrolled inputs"](https://twitter.com/dan_abramov/status/1641830612955803650)
+- 📜 [Learning React from two Angles in 2023](https://www.robinwieruch.de/learning-react/): it is possible to learn React as a library, or as a framework/architecture (Next.js). Not easy to know where to start for a beginner.
+- 📜 [Refs in React: from access to DOM to imperative API](https://www.developerway.com/posts/refs-from-dom-to-api): good intro to refs, forwardRef, useImperativeHandle.
+- 📜 [Rethinking React best practices](https://frontendmastery.com/posts/rethinking-react-best-practices/): describes well the trend of React which is progressively moving from a simple UI library to a full-stack architecture.
+- 📜 [isMounted tricks are code-smell](https://reacttraining.com/blog/isMounted-tricks-are-code-smell): if you use this kind of pattern, I think it will become a problem with the future Offscreen API.
+- 📜 [Setting State On An Unmounted Component](https://reacttraining.com/blog/setting-state-on-unmounted-component)
+- 📜 [The useEffect cleanup and the two circumstances it's called](https://reacttraining.com/blog/useEffect-cleanup)
+- 📜 [How Will the Future of Web Development Be Affected by Influential New React Docs?](https://luketheweb.dev/blog/how-will-the-future-of-web-development-be-affected-by-influential-new-react-docs)
+- 📜 [Making Tanstack Table 1000x faster with a 1 line change](https://jpcamara.com/2023/03/07/making-tanstack-table.html)
+- 📜 [How to build zero-CLS A/B tests with Next.js and Vercel Edge Config](https://vercel.com/blog/zero-cls-experiments-nextjs-edge-config)
+- 📜 [Custom fonts without compromise using Next.js and `next/font`](https://vercel.com/blog/nextjs-next-font)
+- 📜 [Animated page transitions with Remix's nested routes](https://www.jacobparis.com/guides/remix-animated-page-transitions)
+- 📦 [Storybook 7.0](https://github.com/storybookjs/storybook/releases/tag/v7.0.0): nice release with Vite, CSF3, API frameworks, MDX2... The new features have already been presented before, but we'll probably get a blog post soon?
+- 📦 [Server Components Demo updated](https://twitter.com/dan_abramov/status/1641596168290312195)
+- 📦 [Ark UI](https://ark-ui.com/): the Chakra UI team introduced a new universal UI lib (React, Vue, Solid) based on Zag.js state machines.
+- 📦 [Simple-RSC](https://github.com/bholmesdev/simple-rsc): simple and annotated Server Components implementation, related to a [long stream between Ben Holmes (Astro) and Dan Abramov](https://twitter.com/BHolmesDev/status/1641659705444401152).
+- 📦 [Impala - A very simple static React framework](https://github.com/ascorbic/impala)
+- 📦 [Webpack-RSC](https://twitter.com/unstubbable/status/1641495749627109380)
+- 📦 [MDX syntax highlighting VS Code extension](https://twitter.com/wooorm/status/1638898049404612608)
+- 📦 [ContentLayer 0.3.1 - React Server Components support](https://github.com/contentlayerdev/contentlayer/releases/tag/v0.3.1)
+- 📦 [Styling Addon: configure styles and themes in Storybook](https://storybook.js.org/blog/styling-addon-configure-styles-and-themes-in-storybook/)
+- 📦 [Docusaurus 2.4](https://docusaurus.io/blog/releases/2.4)
+- 📦 [Framer Motion 10.9 - Timelines](https://twitter.com/mattgperry/status/1639286184965750790)
+- 📦 [Planby 2.3.0 - Schedule / Timeline for React with](https://dev.to/kozerkarol/schedule-timeline-for-react-with-planby-223-2djf)
+- 📦 [Ionic 7](https://ionic.io/blog/ionic-7-is-here)
+- 🧑‍🎓 [React.gg](https://react.gg): new promising React course in private beta
+- 🎥 [Theo - So I had a call with Dan...](https://www.youtube.com/watch?v=qZzmUVspiEo): I agree that the client/server components naming is not ideal, and "use interactive" seems to me a good idea.
+- 🎥 [Smarter and Simpler React State](https://www.youtube.com/watch?v=Cp64YbYBNDA)
+- 🎥 [Next.js App Router: Routing, Data Fetching, Caching](https://www.youtube.com/watch?v=gSSsZReIFRk)
+- 🎥 [The official T3 Stack Tutorial](https://www.youtube.com/watch?v=YkOSUVzOAA4)
+
+<SubscribeFormEmbed />
+
+---
+
+## 💸 Sponsor {#sponsor2}
+
+[![Tina.io is a headless CMS for Markdown-powered sites](/emails/issues/140/tinacms.jpg)](https://tina.io/?utm_source=newsletter&utm_term=this-week-in-react)
+
+**[Tina.io is a headless CMS for Markdown-powered sites](https://tina.io/?utm_source=newsletter&utm_term=this-week-in-react)**
+
+- Editing UI for your Markdown files
+- UI for MDX components
+- Supports static (SSG) and server-side rendering (SSR)
+- Option for visual editing (live-preview)
+- Build with reusable blocks
+
+Test a starter site
+
+- [Docusaurus](https://github.com/tinacms/tinasaurus) (github.com)
+- [Next.js + Tailwind with visual editing](https://github.com/tinacms/tina-cloud-starter) (github.com)
+
+Or run  `npx create-tina-app@latest` then visit `localhost:3000/admin`
+
+Watch the [4-min demo video](https://www.youtube.com/watch?v=zRkeKSZjlyw)
+
+---
+
+## 📱 React-Native {#react-native}
+
+- 📜 [Storybook for React Native (6.5)](https://storybook.js.org/blog/storybook-for-react-native-6-5/): great news for Storybook users on React-Native, the integration is catching up with Storybook web, adopting CSF, Controls, Args, and should soon be compatible with Storybook 7.0. With the new Metro features (`require.context`), the need to generate a story index should soon disappear.
+- 📜 [How Migrating from Vanilla Redux to Redux Toolkit Improved State Management in Shopify POS](https://shopify.engineering/react-redux-toolkit-migration): feedback on an incremental migration to RTK, removing 3500 lines.
+- 👀 [RFC: DOM traversal and layout APIs in React Native](https://github.com/react-native-community/discussions-and-proposals/pull/607): new advanced API could unlock the implementation of features like `MutationObserver`, `IntersectionObserver`...
+- 👀 [View Flattening on iOS](https://twitter.com/SamuelSusla/status/1641086480675225601): React-Native could already optimize on Android by avoiding to create useless native views. Samuel explains how it works and announces that now it works for iOS too.
+- 👀 [Expo Router + Apple Handoff demo](https://twitter.com/Baconbrix/status/1641850192839180315): great iOS innovation to switch between web and mobile, and it should work well with universal Expo Router apps 👌
+- 🎥 [The Joy of Painting with React Native](https://www.youtube.com/watch?v=GQqL1OCoOFM): new style of Skia ASMR video by William Candillon 😄
+- 📦 [React-Native WebView 12.0](https://twitter.com/titozzz/status/1642147926762815490): new architecture support.
+- 📦 [React-Native 0.76.1](https://github.com/facebook/react-native/releases/tag/v0.71.6): new releases fixing XCode build issues.
+- 📦 [Expo-Blur - Android support](https://twitter.com/aleqsio/status/1638893843457212418): BlurView will soon be cross-platform.
+- 🐦 [Tzvetan Mikov - "Messenger for MacOS is a React Native app."](https://twitter.com/tmikov/status/1642630975430754305)
+- 🎙️ [RNR 263 - Shopify Goes React Native!](https://reactnativeradio.com/episodes/rnr-263-shopify-goes-react-native)
+- 👥 [Chain React](https://chainreactconf.com/): conf in Portland, May 18-19 (-10% discount with "thisweekinreact" code).
+
+---
+
+## 🧑‍💻 Jobs {#jobs}
+
+🧑‍💼 [**Passionfroot - Senior Full-stack Engineer (Remix) - €160k+, Berlin/remote**](https://passionfroot.recruitee.com/o/senior-fullstack-engineer)
+
+Passionfroot's mission is to empower the independent businesses of tomorrow via YouTube, Podcasts, Social Media, and Newsletters. Join us in building a tool that will empower creators globally to build scalable, sustainable businesses.
+
+🧑‍💼 [**Callstack - Senior React Native Developer - Fully Remote, PLN 21-32k net on B2B, monthly**](https://www.callstack.com/senior-react-native-developer)
+
+Do you want to work on the world's most used apps? Would you like to co-create the React Native technology? Join the Callstack team of React & React Native leaders. Check our website for more details. We are looking forward to seeing your application - show us what you've got!
+
+🧑‍💼 [**G2i - 100% Remote React Native Jobs**](https://twitter.com/gabe_g2i/status/1563204813881425926?s=20&t=ArRLC77BpRwXXCdx8fnUqw)
+
+We have several roles open for developers focused on React Native! Pay is ~160k plus 10% bonus. You must have production experience with RN and be based in the US. DM [@gabe_g2i](https://twitter.com/gabe_g2i) to learn more and don't forget to mention This Week in React.
+
+💡 [How to publish an offer?](https://thisweekinreact.com/sponsor)
+
+---
+
+## 🔀 Other {#other}
+
+- [Updates from the 95th TC39 meeting](https://dev.to/hemanth/updates-from-the-95th-tc39-meeting-ne5): nice progressions, including [AsyncContext (stage 2)](https://twitter.com/sebastienlorber/status/1639183216799100928)!
+- [Node.js compatibility for Cloudflare Workers](https://blog.cloudflare.com/workers-node-js-asynclocalstorage/): including AsyncLocalStorage (~= server-side AsyncContext)
+- [WebKit Features in Safari 16.4](https://webkit.org/blog/13966/webkit-features-in-safari-16-4/)
+- [JavaScript import maps are now supported cross-browser](https://web.dev/import-maps-in-all-modern-browsers/)
+- [Push notifications are now supported cross-browser](https://web.dev/push-notifications-in-all-modern-browsers/)
+- [Types in JavaScript With Zod and JSDoc](https://blog.jim-nielsen.com/2023/types-in-jsdoc-with-zod/)
+- [Qwik 1.0 RC](https://www.builder.io/blog/qwik-rc-milestone)
+- [pnpm 8.0](https://twitter.com/pnpmjs/status/1640464273817362432)
+- [Tailwind 3.3](https://tailwindcss.com/blog/tailwindcss-v3-3)
+- [Deno 1.32: Enhanced Node.js Compatibility](https://deno.com/blog/v1.32)
+- [Rome v12](https://rome.tools/blog/2023/03/28/rome12/)
+- [Moon 1.0](https://twitter.com/tothemoonrepo/status/1640469052043980800)
+- [Bun 0.5.9](https://bun.sh/blog/bun-v0.5.9)
+
+---
+
+## 🤭 Fun {#fun}
+
+[![alt](/emails/issues/140/meme.jpg)](https://twitter.com/thekitze/status/1638927506723033088)
+
+See ya! 👋

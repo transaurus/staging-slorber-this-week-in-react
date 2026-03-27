@@ -1,0 +1,385 @@
+{
+  "github": {
+    "silent": true
+  },
+  "build": {
+    "env": {
+      "ENABLE_FILE_SYSTEM_API": "1"
+    }
+  },
+  "headers": [
+    {
+      "source": "/assets/:path*",
+      "headers": [
+        {
+          "key" : "Cache-Control",
+          "value" : "public, max-age=604800, immutable"
+        }
+      ]
+    },
+
+    {
+      "source": "/img/TWIR_LOGO_SIMPLE_NOBG.png",
+      "headers": [
+        {
+          "key" : "Cache-Control",
+          "value" : "public, max-age=86400, s-maxage=86400"
+        }
+      ]
+    },
+    {
+      "source": "/img/TWIR_POST.jpg",
+      "headers": [
+        {
+          "key" : "Cache-Control",
+          "value" : "public, max-age=86400, s-maxage=86400"
+        }
+      ]
+    },
+    {
+      "source": "/fr/img/TWIR_POST.jpg",
+      "headers": [
+        {
+          "key" : "Cache-Control",
+          "value" : "public, max-age=86400, s-maxage=86400"
+        }
+      ]
+    },
+
+    {
+      "source": "/newsletter/rss.xml",
+      "headers": [
+        {
+          "key" : "Cache-Control",
+          "value" : "public, max-age=3600, s-maxage=3600"
+        }
+      ]
+    },
+    {
+      "source": "/fr/newsletter/rss.xml",
+      "headers": [
+        {
+          "key" : "Cache-Control",
+          "value" : "public, max-age=3600, s-maxage=3600"
+        }
+      ]
+    },
+
+    {
+      "source": "/emails/separators/christmas.png",
+      "headers": [
+        {
+          "key" : "Cache-Control",
+          "value" : "public, max-age=86400, s-maxage=86400"
+        }
+      ]
+    },
+    {
+      "source": "/emails/:path*",
+      "headers": [
+        {
+          "key" : "Cache-Control",
+          "value" : "public, max-age=3600, s-maxage=3600"
+        }
+      ]
+    },
+    {
+      "source": "/social/:path*",
+      "headers": [
+        {
+          "key" : "Cache-Control",
+          "value" : "public, max-age=86400, s-maxage=86400"
+        }
+      ]
+    }
+  ],
+
+
+  "redirects": [
+    {
+      "source": "/feed",
+      "destination": "/newsletter/rss.xml",
+      "permanent": true
+    },
+
+    {
+      "source": "/social/x",
+      "destination": "https://twitter.com/sebastienlorber",
+      "permanent": true
+    },
+    {
+      "source": "/social/linkedin",
+      "destination": "https://www.linkedin.com/in/sebastienlorber/",
+      "permanent": true
+    },
+    {
+      "source": "/social/instagram",
+      "destination": "https://www.instagram.com/thisweekinreact/",
+      "permanent": true
+    },
+    {
+      "source": "/social/youtube",
+      "destination": "https://www.youtube.com/@thisweekinreact",
+      "permanent": true
+    },
+
+    {
+      "source": "/l",
+      "destination": "https://thisweekinreact.com/?utm_source=linkedin",
+      "permanent": true
+    },
+
+    {
+      "source": "/i",
+      "destination": "https://thisweekinreact.com/?utm_source=instagram-profile",
+      "permanent": true
+    },
+    {
+      "source": "/ig",
+      "destination": "https://www.instagram.com/thisweekinreact/",
+      "permanent": true
+    },
+
+    {
+      "source": "/t",
+      "destination": "https://thisweekinreact.com/?utm_source=twitter",
+      "permanent": true
+    },
+    {
+      "source": "/ts",
+      "destination": "https://thisweekinreact.com/?utm_source=twitter&utm_medium=thread&utm_content=thread-start",
+      "permanent": true
+    },
+    {
+      "source": "/tb",
+      "destination": "https://thisweekinreact.com/?utm_source=twitter&utm_medium=thread&utm_content=thread-break",
+      "permanent": true
+    },
+    {
+      "source": "/te",
+      "destination": "https://thisweekinreact.com/?utm_source=twitter&utm_medium=thread&utm_content=thread-end",
+      "permanent": true
+    },
+
+    {
+      "source": "/ih",
+      "destination": "https://thisweekinreact.com/?utm_source=ih",
+      "permanent": true
+    },
+    {
+      "source": "/react-async-hook",
+      "destination": "https://thisweekinreact.com/?utm_source=react-async-hook",
+      "permanent": true
+    },
+    {
+      "source": "/dev-comment",
+      "destination": "https://thisweekinreact.com/?utm_source=dev-comment",
+      "permanent": true
+    },
+    {
+      "source": "/linkedin-page",
+      "destination": "https://thisweekinreact.com/?utm_source=linkedin-page",
+      "permanent": true
+    },
+    {
+      "source": "/md",
+      "destination": "https://thisweekinreact.com/?utm_source=md",
+      "permanent": true
+    },
+    {
+      "source": "/find-your-newsletter",
+      "destination": "https://thisweekinreact.com/?utm_source=find-your-newsletter",
+      "permanent": true
+    },
+    {
+      "source": "/stackoverflow",
+      "destination": "https://thisweekinreact.com/?utm_source=stackoverflow",
+      "permanent": true
+    },
+    {
+      "source": "/dev-listing",
+      "destination": "https://thisweekinreact.com/?utm_source=dev-listing",
+      "permanent": true
+    },
+    {
+      "source": "/subscribe",
+      "destination": "https://thisweekinreact.com/?utm_source=subscribe",
+      "permanent": true
+    },
+
+    {
+      "source": "/fr",
+      "destination": "/fr/",
+      "permanent": true
+    },
+
+    {
+      "source": "/fr/sponsor",
+      "destination": "/sponsor",
+      "permanent": false
+    },
+
+    {
+      "source": "/blackfriday",
+      "destination": "/black-friday",
+      "permanent": true
+    },
+
+    {
+      "source": "/testimonials",
+      "destination": "https://twitter.com/sebastienlorber/timelines/1448942785814466561",
+      "permanent": true
+    },
+    {
+      "source": "/ck",
+      "destination": "https://convertkit.com/?lmref=d0748g",
+      "permanent": true
+    },
+    {
+      "source": "/convertkit",
+      "destination": "https://convertkit.com/?lmref=d0748g",
+      "permanent": true
+    },
+
+    {
+      "source": "/revue",
+      "destination": "https://substack.thisweekinreact.com/archive",
+      "permanent": true
+    },
+    {
+      "source": "/archive",
+      "destination": "https://substack.thisweekinreact.com/archive",
+      "permanent": true
+    },
+    {
+      "source": "/fr/archive",
+      "destination": "https://substack.thisweekinreact.com/archive",
+      "permanent": true
+    },
+
+    {
+      "source": "/calendar",
+      "destination": "https://docs.google.com/spreadsheets/d/16aQqZV4pJbrm0zvvT9qFm0B1NwLUPQuVFzijt4zSJCk",
+      "permanent": true
+    },
+    {
+      "source": "/buildinpublic",
+      "destination": "https://docs.google.com/spreadsheets/d/1Mlx78hLGflLKEbqbqeahkl5-2GW6t4m90ZL9zknZLb8/edit",
+      "permanent": true
+    },
+    {
+      "source": "/testimonials",
+      "destination": "https://twitter.com/sebastienlorber/timelines/1448942785814466561",
+      "permanent": true
+    },
+
+    {
+      "source": "/sponsor/form",
+      "destination": "https://tally.so/r/wLK0VG",
+      "permanent": true
+    },
+
+    {
+      "source": "/sponsoring",
+      "destination": "https://thisweekinreact.com/sponsor",
+      "permanent": true
+    },
+    {
+      "source": "/sponsoring/en",
+      "destination": "https://thisweekinreact.com/sponsor",
+      "permanent": true
+    },
+    {
+      "source": "/sponsoring/fr",
+      "destination": "https://thisweekinreact.com/fr/sponsor",
+      "permanent": true
+    },
+    {
+      "source": "/fr/sponsoring",
+      "destination": "https://thisweekinreact.com/fr/sponsor",
+      "permanent": true
+    },
+    {
+      "source": "/discord",
+      "destination": "https://discord.gg/DMy7wRBhrN",
+      "permanent": true
+    },
+    {
+      "source": "/chat",
+      "destination": "https://discord.gg/DMy7wRBhrN",
+      "permanent": true
+    },
+
+    {
+      "source": "/assets/images/storybook7-aa7bd6ad5f774d37600e1906d803bcb2.png",
+      "destination": "https://thisweekinreact.com/emails/issues/129/storybook7.png",
+      "permanent": true
+    },
+    {
+      "source": "/assets/images/opennext-6be161d0a1fbf2873127013569ee41bd.png",
+      "destination": "https://thisweekinreact.com/emails/issues/129/opennext.png",
+      "permanent": true
+    },
+    {
+      "source": "/assets/images/reactemail-2e20ad4a526a2af82000f5e760fbe928.png",
+      "destination": "https://thisweekinreact.com/emails/issues/129/reactemail.png",
+      "permanent": true
+    },
+    {
+      "source": "/assets/images/reactrouter6.5-5d1e594683c1508f56aab1505467a0db.png",
+      "destination": "https://thisweekinreact.com/emails/issues/129/reactrouter6.5.png",
+      "permanent": true
+    },
+    {
+      "source": "/assets/images/pointer-61d414eb4e584908e55f0bd57c5a023d.png",
+      "destination": "https://thisweekinreact.com/emails/issues/129/pointer.png",
+      "permanent": true
+    },
+    {
+      "source": "/assets/images/expo-mdx-3c25f5c69d560e1edee6c8056e1e9ea1.png",
+      "destination": "https://thisweekinreact.com/emails/issues/129/expo-mdx.png",
+      "permanent": true
+    },
+    {
+      "source": "/assets/images/meme-7307ca16c0f3d5d3d7389021f7d86769.png",
+      "destination": "https://thisweekinreact.com/emails/issues/129/meme.png",
+      "permanent": true
+    },
+
+    {
+      "source": "/fr/assets/images/storybook7-aa7bd6ad5f774d37600e1906d803bcb2.png",
+      "destination": "https://thisweekinreact.com/fr/emails/issues/129/storybook7.png",
+      "permanent": true
+    },
+    {
+      "source": "/fr/assets/images/opennext-6be161d0a1fbf2873127013569ee41bd.png",
+      "destination": "https://thisweekinreact.com/fr/emails/issues/129/opennext.png",
+      "permanent": true
+    },
+    {
+      "source": "/fr/assets/images/reactemail-2e20ad4a526a2af82000f5e760fbe928.png",
+      "destination": "https://thisweekinreact.com/fr/emails/issues/129/reactemail.png",
+      "permanent": true
+    },
+    {
+      "source": "/fr/assets/images/reactrouter6.5-5d1e594683c1508f56aab1505467a0db.png",
+      "destination": "https://thisweekinreact.com/fr/emails/issues/129/reactrouter6.5.png",
+      "permanent": true
+    },
+    {
+      "source": "/fr/assets/images/pointer-61d414eb4e584908e55f0bd57c5a023d.png",
+      "destination": "https://thisweekinreact.com/fr/emails/issues/129/pointer.png",
+      "permanent": true
+    },
+    {
+      "source": "/fr/assets/images/expo-mdx-3c25f5c69d560e1edee6c8056e1e9ea1.png",
+      "destination": "https://thisweekinreact.com/fr/emails/issues/129/expo-mdx.png",
+      "permanent": true
+    },
+    {
+      "source": "/fr/assets/images/meme-7307ca16c0f3d5d3d7389021f7d86769.png",
+      "destination": "https://thisweekinreact.com/fr/emails/issues/129/meme.png",
+      "permanent": true
+    }
+  ]
+}

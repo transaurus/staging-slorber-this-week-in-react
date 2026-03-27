@@ -1,0 +1,171 @@
+---
+slug: /142
+title: "This Week In React #142: JSX, React-Query, Server Components, Next.js, Million, OpenNext, Ariakit, Expo-Image, React-Three-Fiber, TS 5.1, Node.js 20, WebGPU..."
+authors: [slorber]
+date: 04-18-2023
+---
+
+Hi everyone!
+
+This week, TypeScript 5.1 is released in beta with many improvements related to JSX and React!
+
+React-Query plans to remove query callbacks in version 5, and this idea does not please everyone.
+
+For React-Native developers, don't miss [React-Native-Connection](https://reactnativeconnection.io/) on June 1st in Paris! I participated to the talks selection committee, and we just [published the complete line-up](https://twitter.com/sebastienlorber/status/1648269027318411264) with international and local speakers. 10% discount with the code "REACTHEBDO".
+
+<!-- truncate -->
+
+**💡 [Check this newsletter on Twitter](https://slo.im/thread) - visual format 🎨**
+
+---
+
+import Support from "../_support.mdx";
+
+<Support />
+
+---
+
+## 💸 Sponsor {#sponsor1}
+
+[![React-admin](/emails/issues/141/react_admin.png)](https://marmelab.com/react-admin/?utm_source=newsletter&utm_term=this-week-in-react)
+
+**[React-admin - The Open-Source Framework for B2B apps](https://marmelab.com/react-admin/?utm_source=newsletter&utm_term=this-week-in-react)**
+
+Are you currently building an admin panel with React? If so, we have some exciting news for you! By using React-admin, an open-source framework for B2B apps, you can spare yourself days of coding! 🤩
+
+With React-admin you can not only save valuable time, but you can also become a better developer! You don't have to take only our word for it, though. There are already over 20,000 developers who use it daily and swear by its effectiveness. And if you're curious about the experiences of developers who have used React-admin for years already, check out NPO [Caritas' testimonial](https://marmelab.com/blog/2022/07/07/react-admin-caritas.html).
+
+Join our thriving community as well as [Discord](https://discord.com/invite/jR3D6SdQ) server, so you can stay up-to-date on the latest React-admin updates and get support from a network of experienced developers.
+
+So what are you waiting for? Start using React-admin now, it’s free 😉, and take your development to the next level! 🚀
+
+---
+
+## ⚛️ React {#react}
+
+[![TypeScript 5.1 beta](/emails/issues/142/ts5.1.jpg)](https://devblogs.microsoft.com/typescript/announcing-typescript-5-1-beta/)
+
+**[TypeScript 5.1 (beta) + React](https://devblogs.microsoft.com/typescript/announcing-typescript-5-1-beta/)**
+
+An important TypeScript release that will allow React to be able to declare its own valid JSX types. It is planned to use this new feature as soon as possible in React typedefs, which have already been [forked](https://github.com/DefinitelyTyped/DefinitelyTyped/pull/65126) to continue to support older versions (TypeScript \<= 5.0).
+
+There are good reasons to adopt TypeScript 5.1+ as soon as possible. It unlocks among other things:
+
+- the ability to use a React Server Component `async` in JSX without TypeScript errors or [workaround](https://gist.github.com/cramforce/b5e3f0b103f841d2e5e429b1d5ac4ded).
+- the ability to return all valid types for `ReactNode` (string, array, boolean...) without needing a fragment ([details](https://twitter.com/sebastienlorber/status/1648619398259769344)).
+- other interesting improvements around JSX: namespaced attributes and linked editing (VSCode).
+
+---
+
+[![Breaking React Query's API on purpose](/emails/issues/142/rq.jpg)](https://tkdodo.eu/blog/breaking-react-querys-api-on-purpose)
+
+**[Breaking React Query's API on purpose](https://tkdodo.eu/blog/breaking-react-querys-api-on-purpose)**
+
+React-Query will remove the callbacks (`onSuccess`, `onError`, `onSettled`) from the `useQuery` hook with v5. Dominik explains this choice and suggest alternatives more adapted to common cases, like displaying a toast. A controversial but necessary decision because these APIs were often misused. Note: callbacks are kept for `useMutation`.
+
+---
+
+- 🧵 [Dan Abramov - "good rule of thumb. for any “server components”](https://twitter.com/dan_abramov/status/1647203329854799872): explains the minimum requirements for a proper Server Components implementation, taking full advantage of their potential. Presents the limitations of Qwik and Remix models.
+- 👀 [Dan Abramov has a "story to tell" at Remix Conf ("React from Another Dimension")](https://twitter.com/remix_run/status/1646177445454950400)
+- 👀 [Next.js ships its own copy of React](https://twitter.com/devongovett/status/1647728887927906304): copy used only when using App Router.
+- 👀 [Use Storybook with Rspack](https://twitter.com/rspack_dev/status/1646164228598792196)
+- 👀 [WebGPU in React-Three-Fiber demo](https://twitter.com/CantBeFaraz/status/1647811509014216710)
+- ⚡ [SpiderMonkey Newsletter (Firefox 112-113)](https://spidermonkey.dev/blog/2023/04/14/newsletter-firefox-112-113.html): "We’re working on improving performance for popular web frameworks such as React".
+- 📜 [Animating View Transitions](https://www.patterns.dev/posts/view-transitions): explains how to use the new View Transition API (Chrome 111+) in a React context with Next.js App Router, and in a MPA context. Interesting, but the proposed React integration doesn't look ideal.
+- 📜 [An Animated Guide to Reacts Optional Parameters](https://julesblom.com/writing/react-optional-parameters): interactive article that presents some features of React APIs that we use less often.
+- 📜 [Next over Remix](https://bradgarropy.com/blog/next-over-remix): feedback from a dev who had planned to switch to Remix, but finally stayed with Next.js.
+- 📜 [Building a blog with Next.js 13 and React Server Components](https://maxleiter.com/blog/build-a-blog-with-nextjs-13): uses all the latest Next.js features to create a modern blog.
+- 📜 [React forwardRef(): How to Pass Refs to Child Components](https://dmitripavlutin.com/react-forwardref/)
+- 📜 [Is React the New WordPress?](https://www.seancdavis.com/posts/is-react-the-new-wordpress/)
+- 📜 [Becoming an Astro maintainer](https://www.elian.codes/blog/23-04-12-becoming-an-astro-maintainer/)
+- 📜 [Display Warning for Unsaved Form Data on Page Exit](https://claritydev.net/blog/display-warning-for-unsaved-form-data-on-page-exit)
+- 📜 [Mastering React: Techniques to Take Your UI to the Next Level](https://blog.bitsrc.io/mastering-react-techniques-to-take-your-ui-to-the-next-level-a5002173904f)
+- 📜 [What's new in the new Storybook](https://www.mariasimo.codes/storybook-7-new-release)
+- 📜 [Full-stack Web Apps Without React](https://remotesynthesis.com/blog/full-stack-without-react/)
+- 🎥 [Must Know React Portability Patterns](https://www.youtube.com/watch?v=yi8UCnXPu8U): good advices to reduce coupling of your code to a particular framework.
+- 🎥 [Maybe Create React App Isn't Dead?](https://www.youtube.com/watch?v=A2kWoKnpy1U)
+- 📦 [Ariakit 0.1.0](https://github.com/ariakit/ariakit/releases/tag/%40ariakit%2Freact%400.1.0): new way of managing state based on component stores. Motivations in this [RFC](https://github.com/ariakit/ariakit/issues/1875): less re-renders, becoming framework-agnostic...
+- 📦 [Million.js 2.2.1 - Support for hooks and non-primitives](https://twitter.com/aidenybai/status/1646238355427041285). This [thread](https://twitter.com/aidenybai/status/1647005716350406656) gives interesting explanations about the difference between React and Million reconciliation.
+- 📦 [OpenNext 1.0](https://github.com/serverless-stack/open-next/releases/tag/v1.0.0): aims to make Next.js more portable thanks to serverless adapter.
+- 📦 [Astro 2.3](https://twitter.com/astrodotbuild/status/1646593124997779465)
+- 📦 [React-Three-Next - starter updated - App Router support](https://twitter.com/onirenaud/status/1646139899291254786)
+- 📦 [React-Three-Fiber AutoFocus DOF](https://github.com/ektogamat/AutoFocusDOF)
+
+<SubscribeFormEmbed />
+
+---
+
+## 💸 Sponsor {#sponsor2}
+
+[![Tina.io is a headless CMS for Markdown-powered sites](/emails/issues/140/tinacms.jpg)](https://tina.io/?utm_source=newsletter&utm_term=this-week-in-react)
+
+**[Tina.io is a headless CMS for Markdown-powered sites](https://tina.io/?utm_source=newsletter&utm_term=this-week-in-react)**
+
+- Editing UI for your Markdown files
+- UI for MDX components
+- Supports static (SSG) and server-side rendering (SSR)
+- Option for visual editing (live-preview)
+- Build with reusable blocks
+
+Test a starter site
+
+- [Docusaurus](https://github.com/tinacms/tinasaurus) (Github)
+- [Next.js + Tailwind with visual editing](https://github.com/tinacms/tina-cloud-starter) (Github)
+
+Or run  `npx create-tina-app@latest` then visit `localhost:3000/admin`
+
+Watch the [4-min demo video](https://www.youtube.com/watch?v=zRkeKSZjlyw)
+
+---
+
+## 📱 React-Native {#react-native}
+
+- 👀 [Hover gesture coming soon to React Native Gesture Handler](https://twitter.com/breskin67/status/1646511002933153794): future cross-platform API with support for iOS, Android, web.
+- 👀 [Image perf demo](https://twitter.com/nightstomp/status/1647231665222176769): shows the bad perf impact of using too large images on your React-Native apps.
+- 📦 [Expo-Image 1.2.0 - ThumbHash support](https://twitter.com/tsapeta/status/1646875246362861569)
+- 📦 [React-Native-Widget-Extension](https://twitter.com/bndkt/status/1648431242025766912)
+- 📦 [AnimateReactNative](https://www.animatereactnative.com/): more than 100 animations by Catalin Miron (paid product).
+- 🧵 [Expo Docs Updates](https://twitter.com/amanhimself/status/1646959895995105281)
+- 🧵 [Jamon Holmgren - "Want to know how easy it is to grab API keys out of a compiled iPhone app?"](https://twitter.com/jamonholmgren/status/1647305506053320704)
+- 🎥 [Song of Bloom - “Can it be done in React Native?”](https://www.youtube.com/watch?v=PfCQEA72ljU)
+- 🎥 [React Native File Based Routing with Expo Router](https://www.youtube.com/watch?v=RglRiycD0oQ)
+- 👥 [React-Native-Connection](https://reactnativeconnection.io/) (Paris, 1er June) is offering us -10% on entries (code "REACTHEBDO").
+- 👥 [App.js](https://appjs.co/) (Krakow, May 10-12) is offering us [-20% on workshops](https://ti.to/appjs/2023/discount/ThisWeekinReact20) (code "ThisWeekinReact20").
+- 👥 [Chain React](https://chainreactconf.com/) (Portland, May 18-19) is offering us -10% on entries (code "thisweekinreact").
+
+---
+
+## 🧑‍💻 Jobs {#jobs}
+
+🧑‍💼 [**Passionfroot - Senior Full-stack Engineer (Remix) - €160k+, Berlin/remote**](https://passionfroot.recruitee.com/o/senior-fullstack-engineer)
+
+Passionfroot's mission is to empower the independent businesses of tomorrow via YouTube, Podcasts, Social Media, and Newsletters. Join us in building a tool that will empower creators globally to build scalable, sustainable businesses.
+
+🧑‍💼 [**Callstack - Senior React Native Developer - Fully Remote, PLN 21-32k net on B2B, monthly**](https://www.callstack.com/senior-react-native-developer)
+
+Do you want to work on the world's most used apps? Would you like to co-create the React Native technology? Join the Callstack team of React & React Native leaders. Check our website for more details. We are looking forward to seeing your application - show us what you've got!
+
+🧑‍💼 [**G2i - 100% Remote React Native Jobs**](https://twitter.com/gabe_g2i/status/1563204813881425926?s=20&t=ArRLC77BpRwXXCdx8fnUqw)
+
+We have several roles open for developers focused on React Native! Pay is ~160k plus 10% bonus. You must have production experience with RN and be based in the US. DM [@gabe_g2i](https://twitter.com/gabe_g2i) to learn more and don't forget to mention This Week in React.
+
+💡 [How to publish an offer?](https://thisweekinreact.com/sponsor)
+
+---
+
+## 🔀 Other {#other}
+
+- [Node.js 20 Now Available](https://openjsf.org/blog/2023/04/18/node-js-20-now-available/): with stable test runner, permission model, compiling to executable binary...
+- [pretty-ts-errors](https://github.com/yoavbls/pretty-ts-errors): great idea to improve the TS DX in VSCode.
+- [total-typescript/shoehorn - Partial mocks in TypeScript](https://github.com/total-typescript/shoehorn)
+- [Chrome ships WebGPU](https://developer.chrome.com/blog/webgpu-release/): in Chrome 113+.
+- [WebGPU Fundamentals](https://webgpufundamentals.org/)
+- [Turborepo 1.9](https://twitter.com/turborepo/status/1646238976196444162)
+
+---
+
+## 🤭 Fun {#fun}
+
+[![alt](/emails/issues/142/meme.jpg)](https://twitter.com/thekitze/status/1646511070801203202)
+
+See ya! 👋

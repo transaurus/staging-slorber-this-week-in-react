@@ -1,0 +1,154 @@
+---
+slug: /261
+title: "This Week In React #261: RSC vulnerability, Activity, ViewTransition, React Router, Sonner, Cedar, Storybook, Conform | RNRepo, Nitro Modules, Keyboard Controller, SET, Sheets, deep links | tsgo, Bun, WebGPU, Vite, oxfmt, Valibot"
+authors: [slorber]
+date: 12-03-2025
+---
+
+Hi everyone\!
+
+A major React 19 Server Functions vulnerability has just been disclosed. Make sure to upgrade your React 19 or meta-framework ASAP\!
+
+On the mobile side, we have more positive news: RNRepo should speed up our React Native builds even more, and Shared Elements Transitions are coming soon\! (unlike React Native 1.0 😅)
+
+Don’t forget to answer the [State of React 2025 survey](https://survey.devographics.com/en-US/survey/state-of-react/2025?source=thisweekinreact.com) while it’s still open\!
+
+<!-- truncate -->
+
+import Support from "../_support.mdx";
+
+<Support />
+
+---
+
+## 💸 Sponsor {#sponsor1}
+
+[![AG Charts: The Best React Charts in the World.](/emails/issues/261/aggrid.jpg)](https://www.ag-grid.com/charts?utm_source=thisweekinreact&utm_medium=newsletter&utm_campaign=2025-email-6)
+
+**[AG Charts: The Best React Charts in the World.](https://www.ag-grid.com/charts?utm_source=thisweekinreact&utm_medium=newsletter&utm_campaign=2025-email-6)**
+
+**AG Charts** is a high-performance, canvas-based charting library from [AG Grid](https://www.ag-grid.com/react-table?utm_source=thisweekinreact&utm_medium=newsletter&utm_campaign=2025-email-6).
+
+Originally built to power AG Grid’s Integrated Charts, it now serves over **1M npm downloads** each month.
+
+- 🆓 **Free**: A wide range of chart types (bar, line, scatter, area, and more) — free, forever.
+- 🚀 **Fast**: Optimised canvas rendering for large datasets (1M+ points).
+- 🦾 **Accessible**: Built-in support for screen readers and keyboard navigation.
+- 🔄 **AG Grid Integration**: Shared API with AG Grid for seamless integration.
+
+👉 Get Started for Free: [www.ag-grid.com/charts](https://www.ag-grid.com/charts?utm_source=thisweekinreact&utm_medium=newsletter&utm_campaign=2025-email-6)
+
+---
+
+## ⚛️ React {#react}
+
+[![React 19 Critical Security Vulnerability in React Server Components](/emails/issues/261/react.jpg)](https://react.dev/blog/2025/12/03/critical-security-vulnerability-in-react-server-components)
+
+**[React 19 Critical Security Vulnerability in React Server Components](https://react.dev/blog/2025/12/03/critical-security-vulnerability-in-react-server-components)**
+
+A critical (10.0) security vulnerability affects React 19\. It allows unauthenticated remote code execution vulnerability in React Server Components by crafting a malicious HTTP request sent to a Server Function endpoint.
+
+The React team recommends upgrading immediately. The vulnerability has been responsibly disclosed, and patches are already available for React 19 and the most popular frameworks that leverage RSCs: Next.js, Expo, React Router, Waku, Redwood, and more. Hosting providers can mitigate the issue thanks to their Web Application Firewalls.
+
+---
+
+- 💸 [React Certification– Last Chance to get 50% off. Trusted by devs at Ford, PwC, Dell & 680+ companies. Exams by Microsoft MVP Aurora Scharff.](https://certificates.dev/react?friend=TWIR&utm_campaign=cert_cm2025&utm_medium=email&utm_source=twir)
+- 🐦 [The Shopify Live Globe running on the Las Vegas Exosphere using React-Three-Fiber](https://x.com/pushmatrix/status/1994445450527519085): If you are into creative web dev, you might also want to see [their React-Three-Fiber pinball machine](https://shopify.engineering/2025-bfcm-live-globe) that also displays that globe.
+- 👀 [React-Redux issue \- Mark `connect` as deprecated](https://github.com/reduxjs/react-redux/issues/2264)
+- 📜 [Without the blue bar](https://wtbb.vercel.app/): Re-implements GitHub using Next.js 16, RSC, `’use cache’` directives, and browser virtualization to show how much faster it could be.
+- 📜 [Building a toast component](https://emilkowal.ski/ui/building-a-toast-component): The author of the popular React library Sonner shares various design engineering lessons.
+- 📜 [React Router's take on React Server Components](https://www.epicreact.dev/react-routers-take-on-react-server-components-4bj7q)
+- 📜 [Use React \<Activity /\> to preload a video](https://www.epicreact.dev/use-react-activity-to-preload-a-video-y2lmw)
+- 📜 [Use React \<ViewTransition /\> to Smoothly Transition Images and Titles](https://www.epicreact.dev/use-react-view-transition-to-smoothly-transition-images-and-titles-lu6ks)
+- 📜 [React 19.2: The async shift is finally here](https://blog.logrocket.com/react-19-2-the-async-shift/)
+- 📜 [React has changed, your Hooks should too](https://allthingssmitty.com/2025/12/01/react-has-changed-your-hooks-should-too/)
+- 📜 [The next era of React has arrived: Here's what you need to know](https://blog.logrocket.com/the-next-era-of-react/)
+- 📜 [Migrating 6000 React tests using AI Agents and ASTs](https://eliocapella.com/blog/ai-library-migration-guide/)
+- 📜 [Vitest Browser Mode \- The Future of Frontend Testing](https://howtotestfrontend.com/resources/vitest-browser-mode-guide-and-setup-info#how-vitest-browser-mode-works)
+- 📜 [Why use React?](https://adactio.com/journal/22265)
+- 📦 [React Router 7.10 \- Stabilized various APIs](https://github.com/remix-run/react-router/blob/main/CHANGELOG.md#v7100): This also introduces a new `unstable_useTransitions` to opt-in/out of React transitions.
+- 📦 [Storybook 10.1 \- Installation and accessibility improvements](https://github.com/storybookjs/storybook/releases/tag/v10.1.0)
+- 📦 [oRPC 1.12 \- Configure default options for TanStack query/mutation](https://github.com/unnoq/orpc/releases/tag/v1.12.0)
+- 📦 [Conform 1.14 \- Improve `useForm` type inference, form reset, strip empty values by default](https://github.com/edmundhung/conform/releases/tag/v1.14.0)
+- 📦 [CedarJS 1.0 \- Actively maintained fork of RedwoodJS (winded down and renamed as Redwood GraphQL](https://github.com/cedarjs/cedar/releases/tag/v1.0.0))
+- 📦 [Preact 10.28 \- Types and perf improvements](https://github.com/preactjs/preact/releases/tag/10.28.0)
+- 📦 [TanStack Form 1.17 \- Fix React Compiler issues, React 17 compat](https://github.com/TanStack/form/releases/tag/%40tanstack%2Freact-form%401.27.0)
+- 📦 [StyleX 0.17.1 \- Unplugin (universal bundler plugin), Custom Markers, default config options updated](https://stylexjs.com/blog/v0.17.1)
+- 📦 [Base UI beta.7 \- Various bug fixes before v1 that should come soon](https://github.com/mui/base-ui/releases/tag/v1.0.0-beta.7)
+- 📦 [Zustand 5.0.9 \- New `unstable_ssrSafe` middleware for usage with Next.js](https://github.com/pmndrs/zustand/releases/tag/v5.0.9)
+- 🎥 [Web Dev Simplified \- Stop Writing React conditional code like this (use Activity)](https://www.youtube.com/watch?v=Ubbb1RK7iFs)
+- 🎥 [Ankita Kulkarni \- Cache directives \- This Next.js Pattern Critical For Every Developer](https://www.youtube.com/watch?v=1XAOacgJ83s)
+- 🎙️ [This Month in React 2025-11: Cloudflare outage, ongoing npm hacks, React Router is getting RSCs](https://share.transistor.fm/s/8aea071c)
+
+<SubscribeFormEmbed placement="middle" />
+
+---
+
+## 💸 Sponsor {#sponsor2}
+
+[![Let AI fix your mistakes. It already generated the diff](/emails/issues/261/sentry.jpg)](https://blog.sentry.io/seer-can-now-trigger-cursor-agents-to-fix-your-bugs/?utm_source=thisweekinreact&utm_medium=paid-community&utm_campaign=seer-fy26q4-cursoragents&utm_content=newsletter-cursor-blog-learnmore)
+
+**[Let AI fix your mistakes. It already generated the diff](https://blog.sentry.io/seer-can-now-trigger-cursor-agents-to-fix-your-bugs/?utm_source=thisweekinreact&utm_medium=paid-community&utm_campaign=seer-fy26q4-cursoragents&utm_content=newsletter-cursor-blog-learnmore)**
+
+Seer, Sentry’s AI debugger, finds what broke, tells you why, and figures out the fix. Now it can hand that root cause (with full issue context) to your Cursor agent to draft the PR automatically.
+
+Here’s how it works and [how to set it up.](https://blog.sentry.io/seer-can-now-trigger-cursor-agents-to-fix-your-bugs/?utm_source=thisweekinreact&utm_medium=paid-community&utm_campaign=seer-fy26q4-cursoragents&utm_content=newsletter-cursor-blog-learnmore)
+
+---
+
+## 📱 React-Native {#react-native}
+
+[![RNRepo - Faster React Native Builds Through Prebuilt Artifacts](/emails/issues/261/rnrepo.jpg)](https://blog.swmansion.com/rnrepo-faster-react-native-builds-through-prebuilt-artifacts-004903b5e510)
+
+**[RNRepo \- Faster React Native Builds Through Prebuilt Artifacts](https://blog.swmansion.com/rnrepo-faster-react-native-builds-through-prebuilt-artifacts-004903b5e510)**
+
+Software Mansion just unveiled RNRepo, a new infrastructure project aiming to speed up our React Native builds.
+
+The idea is to prebuild popular native libraries against multiple React Native versions ahead of time, and host the artifacts on a Maven repository. Then, you can configure your build to download the prebuilt artifacts instead of building them locally, saving time and disk space. This should complete nicely the speed improvements we get with React Native core prebuilds and the Expo Build Cache providers.
+
+For now, RNRepo is in beta. It only supports Android and 40 popular libraries, but iOS support is coming, and the community can request support for additional libraries.
+
+---
+
+- 💸 [PostHog - Discover and debug issues with session replay for React Native.](https://go.posthog.com/twir-dec3)
+- 📅 [Release Calendar updated for 2026](https://reactnative.dev/docs/releases): The release dates for React Native 0.84-0.89 have been defined. No sign of 1.0, so we pray for 2027? 😇
+- 🐦 [Reanimated Shared Elements Transitions are coming](https://x.com/swmansion/status/1995541905292091789): Software Mansion is teasing us about this [highly anticipated Reanimated PR](https://github.com/software-mansion/react-native-reanimated/pull/7466) that could be merged anytime soon\!
+- 🐦 [Marc Rousavy is bullish on hybrid approaches](https://x.com/mrousavy/status/1994751251284639993): I liked the comparison of React Native with the scripting layer of game engines like Unreal and Unity.
+- 🐦 [Hermes will soon support ISerialization (efficient opaque binary representation) for efficient message passing between runtimes](https://x.com/tmikov/status/1996030644863021125): Will be the base of an upcoming Web Worker implementation 👀.
+- 🎄 [React Native Advent Calendar 2025](https://galaxies.dev/calendar/2025)
+- 📜 [Deep Links and Authentication in React Navigation 7](https://www.callstack.com/blog/deep-links-with-authentication-in-react-navigation): Explains how to deep link to screens behind auth and leverage a new `UNSTABLE_routeNamesChangeBehavior` option to help navigate to the deep link screen after login..
+- 📜 [Building an AI-Powered Note-Taking App in React Native \- Part 4: Automatic Speech Recognition](https://blog.swmansion.com/building-an-ai-powered-note-taking-app-in-react-native-part-4-automatic-speech-recognition-a3b50e7d2245)
+- 📜 [Bridging UIKit and SwiftUI in a Nitro Module](https://davey.bearblog.dev/bridging-uikit-and-swiftui-in-a-nitro-module/)
+- 📜 [Transcribing audio buffers from react-native-audio-api in Real-time](https://davey.bearblog.dev/transcribing-audio-buffers-from-react-native-audio-api-in-real-time/)
+- 📦 [Keyboard Controller 1.20 \- Compatible with Expo Snacks, migrate from deprecated Reanimated `useAnimatedKeyboard` hook, new `assureFocusedInputVisible()` API](https://kirillzyusko.github.io/react-native-keyboard-controller/blog/expo-snacks)
+- 📦 [Nitro Cookies \- High-performance HTTP cookie management](https://github.com/l2hyunwoo/react-native-nitro-cookies)
+- 📦 [True Sheet 3.0 \- New Architecture, automatic ScrollView detection, native header/footer, sheet stacking, Reanimated 4, edge-to-edge, and more](https://sheet.lodev09.com/blog/release-3-0)
+- 📦 [Action Sheet 10.0 \- Reanimated, edge-to-edge, improved keyboard behavior, better list support, new SheetManager APIs](https://github.com/ammarahm-ed/react-native-actions-sheet/releases/tag/v10.0.0)
+- 📦 [Expo Targets \- Add iOS widgets, App Clips, iMessage stickers, share extensions, and wallet extensions to your Expo app — no native experience required](https://github.com/csark0812/expo-targets)
+- 🎥 [React Strict DOM: Nicolas Gallagher on Writing Once for Web & Native](https://www.youtube.com/watch?v=Ol0vmCdF6Pk)
+- 🎥 [Expo \- How to send emails with Resend from your Expo app](https://www.youtube.com/watch?v=8sPD8SNcUFA)
+- 🎙️ [Rocket Ship 86 \- CSS Grid, Faster JSON, Uniwind Experience, React Native Rails & Tiny Harvest Game Update](https://share.transistor.fm/s/de1cf646)
+
+---
+
+## 🔀 Other {#other}
+
+- 📣 [Progress on TypeScript 7](https://devblogs.microsoft.com/typescript/progress-on-typescript-7-december-2025/): The 10x faster Go-based TypeScript compiler is coming\! It already achieves great compatibility, and previews can easily be tested. TypeScript 6.0 will be the last JS-based release, and a bridge toward the newer implementation.
+- 📣 [Bun is joining Anthropic](https://bun.com/blog/bun-joins-anthropic)
+- 📣 [WebGPU is now supported in major browsers](https://web.dev/blog/webgpu-supported-major-browsers)
+- 📜 [NPM Security Best Practices: How to Protect Your Packages After the 2025 Shai Hulud Attack](https://snyk.io/fr/articles/npm-security-best-practices-shai-hulud-attack/)
+- 📦 [Oxc Formatter Alpha \- Rust-powered, Prettier-compatible code formatter](https://oxc.rs/blog/2025-12-01-oxfmt-alpha.html)
+- 📦 [Vite 8.0 beta \- The Rolldown-powered Vite](https://voidzero.dev/posts/announcing-vite-8-beta)
+- 📦 [Valibot 1.2 \- Type coercion, metadata examples, ISBN validation](https://valibot.dev/blog/valibot-v1.2-release-notes/)
+- 📦 [Prettier 3.7 \- Improved formatting consistency and new plugin features](https://prettier.io/blog/2025/11/27/3.7.0)
+- 📦 [Actsense \- Audit your GitHub Actions to identify security vulnerabilities](https://github.com/0xCardinal/actsense)
+
+---
+
+## 🤭 Fun {#fun}
+
+[![alt](/emails/issues/261/meme.jpg)](https://x.com/DavidKPiano/status/1994059743841931531)
+
+[![alt](/emails/issues/261/meme2.jpg)](https://x.com/0xluffy/status/1995929795058917424)
+
+See ya! 👋

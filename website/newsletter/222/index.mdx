@@ -1,0 +1,168 @@
+---
+slug: /222
+title: "This Week In React #222: CRA, React Router, captureOwnerStack, TanStack, CTRA, tRPC, Astro, Preact | RN 0.78, React 19, Expo, noCompress, JitPack, CRNL, Screens | TC39, Interop, TS, CSS, Node.js, Deno"
+authors: [slorber]
+date: 02-19-2025
+---
+
+Hi everyone!
+
+This week we have 2 official blog posts from the React and React Native core teams! CRA is deprecated and React Native 0.78 is out with React 19 support.
+
+🎂 We're also celebrating this newsletter's 5th anniversary! The [first issue](https://substack.thisweekinreact.com/p/react-hebdo-sebastien-lorber-1-20-02-13) went out on February 13th. For the first 2 years it was only in French. I’d love to know who's been reading since the early days—say hi if you have! 😀
+
+Check our partner conf **[React Native Connection](https://reactnativeconnection.io/?utm_source=thisweekinreact)** -  🇫🇷 Paris - April 1-2 - 15% discount with code "TWIR". The French React Native conference is back with Britta Evans-Fenton (Shopify), Kadi Kraman (Expo), Krzysztof Piaskowy (Software Mansion), Saad Najmi (Microsoft) and more - and great deep-diving talks!
+
+<!-- truncate -->
+
+import Support from "../_support.mdx";
+
+<Support />
+
+---
+
+## 💸 Sponsor {#sponsor1}
+
+[![PropelAuth: Make Authentication Your Advantage](/emails/issues/218/propelauth.jpg)](https://www.propelauth.com/?utm_source=newsletter&utm_campaign=twinrfeb192024)
+
+**[PropelAuth: Make Authentication Your Advantage](https://www.propelauth.com/?utm_source=newsletter&utm_campaign=twinrfeb192024)**
+
+If your authentication isn't **helping you grow**, it's **holding you back**.
+
+With [PropelAuth](https://www.propelauth.com/?utm_source=newsletter&utm_campaign=twinrjan222024), you get everything you need to launch and scale your B2B product:
+
+- **Easy to understand** [documentation](https://docs.propelauth.com/?utm_source=newsletter&utm_campaign=twinrjan222024) and **friendly, fast support**.
+- **UIs that cover all your use cases** - signup, login, MFA, organization management and more.
+- **User impersonation** so you can provide top-notch support to your users.
+- **Enterprise SAML/SSO** and **advanced security features** so you can be upmarket-ready.
+- **User insights** to help you strategize and expand.
+
+[Get started today](https://www.propelauth.com/?utm_source=newsletter&utm_campaign=twinrjan222024)
+
+---
+
+## ⚛️ React {#react}
+
+[![Sunsetting Create React App](/emails/issues/222/cra.jpg)](https://react.dev/blog/2025/02/14/sunsetting-create-react-app)
+
+**[Sunsetting Create React App](https://react.dev/blog/2025/02/14/sunsetting-create-react-app)**
+
+Long overdue, CRA has received the latest React 19 fixes and is now officially deprecated. This article explains the limits of the CRA and build tools regarding routing, waterfalls, code splitting, and more. The React team encourages us to adopt a framework like Next.js, React Router, or Expo to address these issues. However, you can still [build a React app from scratch](https://react.dev/learn/build-a-react-app-from-scratch) using Vite, Parcel, Rsbuild, or other modern build tools.
+
+The initial announcement sparked heated debates on X and GitHub, mainly because it overemphasized frameworks at the expense of build tools like Vite. It was [soon updated](https://github.com/reactjs/react.dev/pull/7624) to address these concerns. All this also led to potential collaboration opportunities between [Evan You (Vite) and the React team](https://github.com/facebook/react/pull/31768#issuecomment-2666856223) to work together on an opinionated "official" way to integrate with Vite with React Server Components, with a commitment to maintain this integration over time in the React repository.
+
+Related news:
+
+- 📜 [Use a framework to build React Native apps](https://reactnative.dev/blog/2024/06/25/use-a-framework-to-build-react-native-apps): A few months ago, the React Native team made a similar announcement, claiming “you’re either using a framework or you’re building your own framework”.
+- 📦 [Create TanStack Router App](https://github.com/TanStack/create-tsrouter-app): Jack Herrington’s first contribution to the TanStack is an alternative to Create-React-App, also introduced it in a [video](https://www.youtube.com/watch?v=10J6RyMOxN0)
+- 📦 [CRA to Parcel](https://github.com/parcel-bundler/cra-to-parcel): A script to migrate a non-ejected Create React App to Parcel
+
+---
+
+- 💸 [Product for Engineers - How we choose technologies](https://dub.link/twir-feb19)
+- 📣 [Vercel \- Support for React Router v7](https://vercel.com/changelog/support-for-react-router-v7): First-class support for React Router in framework mode with support for SSR on the new optimized Fluid compute serverless feature.
+- 📖 [React core docs \- `captureOwnerStack()`](https://react.dev/reference/react/captureOwnerStack): A new experimental React core API has been recently unflagged and is now officially documented. It is particularly useful for frameworks to enhance their custom error overlays. Unsurprisingly, Next.js is working on a new overlay that leverages this API ([example](https://x.com/sebastienlorber/status/1890361565960151374)).
+- 📖 [Vercel AI docs \- Duman-in-the-Loop with Next.js](https://sdk.vercel.ai/cookbook/next/human-in-the-loop): A recipe to prompt users for yes/no confirmation before LLM tool calls.
+- 📜 [Introducing the new TanStack React Query integration](https://trpc.io/blog/introducing-tanstack-react-query-client): The upcoming tRPC v11 is in RC and leverages React Query’s `queryOptions()` to remove an abstraction layer: you can now use the native `useQuery()` instead of the tRPC wrapper.
+- 📜 [Designing Backgrounds with LLMs and React](https://www.vigilant.run/blog/designing-backgrounds-with-llms-and-react): Tools like Cursor are quite good at authoring artistic React components.
+- 📜 [Snapshot testing styled-components with Vitest](https://brightinventions.pl/blog/snapshot-testing-styled-components-with-vitest/): The existing StyledComponents Jest snapshot serializer is also compatible with Vitest. I’m not a fan of snapshotting styles and usually prefer [visual regression tests](https://docusaurus.io/blog/upgrading-frontend-dependencies-with-confidence-using-visual-regression-testing), but this might help existing codebases migrate to Vitest.
+- 📜 [I like the future of Next.js](https://tigerabrodi.blog/i-like-the-future-of-nextjs): Thoughts on dynamic IO, PPR, and the `use cache` directive.
+- 📜 [React "as" Prop Using TypeScript](https://playfulprogramming.com/posts/react-as-prop)
+- 📜 [Client-Side Rendering in Flame Graphs](https://www.developerway.com/posts/client-side-rendering-flame-graph)
+- 📜 [React Libraries for 2025](https://www.robinwieruch.de/react-libraries/)
+- 📜 [Tanstack Start \- Is it the Next NextJS?](https://spin.atomicobject.com/tanstack-start-nextjs/)
+- 📦 [React Router 7.2 \- Type-safe `href()` utility](https://github.com/remix-run/react-router/blob/main/CHANGELOG.md#v720): A welcome improvement giving route path autocompletion and params validation. This release also include support for an SPA fallback static file, and 2 new future flags `unstable_splitRouteModules` and `unstable_viteEnvironmentApi`.
+- 📦 [TanStack Start 1.107 \- AbortSignal for server functions](https://tanstack.com/start/latest/docs/framework/react/server-functions#cancellation)
+- 📦 [Astro 5.3 \- Faster SSR, automatic session storage setup](https://astro.build/blog/astro-530/)
+- 📦 [Preact 10.26 \- Support for React 19 `<Context>`](https://github.com/preactjs/preact/releases/tag/10.26.0)
+- 📦 [9ui \- Beautiful, customizable components built with Base UI and Tailwind CSS](https://www.9ui.dev/): Using the shadcn distribution model but using Base UI, a new interesting alternative to Radix. The author is also porting popular libs such as Vaul and cmdk.
+- 📦 [Kokonut UI \- Collection of components built for Next.js and React with Tailwind CSS](https://kokonutui.com/): Another option using the shadcn distribution model.
+- 📦 [React Bits \- Collection of animated, interactive & fully customizable React components for building stunning, memorable user interfaces](https://github.com/DavidHDev/react-bits)
+- 🎥 [Alem Tuzlak \- Understanding the server/client boundary in react-router](https://www.youtube.com/watch?v=zyQjzId0H7s)
+- 🎙️ [Front-End Fire 81 \- State of React Results, TypeScript 5.8, and v0 Upgrades](https://front-end-fire.com/episodes/81/)
+
+<SubscribeFormEmbed placement="middle" />
+
+---
+
+## 💸 Sponsor {#sponsor2}
+
+[![Rethink your React apps' UX with Reactile](/emails/issues/216/reactile.jpg)](https://www.reactile.net/?utm_source=ThisweekinReact)
+
+**[Rethink your React apps' UX with Reactile](https://www.reactile.net/?utm_source=ThisweekinReact)**
+
+Reactile is an UI/UX turnkey framework which features an out-of-the-box, intuitive tiling display with workspaces. It encourages parallel workloads for large web solutions within a single browser tab. Implement your own view containers, widgets and logic using React and let Reactile handle the display for you.
+
+On top of that, Reactile also offers:
+
+- A promise-based persistence mechanism which permits a uniform workflow across time and on multiple devices.
+- The possibility to use nested tabs for your tiles.
+- A simplified global search mechanism.
+- CSS @container based responsiveness.
+- And much more.
+
+Version 2 coming out soon. Get started with your unique 30-day free trial. Learn more about it on reactile.net.
+
+[Reactile - The new React UI management system](https://www.reactile.net/price?utm_source=ThisweekinReact)
+
+---
+
+## 📱 React-Native {#react-native}
+
+[![React Native 0.78 - React 19 and more](/emails/issues/222/rn.jpg)](https://reactnative.dev/blog/2025/02/19/react-native-0.78)
+
+**[React Native 0.78 \- React 19 and more](https://reactnative.dev/blog/2025/02/19/react-native-0.78)**
+
+I bet you weren't expecting a React Native release so soon, but the team recently decided to releases smaller versions more frequently. Here are the highlights:
+
+- React 19 support\!
+- Simplified process to enable the React Compiler.
+- Metro log streaming is back in 0.78 and 0.77.1, but opt-in with a new `--client-logs` flag, and still deprecated.
+- `<Image>` supports Android XML resources, unlocking possible perf improvements.
+- `ReactNativeFactory` on iOS to ease brownfield usage in any ViewController
+
+React 19 itself unlocks many cool things:
+
+- Actions (async transitions), `useActionState()`, `useOptimistic()`, all useful to submit forms and manage loading, error, and optimistic state
+- Use `ref` as a regular prop instead of `forwardRef()`, also supporting a ref cleanup function
+- Use `<Context>` instead of `<Context.Provider>`
+- Read contexts and promises with `use()`
+
+---
+
+- 💸 [Codemagic - a great App Center alternative for React Native devs! 8x faster builds, CodePush, automated distribution. 1-month free trial!](https://codemagic.io/migration-from-app-center/?utm_source=newsletter&utm_medium=email&utm_campaign=app_center_this_week_react)
+- 📣 [Expo support for React Native 0.78](https://expo.dev/changelog/react-native-78): Due to the React 19 upgrade, v0.78 will not be supported in SDK52, but will be in the canary version. SDK 53 is scheduled for this spring and will likely upgrade directly to 0.79.
+- 👀 [Gradle Plugin PR \- Add option to disable bundle compression](https://github.com/facebook/react-native/pull/49449): Marc Rousavy proposing a `react.enableBundleCompression` Gradle property. Turning it off could greatly optimize Android app startup time became (and is now the new default), but it also increases the app install size.
+- 💬 [Making the JitPack Repository optional](https://github.com/react-native-community/discussions-and-proposals/discussions/877): Android apps With v0.78, Android apps have a new `react.includeJitpackRepository=true` Gradle property. Turning it off could improve supply chain security, and may become the default in the future.
+- 📜 [Checkbox Interactions \- The beauty of Layout Animations](https://reactiive.io/articles/checkbox-interactions)
+- 📜 [Universal App with Expo](https://www.premieroctet.com/blog/en/universal-app-with-expo)
+- 📦 [Create React Native Library 0.48 \- Support for Nitro modules](https://github.com/callstack/react-native-builder-bob/releases/tag/create-react-native-library%400.48.0)
+- 📦 [React Native Screens 4.7 \- Fix Android formSheet transition](https://github.com/software-mansion/react-native-screens/releases/tag/4.7.0)
+- 📦 [Expo AI Chatbot \- Starter to build a universal Expo \+ Next.js chatbot with premium option](https://www.expoaichatbot.com/)
+- 🎥 [Expo \- EAS Workflows: React Native CI/CD for app developers](https://www.youtube.com/watch?v=OJ2u9tQCpr4)
+- 🎥 [Catalin Miron \- Apple Invites animation](https://www.youtube.com/watch?v=P_gYeiFipsk)
+- 🎥 [Simon Grimm \- The Fastest Way to Build a Mobile App (AI \+ Expo \= Magic)](https://www.youtube.com/watch?v=fJb6f2Sw4Ek)
+- 🎙️ [React Universe On Air 48 \- Reanimated 4 is the Future of Smooth React Native Animations](https://www.youtube.com/watch?v=wAfJqFX62ag)
+
+---
+
+## 🔀 Other {#other}
+
+- 📣 [TC39 \- Agenda for the 106th meeting](https://github.com/tc39/agendas/blob/main/2025/02.md): Meeting in progress. Great proposals have already progressed, including `RegExp.escape()`, `import defer`, `Math.clamp(),` and more.
+- 📣 [Interop 2025](https://web.dev/blog/interop-2025): Browsers agreed to work in priority on exciting features such as CSS anchor positioning, View Transition API, Navigation API, and many others.
+- 📣 [ESLint now officially supports linting of CSS](https://eslint.org/blog/2025/02/eslint-css-support/)
+- 📜 [Bundling dependencies (and when not to do it)](https://e18e.dev/blog/bundling-dependencies.html)
+- 📜 [CSS @function \+ CSS if() \= 🤯](https://www.bram.us/2025/02/18/css-at-function-and-css-if/)
+- 📜 [Mocking in Node.js Has Just Changed Forever](https://kettanaito.com/blog/mocking-in-nodejs-has-just-changed-forever)
+- 📦 [TypeScript 5.8 RC \- `erasableSyntaxOnly`\` , `require(esm)`, dependent return type narrowing](https://devblogs.microsoft.com/typescript/announcing-typescript-5-8-rc/)
+- 📦 [Node 23.8 \- `URLPattern` API, thread names, zstd compression, using system CA](https://nodejs.org/en/blog/release/v23.8.0)
+- 📦 [Node 22.14 \- `findPackageJSON`, glob `exclude`, Corepack pnpm fix](https://nodejs.org/en/blog/release/v22.14.0)
+- 📦 [Deno 2.2 \- OpenTelemetry, Lint Plugins, `node:sqlite`](https://deno.com/blog/v2.2)
+
+## 🤭 Fun {#fun}
+
+[![alt](/emails/issues/222/meme.jpg)](https://bsky.app/profile/sebastienlorber.com/post/3lifbkotlfc2v)
+
+[![alt](/emails/issues/222/meme2.jpg)](https://x.com/sebastienlorber/status/1891548981848834219)
+
+See ya! 👋

@@ -1,0 +1,165 @@
+---
+slug: /269
+title: "This Week In React #269: State of React, TanStack, Next.js, Tailwind, Base UI, Doctor | Hermes, Sparkling, Yoga, Enriched, Voltra, AI | Interop, Electrobun, Module Federation, Biome, pnpm"
+authors: [slorber]
+date: 02-18-2026
+---
+
+Hi everyone!
+
+Huge thanks ❤️ — **we just hit [\#1 resource](https://2025.stateofreact.com/en-US/resources/#blogs_news_magazines)** on the State of React 2025 survey. Wild.
+
+This week leans heavily into TanStack and Next.js content, plus a few notable releases worth your time.
+
+On mobile, Hermes is clearly ramping up, and ByteDance just lowered the barrier to building Lynx apps.
+
+Let’s dive in.
+
+<!-- truncate -->
+
+import Support from "../_support.mdx";
+
+<Support />
+
+---
+
+## 💸 Sponsor {#sponsor1}
+
+[![Cut Code Review Time & Bugs in Half](/emails/issues/269/coderabbit.jpg)](https://coderabbit.link/twir)
+
+**[Cut Code Review Time & Bugs in Half](https://coderabbit.link/twir)**
+
+Code reviews are critical but time-consuming. CodeRabbit acts as your AI co-pilot, providing instant Code review comments and potential impacts of every pull request.
+
+Beyond just flagging issues, CodeRabbit provides one-click fix suggestions and lets you define custom code quality rules using AST Grep patterns, catching subtle issues that traditional static analysis tools might miss.
+
+CodeRabbit reviews 1 million PRs every week across 3 million repositories and is used by 100 thousand Open-source projects.
+
+CodeRabbit is free for all open-source repo's.
+
+[Get started today](https://coderabbit.link/twir)
+
+---
+
+## ⚛️ React {#react}
+
+[![State of React 2025 - Survey Results](/emails/issues/269/stateofreact.jpg)](https://2025.stateofreact.com/)
+
+**[State of React 2025 \- Survey Results](https://2025.stateofreact.com/)**
+
+The State of React 2025 survey results are out. It’s impossible to summarize it all here, but here's what I've taken away:
+
+- `useEffect` remains the most disliked hook
+- `<Suspense>` increased in both adoption and satisfaction
+- React Server Components and Server Functions divide
+- Although usage is still low, `<Activity>` reaches a 100% satisfaction score
+- TanStack Query and Zustand remain the favorite libraries
+- Your favorite resources are the official docs, this newsletter (❤️), Syntax.fm, Theo.
+
+Read also the [breakdown from Aurora Scharff](https://certificates.dev/blog/breaking-down-state-of-react-2025-results), who wrote the survey conclusion.
+
+---
+
+- 💸 [Make React apps fast where it actually matters. Learn how to diagnose real bottlenecks and fix slow, janky React apps using modern React 19 patterns.](https://frontendmasters.com/courses/react-performance-v2/?utm_source=reactweekly&utm_medium=email&utm_campaign=reactperf)
+- 🔐 [High-Severity RCE Vulnerability Disclosed in next-mdx-remote](https://socket.dev/blog/high-severity-rce-vulnerability-disclosed-in-next-mdx-remote) \- Member that MDX is code and it’s unsafe to evaluate untrusted MDX strings.
+- 🗓 [React Paris 2026](https://react.paris/?utm_source=thisweekinreact) - 🇫🇷 Paris - 26 & 27 March. Last chance to join! Ticket sales close on March 4th - don't miss this premier React event. Get a 10% discount with code "TWIR".
+- 📜 [Vercel \- We Ralph Wiggumed WebStreams to make them 10x faster](https://vercel.com/blog/we-ralph-wiggumed-webstreams-to-make-them-10x-faster) \- For Next.js and other React/SSR/RSC heavy workloads, the Node.js native implementation of WebStreams can be major a bottleneck. They implemented a much faster spec-compliant alternative, until upstream performance improvements land in Node.js. No doubt Next.js is going to benefit from all this soon.
+- 📜 [Building Next.js for an agentic future](https://nextjs.org/blog/agentic-future) \- The Next.js team realized they need to treats agents as first-class users, thinking from their perspective.
+- 📜 [Virtual Scrolling for Billions of Rows](https://rednegra.net/blog/20260212-virtual-scroll/) \- 5 vertical scrolling techniques from the `` `hightable` `` React virtualization library.
+- 📜 [Radix UI vs Base UI \- Detailed Guide](https://shadcnspace.com/blog/radix-ui-vs-base-ui)
+- 📜 [Next.js Finally Has Competition (TanStack Start)](https://dev.to/elvissautet/nextjs-finally-has-competition-2lg7)
+- 📜 [The Journey to a Safer Frontend: Why Gusto Removed](https://engineering.gusto.com/the-journey-to-a-safer-frontend-why-we-removed-react-fc-095ff0b3e2e4) [`React.FC`](http://React.FC)
+- 💸 [The Secret to Faster RAG Systems by ElevenLabs](https://r2trck.com/twir-7?utm_medium=email-media-newsletter&utm_source=twir-cpa&utm_campaign=the-secret-to-faster-rag-systems-cpa&utm_content=paid&utm_term=1-1-2026)
+- 📦 [Tailwind 4.2 \- Webpack plugin, new utilities and color palettes](https://github.com/tailwindlabs/tailwindcss/releases/tag/v4.2.0) \- The Webpack plugin has been contributed by Tim Neutkens and should lead to [significant](https://x.com/timneutkens/status/2024140710786523301) performance improvements for frameworks like Next.js (even for Turbopack).
+- 📦 [Base UI 1.2 \- Drawer component, support lazy/async components in `render`, new `useFilteredItems` hook](https://base-ui.com/react/overview/releases/v1-2-0) \- The new Drawer component is in preview ([docs](https://base-ui.com/react/components/drawer)) for now. Unlike Radix, it’s not based on Vaul (now unmaintained).
+- 📦 [TanStack Hotkeys alpha](https://tanstack.com/hotkeys/latest) \- This brand-new TanStack library is framework-agnostic, but initially comes with a first-class React integration. It provides a type-safe API, normalizes modifiers across platforms, supports multi-step keyboard sequences, and more.
+- 📦 [TanStack Start 1.161 \- Import protection](https://tanstack.com/start/latest/docs/framework/react/guide/import-protection) \- Ensures your code runs in the right client/server environment.
+- 📦 [Preact 11.0 beta.1](https://github.com/preactjs/preact/releases/tag/11.0.0-beta.1) \- By the way, TanStack query now [supports Preact](https://github.com/TanStack/query/releases/tag/%40tanstack%2Fpreact-query%405.91.0).
+- 📦 [React Doctor \- Scan your codebase, let coding agents diagnose/fix your React code](https://github.com/millionco/react-doctor)
+- 📦 [json-render 0.7 \- Generative UI framework \- Add 30+ shadcn/ui components, and more](https://github.com/vercel-labs/json-render/releases/tag/%40json-render%2Fshadcn%400.7.0)
+- 🎥 [Austin Davis \- TanStack Router \- How to Become a Routing God in React](https://www.youtube.com/watch?v=Ab01W6h4Giw)
+- 🎥 [Josef Bender \- TanStack Loaders vs Context: What I Got Wrong](https://www.youtube.com/watch?v=3jJ2Xz-oWt8)
+- 🎥 [Shruti Kapoor \- Build a YouTube content dashboard with generative UI (Tambo)](https://www.youtube.com/watch?v=vKsh_qrv7lM)
+
+<SubscribeFormEmbed placement="middle" />
+
+---
+
+## 💸 Sponsor {#sponsor2}
+
+[![Free Workshop: Debug React Apps With AI From Dev to Prod](/emails/issues/269/sentry.jpg)](https://sentry.io/resources/seer-workshop-series/?utm_source=thisweekinreact&utm_medium=paid-community&utm_campaign=seer-fy27q1-seerworkshop&utm_content=newsletter-workshop-register)
+
+**[Free Workshop: Debug React Apps With AI From Dev to Prod](https://sentry.io/resources/seer-workshop-series/?utm_source=thisweekinreact&utm_medium=paid-community&utm_campaign=seer-fy27q1-seerworkshop&utm_content=newsletter-workshop-register)**
+
+🧠 [**Seer** is Sentry's AI debugging agent](https://sentry.io/product/seer/?utm_source=thisweekinreact&utm_medium=paid-community&utm_campaign=seer-fy27q1-seerlaunch&utm_content=newsletter-product-trysentry). It root causes errors, suggests fixes, and catches bugs in code review before they hit production.
+
+This free 4-part workshop series covers the full workflow: production error triage, root cause analysis, AI code review, and debugging via MCP. Each session goes hands-on with a specific feature so you can actually set it up and use it in your own projects. No fluff, just walkthroughs you can follow along with.
+
+[**Register today**](https://sentry.io/resources/seer-workshop-series/?utm_source=thisweekinreact&utm_medium=paid-community&utm_campaign=seer-fy27q1-seerworkshop&utm_content=newsletter-workshop-register).
+
+---
+
+## 📱 React-Native {#react-native}
+
+[![WebAssembly Comes to Hermes](/emails/issues/269/hermes.jpg)](https://x.com/tmikov/status/2023821160241393839)
+
+**[WebAssembly Comes to Hermes](https://x.com/tmikov/status/2023821160241393839)**
+
+An exciting early preview of WebAssembly support in Hermes, unlocking new ways to integrate C, C++, Rust, and more into your React Native app. It’s even possible to precompile WASM to Hermes bytecode `.hbc` files.
+
+---
+
+[![Sparkling - Unlocks Lynx at TikTok Scale](/emails/issues/269/lynx.jpg)](https://tiktok.github.io/sparkling/)
+
+**[Sparkling \- Unlocks Lynx at TikTok Scale](https://tiktok.github.io/sparkling/)**
+
+ByteDance unveiled Lynx last year as an interesting framework-agnostic alternative to React Native. So far, the DX has been limited, and there has been no easy way to create a new Lynx app from scratch. Sparkling changes that, and offers the tooling that Lynx apps deserve. By the way, [Lynx 3.6](https://lynxjs.org/blog/lynx-3-6) is out, improving support for React, AI, and CSS.
+
+See also:
+
+- 📦 [Lynx 3.6 \- Lynx for AI, ReactLynx hooks, CSS for Design](https://lynxjs.org/blog/lynx-3-6)
+- 🎥 [Sparkling: A New Framework for Lynx](https://www.callstack.com/events/sparkling-a-new-framework-for-lynx) \- A 2h event with Callstack and the Lynx team.
+
+---
+
+- 💸 [Product for Engineers - 10x job posts for 10x engineers](https://go.posthog.com/twir-feb18)
+- 👀 [Yoga PR \- Add core Yoga support for CSS `calc()`](https://github.com/facebook/yoga/pull/1874)
+- 📜 [Expo \- The production playbook for OTA updates](https://expo.dev/blog/the-production-playbook-for-ota-updates)
+- 📜 [Agent Device: iOS & Android Automation for AI Agents](https://www.callstack.com/blog/agent-device-ai-native-mobile-automation-for-ios-android)
+- 📜 [A Practical Guide to React Native Monorepo With Yarn Workspaces](https://www.callstack.com/blog/a-practical-guide-to-react-native-monorepo-with-yarn-workspaces)
+- 📦 [@react-native-ai/json-ui alpha \- Generative UI, tailor-made for small, local language models](https://www.react-native-ai.dev/docs/json-ui/getting-started) \- Similar to json-render, but on-device.
+- 📦 [Sentry React Native 8.0 \- Capture App Start errors and crashes](https://github.com/getsentry/sentry-react-native/releases/tag/8.0.0)
+- 📦 [Agent Device 0.4 \- CLI to control iOS/Android devices \- Supports testing on physical devices](https://github.com/callstackincubator/agent-device/releases/tag/v0.4.0)
+- 📦 [Enriched 0.4 \- Rich text editor \- Support animated gifs, pasting images, checkbox lists](https://github.com/software-mansion/react-native-enriched/releases/tag/v0.4.0)
+- 📦 [Enriched Markdown 0.2 \- Layout controls, a11y, font scaling, strikethrough/underline](https://github.com/software-mansion-labs/react-native-enriched-markdown/releases/tag/0.2.0) \- The next release will be even better, [bringing full GitHub Flavored Markdown support](https://github.com/software-mansion-labs/react-native-enriched-markdown/issues/47#issuecomment-3914681397) (support for tables/autolinks already merged).
+- 📦 [Bottom Sheet Stack 1.8 \- Stack manager for bottom sheets and modals \- Now library-agnostic, including built-in adapters](https://github.com/arekkubaczkowski/react-native-bottom-sheet-stack/releases/tag/v1.8.0)
+- 📦 [Voltra 1.2 \- Widgets/Live Activities framework \- New iOS layout engine, improved Expo support, new `getActiveWidgets()` API](https://github.com/callstackincubator/voltra/releases/tag/v1.2.0)
+- 🤖 [React Native Testing Library Skill](https://skills.sh/callstack/react-native-testing-library/react-native-testing)
+- 🤖 [React Native Community \- Upgrade RN Skill](https://skills.sh/react-native-community/skills/upgrade-react-native)
+- 🎥 [Beto \- How to Add Rich Push Notifications in Expo (iOS Images)](https://www.youtube.com/watch?v=ycYM_zKEF_4)
+- 🎥 [Simon Grimm \- How I’d Learn React Native Today (2026 Edition)](https://www.youtube.com/watch?v=nARu6acI5kM)
+- 🎙️ [React Universe on Air \- From Teddy Bears to Voice Agents: Kraen Hansen on Voice AI, Local-First & App Security](https://www.callstack.com/podcasts/local-first-voice-ai-and-app-security)
+
+---
+
+## 🔀 Other {#other}
+
+- 👀 [Interop 2026](https://webkit.org/blog/17818/announcing-interop-2026/) \- Web browsers unveiled their focus areas for the year. This includes new features (cross-document view transitions, scroll-driven animations, container style queries…), but also stabilizing carryovers from Interop 2025 (anchor positioning, navigation API…).
+- 👀 [Selectors Level 5 \- W3C First Public Working Draft](https://www.w3.org/TR/2026/WD-selectors-5-20260217/) \- Preview of new CSS selectors and pseudo-classes being worked.
+- 📜 [Fun with TypeScript Generics](https://frontendmasters.com/blog/fun-with-typescript-generics/)
+- 📜 [Fastest Frontend Tooling for Humans & AI](https://cpojer.net/posts/fastest-frontend-tooling)
+- 📦 [Module Federation 2.0 \- Micro-Frontend Architecture](https://module-federation.io/blog/v2-stable-version.html) \- Adds support for SSR among many other things. They also plan to add support for React Server Components later.
+- 📦 [Electrobun 1.0 \- Build ultra fast, tiny, and cross-platform desktop apps with TypeScript](https://blackboard.sh/blog/electrobun-v1/) \- An alternative to Tauri based on Bun/Zig.
+- 📦 [Chrome 145 DevTools](https://developer.chrome.com/blog/new-in-devtools-145) \- The performance panel now includes Soft Navigation markers, improving the DX when troubleshooting client-side navigation (SPA/CSR apps).
+- 📦 [Biome 2.4 \- Embedded Snippets, HTML Accessibility, and Better Framework Support](https://biomejs.dev/blog/biome-v2-4/)
+- 📦 [pnpm 10.30 \- Improves `pnpm why`, showing an easier-to-understand reverse dependency tree](https://pnpm.io/blog/releases/10.30)
+
+---
+
+## 🤭 Fun {#fun}
+
+[![alt](/emails/issues/269/meme.jpg)](https://x.com/DavidKPiano/status/1981470720166154567)
+
+[![alt](/emails/issues/269/meme2.jpg)](https://x.com/swyx/status/2022854115748122909)
+
+See ya! 👋

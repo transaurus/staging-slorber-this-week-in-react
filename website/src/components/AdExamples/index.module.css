@@ -1,0 +1,17 @@
+.adExampleWindow img {
+  flex: 0;
+  width: 100%;
+  margin-right: 1rem;
+}
+
+@media screen and (max-width: 996px) {
+  .adExampleWindow h2 {
+    font-size: 1.4rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .adExampleWindow h2 {
+    font-size: 1rem;
+  }
+}

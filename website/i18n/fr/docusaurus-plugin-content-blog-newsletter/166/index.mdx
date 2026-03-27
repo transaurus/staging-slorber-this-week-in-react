@@ -1,0 +1,145 @@
+---
+slug: /166
+title: "React Hebdo #166: Server Components, Waku, React-Forget, React-Native, Expo, Million, Remotion, Next.js, Storybook, Remix, AuthKit, Expo Router, Reactotron, Unistyles, Skia, SEO, CSS, Oxlint..."
+authors: [slorber]
+date: 12-12-2023
+---
+
+Salut à tous !
+
+Cette semaine est chargée d'actualités!
+
+Il y a eu pas mal de nouvelles releases, et des articles intéressants. C'est top de voir React-Forget se déployer lentement sur Instagram. Remotion a également commencé à démontrer son plein potentiel avec le lancement de GitHub Unwrapped.
+
+React-Native est en feu cette semaine, avec la v0.73 stable, Expo SDK 50 et Expo Router v3 en bêta et quelques autres sorties. Ce qui m'excite le plus, c'est qu'Expo dévoile progressivement son plan: supporter les React Server Components de manière universelle.
+
+Cette édition est spéciale pour moi : c'est la première fois que je ne suis pas seul à l'écrire! [Benedikt](https://twitter.com/bndkt) a presque écrit toute la section React-Native. Je n'ai pas utilisé React-Native en production depuis 2020 😅, c'est cool d'avoir quelqu'un qui [utilise toutes les dernières libs](https://github.com/bndkt/sharemystack) pour m'aider à commenter de manière pertinente.
+
+N'oubliez pas de répondre aux enquêtes [State of JavaScript](https://stateofjs.com/en-US) et [State of React-Native](https://stateofreactnative.com/). Et si vous pouvez me mentionner à la fin, c'est super ! [Theo T3 vous montre comment faire](https://youtube.com/clip/UgkxDdNASo6xNS710ODcjMx0WW4HtTxIYbrA?si=G0rAnDKOQwHqh_ED) 😄
+
+<!-- truncate -->
+
+**💡 [Consulter cette newsletter sur Twitter](https://slo.im/thread) - format visuel 🎨**
+
+---
+
+import Support from "../_support.mdx";
+
+<Support />
+
+---
+
+## 💸 Sponsor {#sponsor1}
+
+[![MightyMeld launches visual dev tool to accelerate React development](/emails/issues/166/mightymeldthisweekinreact.jpg)](https://www.mightymeld.com/?utm_source=thisweekinreact&utm_medium=newsletter&utm_campaign=1&utm_content=top)
+
+**[MightyMeld launches visual dev tool to accelerate React development](https://www.mightymeld.com/?utm_source=thisweekinreact&utm_medium=newsletter&utm_campaign=1&utm_content=top)**
+
+A new kind of dev tool for React just opened its beta. See your JSX and styles in action while running your build. Hop quickly to your favorite editor. Use drag’n’drop and generative AI to update your app. As you work, MightyMeld generates clean code ready to merge as part of your PR. [Free to use](https://www.mightymeld.com/?utm_source=thisweekinreact&utm_medium=newsletter&utm_campaign=1&utm_content=body).
+
+---
+
+## ⚛️ React {#react}
+
+[![Waku](/emails/issues/166/waku.jpg)](https://waku.gg/blog/introducing-waku)
+
+[**Waku - Minimal React Framework that enhances React Server Component usage**](https://waku.gg/blog/introducing-waku)
+
+Nous l'avions déjà présenté, mais la v0.18 vient de sortir avec un petit blog post pour finalement l'introduire proprement.
+Waku est un framework React minimal qui nous permet d'explorer les capacités de base des Server Components, en dehors des stratégies SSG/SSR habituelles. Techniquement, il s'agit d'un bundler basé sur Vite qui produit du JS pur et supporte le déploiement vers des runtimes edge. Projet maintenant sponsorisé par Vercel.
+
+---
+
+- 💸 [Developer Nation Survey - For each completed response, Developer Nation will donate to one of the charities of respondents’ choosing! Start now!](https://developereconomics.net/?member_id=thisweekinreact&utm_medium=nl_ad2)
+- 🍿 [Remotion - GitHub Unwrapped 2023](https://githubunwrapped.com/): cette année, Remotion s'est associé à GitHub pour produire la vidéo GitHub Unwrapped ([voici la mienne](https://twitter.com/sebastienlorber/status/1734622460547342693)). Une belle vitrine pour le type de vidéos qui peuvent être produites avec React.
+- 🐦 [React hydration error diff demo](https://twitter.com/samijaber_/status/1734332721634099282): regain d'intérêt pour cette fonctionnalité très attendue ([nouvelle PR React](https://github.com/facebook/react/pull/27808)).
+- 🐦 [Tanner Linsley about React concurrent model vs reactive model](https://twitter.com/tannerlinsley/status/1732474127712481371): sur la difficulté d'obtenir les avantages des deux modèles à la fois. Tanner a finalement migré le futur routeur TanStack vers un modèle réactif ([démo visuelle](https://x.com/aryan__deora/status/1733164876170764409)).
+- 🐦 [Next.js moving away from extending `fetch()`, adding new APIs like `noStore()`](https://twitter.com/leeerob/status/1733154383410684148)
+- 📖 [Next.js - Updated Server Actions docs - Includes how to use them outside forms, security recommendations, and best practices](https://nextjs.org/docs/app/building-your-application/data-fetching/server-actions-and-mutations)
+- 📖 [Next.js React Foundations updated with App Router and Server Components](https://nextjs.org/learn/react-foundations)
+- 📜 [A Chain Reaction](https://overreacted.io/a-chain-reaction/): Dan Abramov est de retour avec une belle leçon de storytelling à travers la création d'une fonction récursive qui render du JSX.
+- 📜 [Next.js 14: Layouts vs Templates](https://www.builder.io/blog/nextjs-14-layouts-templates): les templates sont remontés lors de la navigation et réinitialisent leur état.
+- 📜 [Storybook for React Server Components](https://storybook.js.org/blog/storybook-react-server-components/): Storybook 8 est en alpha. Il inclut le support expérimental de Next.js RSC. En pratique, les RSC s'exécutent côté client et vous devrez mocker le network et appels Node.js.
+- 📜 [The anatomy of shadcn/ui](https://manupa.dev/blog/anatomy-of-shadcn-ui): donne un bon aperçu de la l̶i̶b̶r̶a̶r̶y̶ populaire utilisant Radix + Tailwind, et la façon dont il divers packages sont assemblés pour fournir une bonne DX.
+- 📜 [How to set up self-healing URLs in Next.js for better SEO](https://mikebifulco.com/posts/self-healing-urls-nextjs-seo): montre comment créer des urls Next.js qui sont à la fois lisibles et qui incluent un identifiant stable, pour pouvoir changer le titre de l'article sans briser les liens.
+- 📜 [Remix - Submit a form without overwriting existing parameters](https://www.jacobparis.com/content/existing-params): suggère d'utiliser un `<ExistingSearchParams>` pour ajouter les paramètres existants au formulaire.
+- 📜 [Polymorphism in React - 2 patterns you must know](https://www.bekk.christmas/post/2023/01/polymorphism-in-react)
+- 📜 [Lexical state updates](https://dio.la/article/lexical-state-updates)
+- 📦 [React DevTools 5.0 - New React-Forget badge](https://github.com/facebook/react/pull/27759): nouvelle feature qui permet de voir le déploiement de React-Forget de Meta en production sur Instagram ([ref](https://twitter.com/sebastienlorber/status/1734607171030303186)).
+- 📦 [Million.js 3.0 - Overhauled version, faster drop-in replacement](https://million.dev/blog/million-3)
+- 📦 [AuthKit - The world's best login box powered by WorkOS and Radix](https://www.authkit.com/)
+- 📦 [react-hook-form 7.49 - react-server bundle, reactive errors prop...](https://github.com/react-hook-form/react-hook-form/releases/tag/v7.49.0)
+- 📦 [Next-Admin 3.0 - App router support](https://github.com/premieroctet/next-admin/releases/tag/%40premieroctet%2Fnext-admin%403.0.0)
+- 📦 [Epic Stack - Client Hints - Eliminate flashes of incorrect content](https://github.com/epicweb-dev/client-hints)
+
+<SubscribeFormEmbed placement="middle" />
+
+---
+
+## 💸 Sponsor {#sponsor2}
+
+[![Open-source React Framework for building enterprise B2B apps](/emails/issues/166/about.jpg)](https://s.refine.dev/github-repo)
+
+**[Open-source React Framework for building enterprise B2B apps](https://s.refine.dev/github-repo)**
+
+Refine streamlines the building of production-ready B2B apps like internal tools and dashboards.
+
+It is designed to address the specific pain points of larger organizations, giving top priority to security and reducing repetitive tasks with its hooks and components.
+
+Offers industry-standard solutions for critical project aspects like **authentication**, **access control**, **routing**, **networking**, and **state management**.
+
+🌱 [Visit complete CRM app template built with Refine](https://s.refine.dev/crm-app).
+
+---
+
+## 📱 React-Native {#react-native}
+
+![React Native 0.73, Expo SDK 50 beta, Expo Router v3 beta](/emails/issues/166/rnheader.jpg)
+
+- 📊 [State of React-Native - Reminder to fill the survey!](https://survey.stateofreactnative.com/)
+- 🚧 [RFC - Well-defined event loop processing model](https://github.com/react-native-community/discussions-and-proposals/pull/744): pour que l'event-loop de React Native se rapproche de la spécification web.
+- 🐦 [POC of multi-window apps support in React Native](https://x.com/o_kwasniewski/status/1734198386612388263)
+- 🐦 [interpolate() in React Native Reanimated - visually understand extrapolation](https://x.com/kacperkapusciak/status/1732794213371097491)
+- 📖 [Expo introduces canary releases](https://docs.expo.dev/versions/latest/#canary-releases)
+- 📜 [Expo EAS - Keep your cache close — It’s Faster!](https://expo.dev/changelog/2023/12-07-cocoapods-cache#how-to-speed-up-cocoapods): Expo réduit le temps d'installation des pods en mettant en cache les pods les plus populaires directement sur leurs VM EAS.
+- 📜 [Integrate Firebase Analytics into Expo Router](https://tinybytelabs.com/blog/integrate-firebase-analytics-to-expo-router): Contrairement à React-Navigation, Expo-Router est url-first, et vous devez écouter les changements de pathname.
+- 📜 [Creating a macOS MenuBar app with React Native](https://www.oskarkwasniewski.dev/blog/create-react-native-macos-menubar-app)
+- 📜 [Epic Games vs Google - Trial Verdict, a Win for All Developers](https://www.epicgames.com/site/en-US/news/epic-v-google-trial-verdict-a-win-for-all-developers): pourrait apporter des changements aux règles des app stores sur les modèles de paiement in-app et leur taxe de 30 %.
+- 📦 [React Native 0.73](https://reactnative.dev/blog/2023/12/06/0.73-debugging-improvements-stable-symlinks) nouveau debugger destiné à remplacer Flipper, support stable de Symlink dans Metro (important pour les monorepos), template Kotlin pour Android, support d'Android 14...
+- 📦 [Expo SDK 50 beta](https://expo.dev/changelog/2023/12-12-sdk-50-beta): upgrade vers React-Native 0.73, nouvelle API Expo Dev Tools Plugin, une réécriture complète de `expo-sqlite`, une amélioration de `expo-camera`, une nouvelle bibliothèque pour déterminer la compatibilité entre un bundle JS et un build natif particulier (`@expo/fingerprint`), `expo-updates` hooks API, EAS updates/rollouts et bien plus encore.
+- 📦 [Expo Router v3 beta](https://blog.expo.dev/expo-router-v3-beta-is-now-available-eab52baf1e3e): inclut les API Routes, le bundle splitting pour le web, et beaucoup d'autres nouvelles fonctionnalités. Expo dévoile sa volonté de supporter les Universal React Server Components.
+- 📦 [Reactotron 3.0](https://shift.infinite.red/announcing-reactotron-3-0-934b5a221bda): automatic log tracking, amélioration debugging Android, plus rapide...
+- 📦 [React Native Skia - 3D transformations](https://github.com/Shopify/react-native-skia/pull/2033): voir aussi la 🐦 [demo](https://x.com/wcandillon/status/1733972374930837776) de William Candillon
+- 📦 [React-Native-Unistyles 2.0](https://reactnativeunistyles.vercel.app/)
+- 📦 [react-native-permissions 4.0 - iOS 17, Android 14 support](https://github.com/zoontek/react-native-permissions/releases/tag/4.0.0)
+- 🎙️ [Galaxies - Rocket Ship](https://podcast.galaxies.dev/): nouveau podcast avec un focus React-Native et de bons invités, à découvrir.
+
+---
+
+## 🇫🇷 En français {#fr}
+
+- 🎥 [Actus JS de la semaine - Astro 4.0, Vitest 1.0](https://www.youtube.com/watch?v=79SuxiERtWM)
+
+💡Tu peux m'envoyer ton contenu: [sebastien@thisweekinreact.com](mailto:sebastien@thisweekinreact.com?subject=Contenu%20en%20fran%C3%A7ais) !
+
+---
+
+## 🔀 Autre {#other}
+
+- 📜 [Baseline 2023 - All new cross-browser supported APIs - Displayed on on caniuse](https://web.dev/blog/baseline2023)
+- 📜 [CSS Wrapped - 2023 was a huge year for CSS!](https://developer.chrome.com/blog/css-wrapped-2023)
+- 📜 [WebKit Features in Safari 17.2 - exclusive accordions, CSS nesting, maths, animations...](https://webkit.org/blog/14787/webkit-features-in-safari-17-2/)
+- 📜 [Does Interaction to Next Paint actually correlate to user behavior?](https://www.speedcurve.com/blog/INP-user-experience-correlation/)
+- 📜 [The TypeScript 5.3 Feature They Didn't Tell You About - as const satisfies](https://www.totaltypescript.com/the-typescript-5-3-feature-they-didn-t-tell-you-about)
+- 📜 [Ternaries could be beautiful - A new proposal for Prettier formatting](https://pedrocattori.dev/blog/ternaries-could-be-beautiful)
+- 📜 [Improving Node.js loader performance](https://sentry.engineering/blog/improving-nodejs-loader-performance)
+- 📦 [Seroval 1.0 - Stringify JS values](https://github.com/lxsmnsyc/seroval)
+- 📦 [Oxlint - General Availability](https://oxc-project.github.io/blog/2023-12-12-announcing-oxlint.html)
+
+---
+
+## 🤭 Fun {#fun}
+
+[![alt](/emails/issues/166/meme.jpg)](https://twitter.com/sebastienlorber/status/1733126141915906550)
+
+A plus 👋

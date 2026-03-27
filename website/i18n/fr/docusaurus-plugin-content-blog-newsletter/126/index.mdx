@@ -1,0 +1,168 @@
+---
+slug: /126
+title: "React Hebdo #126: React Perf, Progressive Enhancement, Remix, Storybook, React-Native, FlashList, Nitro, TC39..."
+authors: [slorber]
+date: 11-29-2022
+---
+
+Salut à tous !
+
+C'est la fin du [Black Friday](https://thisweekinreact.com/black-friday), mais quelques offres sont encore valides.
+
+Si votre entreprise recrute, j'en profite également pour faire une [**promo de -50% sur les offres de sponsoring job offer**](https://thisweekinreact.com/sponsor#sponsor-jobs). N'hésitez pas à en parler à vos RH ou votre manager, ça m'aide beaucoup!
+
+Comme on pouvait s'en douter avec Thanksgiving, c'est une semaine plutôt calme en nouvelles React.
+
+Rappel: 1er meetup [React-Native Paris](https://www.meetup.com/fr-FR/meetup-group-xaaafwks/) le 6 Décembre ([Slack](https://reactnativeconnection.slack.com/)).
+
+<!-- truncate -->
+
+**💡 [Consulter cette newsletter sur Twitter](https://slo.im/thread) - format visuel 🎨**
+
+---
+
+import Support from "../_support.mdx";
+
+<Support />
+
+---
+
+## 💸 Sponsor {#sponsor1}
+
+[![FlyCode rend votre app React éditables, sans code - basé sur Git](/emails/issues/124/flycode.jpg)](https://bit.ly/3UPwAoJ)
+
+**[FlyCode rend votre app React éditables, sans code - basé sur Git](https://bit.ly/3UPwAoJ)**.
+
+[FlyCode](https://bit.ly/3wWSi00) (YC S22) rend les applications web React modifiables en quelques minutes afin que les équipes produit et UX puissent itérer et sortir des produits plus rapidement, sans avoir à attendre (ou consommer) le temps des développeurs.
+
+FlyCode lit votre code React et trouve les textes, les images, les design tokens et les événements analytics, puis il permet aux non-codeurs de collaborer, de les modifier et de renvoyer une demande de modification (ils n'ont pas besoin d'accéder à GitHub !).
+
+- Gain de temps de développement
+- Pas d'intégration de code, ça lit simplement votre code !
+- Basé sur GitHub, un robot analyse le code et crée les pull requests
+- Utilisez votre propre stack et vos propres composants
+- Gardez le contrôle de votre base de code
+
+Vous pouvez commencer ici: [flycode.com/developers](https://www.flycode.com/developers)
+
+---
+
+## ⚛️ React {#react}
+
+**[Is React going anywhere?](https://www.infoxicator.com/is-react-going-anywhere)**
+
+Reflexion intéressante de Ruben, après avoir rencontré un CTO e-commerce qui a décidé d'abandonner React pour du Vanilla JS. Est-ce que React est réellement responsable des mauvaises perfs de son app? Est-ce qu'adopter une alternative est justifié? Est-ce que React va rester leader sur les 5 ou 10 prochaines années?
+
+**[Improving React Interaction Times by 4x](https://www.causal.app/blog/react-perf)**
+
+L'app de Causal (cloud spreadsheet) présente des problèmes de performance. Ils nous proposent une analyse détaillée des problèmes et comment ils les ont résolu via le profiler Chrome. Certains problèmes liés à AG Grid (qu'ils ont patché) et d'autres de leur propre code principalement lié à la mémoisation. Ils ont aussi tenté d'utiliser des Web Workers, mais la sérialisation avait un cout trop élevé.
+
+- 📜 [Progressively enhance the useFetcher hook in Remix](https://sergiodxa.com/articles/progressively-enhance-the-usefetcher-hook-in-remix): petite astuce pour supporter les users avec/sans JS sur l'API useFetcher de Remix: il faut forcer un redirect pour les users sans JS. Dans le même genre, il est possible de gérer le [progressive enhancement sur un upload de fichiers](https://twitter.com/ebey_jacob/status/1596223682246234113). Tout cela n'est sans doute pas indispensable pour beaucoup d'apps, mais ça reste bon à savoir que cela est possible en cas de besoin.
+- 📜 [Remix Deferred overview](https://gist.github.com/jacob-ebey/9bde9546c1aafaa6bc8c242054b1be26): une explication du fonctionnement de [defer](https://github.com/remix-run/remix/issues/4486) dans Remix, qui va permettre de "téléporter" une promesse du back au front. Pour ceux qui ont envie de comprendre le fonctionnement interne de Remix.
+- 📜 [How to update the state of a sibling component in React?](https://alexsidorenko.com/blog/react-siblings/): article court qui illustre bien le concept de "Lifting the state up".
+- 📜 [Minimal TypeScript Crash Course For React](https://profy.dev/article/react-typescript): pour débuter sur TypeScript et React.
+- 📜 [Data Structures In Frontend JavaScript In The Real World - With React Code Examples](https://profy.dev/article/javascript-data-structures): pour se familiariser avec les data structures dans un context React
+- 📜 [ArConnect Migrates Its Chrome Extension to the Plasmo Framework](https://blog.plasmo.com/p/migrating-chrome-extension-to-plasmo): retour d'expérience sur l'usage de [Plasmo](https://github.com/PlasmoHQ/plasmo): framework open-source React pour créer des extensions web.
+- 📜 [Storybook for full-stack developers](https://storybook.js.org/blog/storybook-for-full-stack-developers/): une bonne vue d'ensemble de tout ce que l'écosystème Storybook peut faire pour vous.
+- 📜 [Solid Final Form – Proof of Concept](https://erikras.com/blog/solid-final-form-poc): Erik explique que sa lib [Final Form](https://final-form.org/react) (populaire il y a quelques années) est découplée de React et montre qu'il est possible de l'utiliser dans un contexte SolidJS.
+- 📜 [Ant Design 5.0 - Component-level CSS-in-JS](https://ant.design/docs/blog/css-in-js): le design system React sort une nouvelle version majeure et explique comment ils ont optimisé leur runtime CSS-in-JS.
+- 🎥 [On the merits & limitations of React & single-page apps](https://www.youtube.com/watch?v=ChfjZV-aA_Y): débat de 2 heures entre Alex Russell et Theo Browne. Je n'ai pas eu le temps de regarder, mais cela devrait être très intéressant. Alex est bien connu pour ses critiques envers React et les SPA, et Theo devrait être un bon défenseur de l'écosystème React.
+- 🎥 [React Dev, You Need To Know @container!](https://www.youtube.com/watch?v=ypN-Uwshc5M): bonne intro aux containers query, nouvelle feature CSS, présentée dans un context React en vanilla CSS + Tailwind. Il manque encore le support Firefox, mais il y a un polyfill.
+- 🎥 [RTK Query Basics: Query Endpoints, Data Flow and TypeScript](https://egghead.io/courses/rtk-query-basics-query-endpoints-data-flow-and-typescript-57ea3c43): nouveau cours gratuit sur Egghead par Lenz un des créateurs RTK Query.
+- 🧑‍💻 [Remix PR - Add "jump to definition" support](https://github.com/remix-run/remix/pull/4689): les contributeurs tRPC portent leurs apprentissages sur Remix pour améliorer la DX.
+- 📦 [react-three-editor](https://github.com/pmndrs/react-three-editor): un éditeur de scenes React-Three-Fiber est en cours de création.
+- 📦 [Gatsby 5.1](https://www.gatsbyjs.com/docs/reference/release-notes/v5.1/)
+
+<SubscribeFormEmbed />
+
+---
+
+## 💸 Sponsor {#sponsor2}
+
+[![Yuzu is the Best Finance Data API for Frontends](/emails/issues/126/yuzu.png)](https://www.yuzu.dev/)
+
+**[Yuzu est la meilleure API de données financières pour les devs frontends](https://www.yuzu.dev/)**
+
+Yuzu est conçu pour faciliter l'intégration des données pour les développeurs frontend qui ont besoin de :
+
+- Cours en direct des actions, crypto et forex
+- Nouvelles du marché à la minute près
+- Détails sur les ETF et les fonds communs de placement
+
+Les développeurs adorent les API GraphQL, Websockets et SQL de Yuzu, car elles leur permettent de saisir n'importe quelle donnée avec souplesse et de se concentrer sur la création d'expériences pour l'utilisateur, plutôt que sur le scrapping, la normalisation et la maintenance des data sets.
+
+Les données de qualité professionnelle de Yuzu sont utilisées par des sociétés de courtage, des plateformes analytiques et des applications d'investissement, qu'il s'agisse de startups émergentes ou de sociétés financières établies.
+
+Le meilleur ? Tout le monde peut [commencer gratuitement](https://www.yuzu.dev/pricing) !
+
+---
+
+## 📱 React-Native {#react-native}
+
+**[React Native Core Contributor Summit 2022](https://reactnative.dev/blog/2022/11/22/react-native-core-contributor-summit-2022)**
+
+Une bonne partie des contributeurs React-Native se sont réunis début Septembre à l'occasion de la conférence React-Native EU. Ils ont participé à une série de workshops et nous font un compte rendu. Divers sujets abordés, comme la nouvelle architecture, le bundler Metro ou encore le workflow de release.
+
+**[Shopify - Our Solution for Measuring React Native Rendering Times](https://shopify.engineering/measuring-react-native-rendering-times)**
+
+Présentation du package [react-native-performance](https://github.com/Shopify/react-native-performance) qui permet de générer des rapports (JSON) de performance de type [field/Real User Monitoring](https://web.dev/lab-and-field-data-differences/). Il s'intègre facilement avec React-Navigation. Vous pouvez envoyer ces rapports à un dashboard analytics de votre choix. Cela permet d'identifier un écran spécifique qui a des soucis de performance en production. Cela rappelle les métriques existantes coté web: Core Web Vitals, TTI, INP et les dashboards perf de Vercel/Netlify/Gatsby...
+
+- 📜 [Shopify - What We Learned from Open-Sourcing FlashList](https://shopify.engineering/what-we-learned-from-open-sourcing-flashlist): retour d'expérience sur un lancement open-source réussi chez Shopify. Comme quoi, le marketing est une part importante du succès d'un projet open-source, et il ne faut pas le négliger. Voir aussi mon lancement de [Docusaurus 2.0](https://www.indiehackers.com/post/1-on-product-hunt-thanks-to-newsletters-and-good-timing-2c7d8809d9).
+- 📜 [How to build a React Native app 5x faster with Nitro](https://blog.nitro.build/how-to-build-a-react-native-app-5x-faster-with-nitro-d7e512b18d90): Nitro est un outil (payant, en preview) qui permet de réduire significativement les temps de build CI lorsque seul le code JS à changé.
+- 📜 [React Native in 2022 and Beyond](https://semaphoreci.com/blog/react-native)
+- 📜 [How react-native became performant as native with the new architecture](https://medium.com/ocp-digital-factory/how-react-native-became-performant-as-native-with-the-new-architecture-6e678c3178aa)
+- 🐦 [setNativeProps is back on Fabric?](https://twitter.com/o_kwasniewski/status/1596090790350303233)
+- 🎨 [VisionCamera Frame Processor + Skia - Censor faces demo](https://twitter.com/mrousavy/status/1595746972190883840)
+- 📦 [React-Native 0.71.0-rc.2](https://twitter.com/Kelset/status/1595839212502261760)
+- 📦 [React Native Windows 0.69.14](https://github.com/microsoft/react-native-windows/releases/tag/react-native-windows_v0.69.14)
+
+---
+
+## 🧑‍💻Jobs {#jobs}
+
+🧑‍💼 [**Masteos - Lead ReactJS - Hybride ou Remote - 75-90k€**](https://www.welcometothejungle.com/fr/companies/masteos/jobs/lead-front-reactjs-h-f_paris?q=97ae44f44512e0f1968e134f33de64ea&o=1376093)
+
+Masteos réinvente l’expérience de l’investissement locatif, en proposant un parcours entièrement dématérialisé et un accompagnement de haut niveau aux particuliers qui souhaitent acheter un bien pour le louer.
+
+🧑‍💼 [**Premier Octet - Développeurs(euses) React - Paris**](https://www.premieroctet.com/jobs)
+
+Nous cherchons des développeurs(euses) JavaScript passionnés. Vous interviendrez en développement sur des projets variés et motivants, à la fois serveur et front (React, Nest, Next), et éventuellement mobile (React Native).
+
+💡 [Comment publier une offre d'emploi ?](https://thisweekinreact.com/fr/sponsor)
+
+---
+
+## 🇫🇷 En français {#fr}
+
+- 🎥 [Galerie d'images en React et Three.js](https://www.youtube.com/watch?v=Jqo63Oxq0Ng)
+- 🎥 [La Roadmap React Parfaite pour 2023](https://www.youtube.com/watch?v=GMrrm3v2WGI)
+
+💡Tu peux m'envoyer ton contenu: [sebastien@thisweekinreact.com](mailto:sebastien@thisweekinreact.com?subject=Contenu%20en%20fran%C3%A7ais) !
+
+---
+
+## 🔀 Autre {#other}
+
+- [Agenda for the 93rd meeting of Ecma TC39](https://github.com/tc39/agendas/blob/main/2022/11.md): un meeting est en cours! La nouvelle proposal [Async Context](https://github.com/legendecas/proposal-async-context) m'intéresse particulièrement!
+- [Advanced web font optimization techniques](https://pixelpoint.io/blog/advanced-web-font-optimization-techniques/): explique bien comment optimiser ses fonts: réduire la taille, éviter les layouts shifts et ajuster l'alignement vertical.
+- [Octoverse 2022 - The state of open source software](https://octoverse.github.com/)
+- [A first look at SolidStart](https://ajcwebdev.com/2022/11/20/a-first-look-at-solidstart/)
+- [How to split JavaScript strings into sentences, words or graphemes with "Intl.Segmenter"](https://www.stefanjudis.com/today-i-learned/how-to-split-javascript-strings-with-intl-segmenter/)
+- [How we lost our slick new npm package name (and then got it back)](https://reactflow.dev/blog/reactflow-npm-package-name/)
+- [JavaScript from ES6 to ES12 in 2022](https://medium.com/@bluetch/javascript-es6-es7-es8-es9-es10-es11-and-es12-519d8be7d48c)
+- [Color Formats in CSS](https://www.joshwcomeau.com/css/color-formats/)
+- [TypeScript 5.0 is coming...](https://www.youtube.com/watch?v=PTU-H6Wwbh8)
+- [The Complete Guide to the Fastify Plugin System](https://www.nearform.com/blog/complete-guide-fastify-plugin-system/)
+- [GitHub Copilot CLI](https://githubnext.com/projects/copilot-cli/)
+- [Wasmer 3.0](https://wasmer.io/posts/announcing-wasmer-3.0)
+- [WebAssembly: TinyGo vs Rust vs AssemblyScript](https://ecostack.dev/posts/wasm-tinygo-vs-rust-vs-assemblyscript/)
+- [The large, small, and dynamic viewport units](https://web.dev/viewport-units/)
+- [Node.js Architecture Pitfalls to Avoid](https://blog.appsignal.com/2022/11/23/nodejs-architecture-pitfalls-to-avoid.html)
+- [Cloudflare - Server-side render full stack applications with Pages Functions](https://blog.cloudflare.com/pages-full-stack-frameworks/)
+- [Vercel - Edge Config: Ultra-low latency data at the edge](https://vercel.com/blog/edge-config-ultra-low-latency-data-at-the-edge)
+
+---
+
+## 🤭 Fun {#fun}
+
+[![alt](/emails/issues/126/meme.png)](https://twitter.com/addyosmani/status/1595470573001314309)
