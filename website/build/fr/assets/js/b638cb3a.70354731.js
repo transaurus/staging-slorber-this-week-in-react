@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([["9948"],{21291:function(e){e.exports=JSON.parse('{"metadata":{"permalink":"/fr/articles","page":1,"postsPerPage":10,"totalPages":1,"totalCount":5,"blogDescription":"Articles published on the This Week In React blog","blogTitle":"Articles"}}')}}]);

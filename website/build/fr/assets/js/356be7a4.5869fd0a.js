@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([["8251"],{55895:function(e){e.exports=JSON.parse('{"metadata":{"permalink":"/fr/newsletter","page":1,"postsPerPage":10,"totalPages":17,"totalCount":167,"nextPage":"/fr/newsletter/page/2","blogDescription":"Weekly issues of the This Week In React curation newsletter","blogTitle":"Newsletter"}}')}}]);

@@ -63,7 +63,7 @@ const config: Config = {
   tagline: "Stay up-to-date now!",
   url: "https://thisweekinreact.com",
   baseUrl: "/",
-  onBrokenLinks: "throw",
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: "warn",
 
   // See https://evilmartians.com/chronicles/how-to-favicon-in-2021-six-files-that-fit-most-needs
@@ -103,7 +103,7 @@ const config: Config = {
 
   i18n: {
     defaultLocale: "en",
-    locales: ["en", "fr"],
+    locales: ["en", "zh-Hans"],
     localeConfigs: {
       en: {
         label: "🇬🇧 English",

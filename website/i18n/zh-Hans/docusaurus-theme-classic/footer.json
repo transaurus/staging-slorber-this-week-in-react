@@ -1,0 +1,54 @@
+{
+  "link.title.This Week In React": {
+    "message": "This Week In React",
+    "description": "The title of the footer links column with title=This Week In React in the footer"
+  },
+  "link.title.Sébastien Lorber": {
+    "message": "Sébastien Lorber",
+    "description": "The title of the footer links column with title=Sébastien Lorber in the footer"
+  },
+  "link.item.label.📜 Articles": {
+    "message": "📜 Articles",
+    "description": "The label of footer link with label=📜 Articles linking to /articles"
+  },
+  "link.item.label.📨 Newsletter": {
+    "message": "📨 Newsletter",
+    "description": "The label of footer link with label=📨 Newsletter linking to /newsletter"
+  },
+  "link.item.label.🐦 Thread": {
+    "message": "🐦 Thread",
+    "description": "The label of footer link with label=🐦 Thread linking to https://slo.im/thread"
+  },
+  "link.item.label.💸 Sponsor": {
+    "message": "💸 Sponsor",
+    "description": "The label of footer link with label=💸 Sponsor linking to /sponsor"
+  },
+  "link.item.label.👥 Discord": {
+    "message": "👥 Discord",
+    "description": "The label of footer link with label=👥 Discord linking to https://thisweekinreact.com/discord"
+  },
+  "link.item.label.Twitter": {
+    "message": "Twitter",
+    "description": "The label of footer link with label=Twitter linking to https://twitter.com/sebastienlorber"
+  },
+  "link.item.label.Website": {
+    "message": "Website",
+    "description": "The label of footer link with label=Website linking to https://sebastienlorber.com"
+  },
+  "link.item.label.GitHub": {
+    "message": "GitHub",
+    "description": "The label of footer link with label=GitHub linking to https://github.com/slorber"
+  },
+  "link.item.label.Dev": {
+    "message": "Dev",
+    "description": "The label of footer link with label=Dev linking to https://dev.to/sebastienlorber"
+  },
+  "link.item.label.Hashnode": {
+    "message": "Hashnode",
+    "description": "The label of footer link with label=Hashnode linking to https://hashnode.com/@sebastienlorber"
+  },
+  "copyright": {
+    "message": "Copyright © 2026 Sébastien Lorber. Built with Docusaurus.",
+    "description": "The footer copyright"
+  }
+}
